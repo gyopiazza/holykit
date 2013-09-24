@@ -1,0 +1,318 @@
+// ============================================
+// Import the Holy Kit
+// ============================================
+
+// Core
+@import "holy-kit.less";
+
+// Load a skin (optional)
+@import "skins/plain.less";
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Config
+// ============================================
+
+// Here you can override the default config values
+
+// Typography
+// --------------------------------------------
+
+@font_size_base:            16;
+@line_height_base:          22;
+@global_multiplier:         1;
+
+// Colors
+// --------------------------------------------
+
+// Grayscale
+@black_10:                  darken(#fff, 10%);
+@black_20:                  darken(#fff, 20%);
+@black_30:                  darken(#fff, 30%);
+@black_40:                  darken(#fff, 40%);
+@black_50:                  darken(#fff, 50%);
+@black_60:                  darken(#fff, 60%);
+@black_70:                  darken(#fff, 70%);
+@black_80:                  darken(#fff, 80%);
+@black_90:                  darken(#fff, 90%);
+
+// Brand colors
+@brand_primary:             #2e3641;
+@brand_secondary:           #a8bd44;
+@brand_accent:              #4ad391;
+
+// Yellow/Orange: ffd200
+
+// Accent colors
+@success_color:             #5cb85c;
+@warning_color:             #f0ad4e;
+@danger_color:              #d9534f;
+@info_color:                #5bc0de;
+@disabled_color:            #cccccc;
+
+// Generic colors
+@blue:                      #3498DB;
+@blueDark:                  #2C3E50;
+@green:                     #18BC9C;
+@red:                       #E74C3C;
+@yellow:                    #e6bb0d;
+@orange:                    #F39C12;
+@pink:                      #ff6699;
+@purple:                    #8E44AD;
+
+// Scaffolding
+@body_background:           #f9f9f9;
+@text_color:                @black_50;
+
+// Links
+@link_color:                @brand_primary;
+@link_color_hover:          darken(@link_color, 15%);
+
+
+// Typography
+// --------------------------------------------
+
+@font_family_sans_serif:    "Montserrat", sans-serif;
+// @font_family_sans_serif:    Georgia, "Times New Roman", Times, serif;
+@font_family_serif:         Georgia, "Times New Roman", Times, serif;
+@font_family_monospace:     Monaco, Menlo, Consolas, "Courier New", monospace;
+@font_family_base:          @font_family_sans_serif;
+
+@debug_mode:                true;
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Initialize
+// ============================================
+
+.init();
+
+
+
+// Skin
+// --------------------------------------------
+
+// #skins > .plain;
+
+
+// Grid Helpers
+// --------------------------------------------
+
+// Import all the grid helpers
+// #grid > .all;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Custom styles
+// ============================================
+
+
+body { .padding(2); }
+
+.container { width:1140px; margin:0 auto; }
+
+.m() { .grid-container(960px); .container { padding: 0 (0px + @line_height_base); } }
+.s-down()  { .grid-container(100%); .container { padding: 0; } }
+
+
+#logo { text-align: center; font-size: 0; }
+#logo img { width: auto; height: 264px; }
+.m-down() { #logo img { height: 192px; } }
+
+
+#masthead { .clearfix; .padding(3); background: #ffd200; color: #333; text-shadow: 0 1px 0 rgba(255,255,255,0.3); }
+#masthead h2 { margin: auto; padding: 0 30px; max-width: 960px; font-weight: 300; text-align: center; }
+
+#main-features { .clearfix; background: #333; color: #ffd200; .padding(2); .margin-bottom; text-align: center; text-shadow: 0 1px 0 rgba(0,0,0,0.3); }
+#main-features .feature-icon { .margin-bottom; }
+#main-features i { .font-size(36, 4); .padding(1, 1); color: #333; background-color: #ffd200; border-radius: 100%; text-shadow: 0 1px 0 rgba(255,255,255,0.3); }
+#main-features h3 { /*margin: 40px 0 10px 0;*/ .font(20); margin: 0; .margin-bottom; }
+#main-features p  { .font(14); margin: 0;  }
+
+.s-down() {
+    #main-features { .padding(2, 2); }
+    #main-features li { .margin-bottom(2); }
+    #main-features p { padding: 0 10%; }
+    #main-features li:last-child { margin-bottom: 0; }
+}
+
+// h3 { font-weight: normal; }
+
+// .m-down() {
+//     #text-effects h1 { .font(64, 2); }
+// }
+
+// .s-down() {
+//     #forcecentered, #forcecentered img {
+//         width: auto;
+//         height: 300px;
+//     }
+// }
+
+
+// // Styling the grid
+// #grid .row span {
+//     display: block;
+//     background-color:#ed5c59;
+//     margin-bottom: @gutter;
+//     padding: 6px 8px;
+//     border-radius: 5px;
+// }
+
+
+
+
+
+// Lightbox
+
+// #test-popup {
+//   width: 100%;    
+//   // height: 250px;
+// }
+
+
+
+
+
+// /*.example.row {
+// background:#ededed;
+// padding:@gutter*2 @gutter 0 @gutter;
+// margin-bottom:@gutter*2;
+// border-radius:5px;
+// }*/
+
+// /*.example.row .row {
+// padding:0;
+// margin-bottom:0;
+// border-radius:0;
+// }*/
+
+// hr { border:0; border-top:1px dotted #aaa; }
+
+// .container > h2 { .margin-top(3); }
+
+// span {
+//   display:block;
+//   background-color:#ffd200;
+//   padding:6px 8px;
+//   border-radius:5px;
+//   margin-bottom: round(@gutter/2);
+//   font-size:12px;
+//   color:#333;
+//   text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+//   overflow:hidden;
+// }
+
+// h1 {
+//   font-size:30px;
+//   line-height:64px;
+//   border-bottom:1px solid #eee;
+// }
+
+// h2 {
+//   font-size:20px; 
+//   line-height:30px;
+//   font-weight:normal;
+// }
+
+// h2 small {
+//   font-size:11px;
+//   font-style:italic;
+// }
+
+// h3 {
+//   font-size:16px; 
+//   line-height:30px;
+//   font-weight:normal;
+// }
+
+// table { border-collapse:separate; }
+// table { .grid-column(12); }
+// table thead th { background:#f4f4f4; }
+// table th, table td { text-align:left; padding:10px; }
+
+
+
+// Semantic Grid Example
+// --------------------------------------------
+
+// section, article > div { .grid-row; }
+
+// article { .grid-column(6); }
+// header { .grid-column(8); }
+// aside { .grid-column(4); }
+
+// article span {
+//   display:block;
+//   background-color:#ffd200;
+//   padding:6px 8px;
+//   border-radius:5px;
+//   margin-bottom:@gutter*2;
+//   font-size:12px;
+// }
+
+// .button-flat3D { #button-styles > .flat3D; }
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// This hook outputs the media query helpers, print styles etc...
+// It must stay at the very end of your file for proper overriding.
+
+.end();
+
+// .media-queries;
+
+// Import print styles
+// @import "print.less";
+
+
+
+
+// /* -------------------------------------------- */
+// /* Background baseline                          */
+// /* -------------------------------------------- */
+
+// /** 
+//  * Baseline overlay by Basehold.it
+//  * A quick, painless, javascript-free baseline overlay.
+//  * by Dan Eden & Michael Wright
+//  * http://.basehold.it
+//  **/
+
+// body:after {
+//   background: url("http://basehold.it/image.php?height=@{doc-line-height}") repeat;
+//   opacity:0.5;
+// }
+
+// body {
+//     position:relative;
+// }
+
+// body:after {
+//   background: url("http://basehold.it/image.php?height=@{line_height_base}") repeat scroll left top transparent;
+//     bottom: 0;
+//     content: "";
+//     display: block;
+//     height: auto;
+//     min-height:100%;
+//     left: 0;
+//     pointer-events: none;
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     width: auto;
+//     z-index: 9999;
+//     opacity: 0.2;
+//     // opacity: 0;
+// }

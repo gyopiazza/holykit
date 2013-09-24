@@ -1,0 +1,12 @@
+// Grid Units
+.init() when (@use_grid_units = true) {
+    
+    .@{row_class} { .grid-row(); }
+    
+    // TODO: Check xxs-grid, xs-grid etc... maybe change ^ to * ?
+    .@{row_class} > *, [class^="@{grid_class}"] { .grid-items(); }
+    
+    // Generate all the classes for the grid
+    .generate-grid();
+    
+}

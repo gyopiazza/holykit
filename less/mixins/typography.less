@@ -1,0 +1,377 @@
+// --------------------------------------------
+// Config
+// --------------------------------------------
+
+// Use pixel values without units, rem conversion is automatic
+// @font_size_base: 16;
+// @line_height_base: 24;
+
+// // Golden Ratio: 1.618
+// @scale_ratio: 1.618;
+
+// // Use 16 for a default scale
+// @magic_number: 16;
+
+
+// Private variable: no need to change it
+// @_doc_ratio: @line_height_base / @font_size_base;
+
+
+// --------------------------------------------
+// Mixins
+// --------------------------------------------
+
+// Margins for the vertical rhythm
+.margin-top (@lines: 1) {
+    margin-top: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    margin-top: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.margin-right (@lines: 1) {
+    margin-right: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    margin-right: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.margin-bottom (@lines: 1) {
+    margin-bottom: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    margin-bottom: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.margin-left (@lines: 1) {
+    margin-left: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    margin-left: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.margin (@lines_v: 1, @lines_h: 0) {
+    margin: (0px + round( (@line_height_base * @global_multiplier)  * @lines_v )) (0px + round( (@line_height_base * @global_multiplier)  * @lines_h ));
+    margin: (0rem + ((@_doc_ratio * @global_multiplier)) * @lines_v) (0rem + ((@_doc_ratio * @global_multiplier)) * @lines_h);
+}
+
+// Paddings for the vertical rhythm
+.padding-top (@lines: 1) {
+    padding-top: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    padding-top: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.padding-right (@lines: 1) {
+    padding-right: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    padding-right: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.padding-bottom (@lines: 1) {
+    padding-bottom: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    padding-bottom: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+.padding-left (@lines: 1) {
+    padding-left: 0px + round( (@line_height_base * @global_multiplier) * @lines );
+    padding-left: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
+}
+
+
+
+.padding (@lines_v: 1, @lines_h: 0) {
+    padding: (0px + round( (@line_height_base * @global_multiplier)  * @lines_v )) (0px + round( (@line_height_base * @global_multiplier)  * @lines_h ));
+    padding: (0rem + ((@_doc_ratio * @global_multiplier)) * @lines_v) (0rem + ((@_doc_ratio * @global_multiplier)) * @lines_h);
+}
+
+.line-height (@lines: 1) {
+    line-height: 0px + round((@line_height_base * @lines));
+    line-height: 0rem + (@_doc_ratio * @lines);  
+}
+
+// PX + REMs
+.font-rem (@size: @font_size_base) {
+    font-size: 0px + @size;
+    font-size: 0rem + @size / @font_size_base;
+}
+
+// Just font-size and line-height
+.font (@size: @font_size_base, @line_height: 1) {  
+    .font-rem(@size);
+    .line-height (@line_height);
+}
+
+// Full-fat vertical rhythm
+// @size          px         The font size in px, without the unit (16px -> 16)
+// @multiplier    number     The line-height multiplier
+// @lines         number     The margin multiplier
+
+.font-size (@size: @font_size_base, @line_height: 1, @margin: 1) {
+    margin: 0;
+    .font (@size, @line_height);
+    .margin-bottom (@margin);
+}
+
+
+// --------------------------------------------
+// Extra mixins for vertical rhythm 
+// --------------------------------------------
+
+.height (@lines: 1) {
+    height: 0px + (@line_height_base * @lines);
+}
+
+.min-height (@lines: 1) {
+    min-height: 0px + (@line_height_base * @lines);
+}
+
+.max-height (@lines: 1) {
+    max-height: 0px + (@line_height_base * @lines);
+}
+
+
+
+// --------------------------------------------
+// Scales
+// --------------------------------------------
+
+// @group modular scale calculator use Ems@16
+
+// http://modularscale.com/scale/?px1=19&px2=14&ra1=1.618&ra2=0
+//$ratio:1.618;
+//$default:16; // current accepted ‘default’ pixel size browsers use
+//$base-number:19;
+//$important-number:14;
+
+// $a-scale is based on $base-number and give bigger numbers
+//@a-scale: @font_size_base/16; // this is the base font size
+@a-scale: @magic_number/16;
+
+@a-scale-2: @a-scale * @scale_ratio;
+@a-scale-3: @a-scale-2 * @scale_ratio;
+@a-scale-4: @a-scale-3 * @scale_ratio;
+@a-scale-5: @a-scale-4 * @scale_ratio;
+@a-scale-6: @a-scale-5 * @scale_ratio;
+
+//$a-scale:$base-number/$default; /* this is the base font size */
+//$a-scale-2:$a-scale*$ratio;
+//$a-scale-3:$a-scale-2*$ratio;
+//$a-scale-4:$a-scale-3*$ratio;
+//$a-scale-5:$a-scale-4*$ratio;
+//$a-scale-6:$a-scale-5*$ratio;
+
+// $a-scale- is based on $base-number and give smaller numbers
+//$a-scale-:$a-scale;
+//$a-scale—2:$a-scale-/$ratio;
+//$a-scale—3:$a-scale—2/$ratio;
+//$a-scale—4:$a-scale—3/$ratio;
+//$a-scale—5:$a-scale—4/$ratio;
+//$a-scale—6:$a-scale—5/$ratio;
+
+// b-scale is based on $important-number
+//$b-scale:$important-number/$default; /* these are additional numbers based on $important-number */
+//$b-scale-2:$b-scale*$ratio;
+//$b-scale-3:$b-scale-2*$ratio;
+//$b-scale-4:$b-scale-3*$ratio;
+//$b-scale-5:$b-scale-4*$ratio;
+//$b-scale-6:$b-scale-5*$ratio;
+
+
+// --------------------------------------------
+// Text Effects
+// --------------------------------------------
+
+// TODO: Make them configurable
+
+#text-effects {
+    
+    .one-px() {
+        text-shadow: 0px 1px 1px #fff;
+    }
+    
+    .letterpress() {
+        //color: rgba(0,0,0,0.6);
+        text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+    }
+    
+    .hard-shadow() {
+        text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    }
+    
+    .double-shadow() {
+        text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+    }
+    
+    .down-distant() {
+        text-shadow:
+            0px 3px 0px #b2a98f,
+            0px 14px 10px rgba(0,0,0,0.15),
+            0px 24px 2px rgba(0,0,0,0.1),
+            0px 34px 30px rgba(0,0,0,0.1);
+    }
+    
+    .close-heavy() {
+        text-shadow:
+            0px 4px 3px rgba(0,0,0,0.4),
+            0px 8px 13px rgba(0,0,0,0.1),
+            0px 18px 23px rgba(0,0,0,0.1);
+    }
+    
+    .three-d() {
+        text-shadow:
+            0 1px 0 #ccc, 
+            0 2px 0 #c9c9c9,
+            0 3px 0 #bbb,
+            0 4px 0 #b9b9b9,
+            0 5px 0 #aaa,
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.1),
+            0 1px 3px rgba(0,0,0,.3),
+            0 3px 5px rgba(0,0,0,.2),
+            0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+            0 20px 20px rgba(0,0,0,.15);
+    }
+  
+    .three-d-shadow() {
+        text-shadow:
+            1px 0px 0px #438088,
+            1px 2px 0px #154449,
+            3px 2px 5px #438088,
+            3px 4px 0px #154449,
+            5px 4px 8px #438088,
+            5px 6px 0px #154449,
+            7px 6px 8px #438088,
+            7px 8px 0px #154449,
+            2px 3px 0px #154449,
+            4px 5px 0px #154449,
+            6px 7px 0px #154449,
+            7px 9px 0px #51A3AC,
+            6px 10px 0px #51A3AC,
+            5px 11px 0px #51A3AC,
+            4px 12px 0px #51A3AC,
+            3px 13px 0px #51A3AC,
+            2px 14px 0px #51A3AC,
+            1px 15px 0px #51A3AC;
+    }
+    
+    .three-d-2() {
+        text-shadow:
+        	1px 1px 0 #CCC,
+        	2px 2px 0 #CCC,
+        
+        	3px 3px 0 #444,
+        	4px 4px 0 #444,
+        	5px 5px 0 #444,
+        	6px 6px 0 #444;
+    }
+    
+    .three-d-3 (@color, @size, @angle) {
+        text-shadow: ~`(function(c,s,a){ s=parseInt(s); a=parseInt(a); if(a==90)a=89.99; if(a==180)a=179.99; if(a==270)a=269.99; if(a==360)a=0; var ac=Math.cos(a*Math.PI/180); var as=Math.sin(a*Math.PI/180); s++; var r=(1*ac)+"px "+(1*as)+"px 0 "+c; for( var i=2; i<s; i++ ) { r += ","+(i*ac)+"px "+(i*as)+"px 0 "+c; }; return r; })( "@{color}", "@{size}", "@{angle}" )`;
+    }
+    
+    .inset() {
+        background-color: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+    }
+    
+    .glowing() {
+        text-shadow: 0 0 0.2em rgba(255,255,255,0.8);
+    }
+    
+    .superhero() {
+        text-shadow:
+            -10px 10px 0px #00e6e6,
+            -20px 20px 0px #01cccc,
+            -30px 30px 0px #00bdbd;
+    }
+    
+    .multiple-lights() {
+        text-shadow:
+            0px 15px 5px rgba(0,0,0,0.1),
+            10px 20px 5px rgba(0,0,0,0.05),
+            -10px 20px 5px rgba(0,0,0,0.05);
+    }
+    
+    .soft-emboss() {
+        color: rgba(0,0,0,0.6);
+        text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+    }
+    
+    .x-ray() {
+        text-shadow:
+            0px 0px 0px #fff,
+            0px 1px 0px #fff,
+            0px -1px 0px #fff,
+            0px 2px 0px #fff,
+            0px -2px 0px #fff,
+            1px 0px 0px #fff,
+            1px 1px 0px #fff,
+            1px -1px 0px #fff,
+            1px 2px 0px #fff,
+            1px -2px 0px #fff,
+            2px 0px 0px #fff,
+            -1px 1px 0px #fff,
+            -1px -1px 0px #fff,
+            -1px 2px 0px #fff,
+            -1px -2px 0px #fff,
+            2px 2px 0px #fff,
+            2px 1px 0px #fff,
+            -2px 3px 0px #373B3F,
+            -3px 4px 0 #373B3F,
+            -4px 5px 0 #373B3F,
+            -5px 6px 0px #373B3F,
+            -7px 3px 0px #fff,
+            -6px 2px 0px #fff,
+            -5px 1px 0px #fff,
+            -4px 0px 0px #fff,
+            -3px -1px 0px #fff,
+            -7px 4px 0px #fff,
+            -7px 5px 0px #fff,
+            -7px 6px 0px #fff,
+            -7px 7px 0px #fff,
+            -6px 7px 0px #fff,
+            2px 3px 0px #fff,
+            1px 4px 0px #fff,
+            0px 5px 0px #fff,
+            -1px 6px 0px #fff,
+            -2px 7px 0px #fff;
+    }
+    
+    .blur() {
+        color: transparent;
+        text-shadow: #fff 0 0 20px;
+    }
+    
+    .neon() {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff,
+            0 0 40px #ff00de,
+            0 0 70px #ff00de,
+            0 0 80px #ff00de,
+            0 0 100px #ff00de,
+            0 0 150px #ff00de;
+    }
+    
+    .anaglyph() {
+        text-shadow: -0.06em 0 red, 0.06em 0 cyan;
+    }
+}
+
+// Text Effects Helpers
+// .one-px           { #text-effects > .one-px; }
+// .letterpress      { #text-effects > .letterpress; }
+// .hard-shadow      { #text-effects > .hard-shadow; }
+// .double-shadow    { #text-effects > .double-shadow; }
+// .down-distant     { #text-effects > .down-distant; }
+// .close-heavy      { #text-effects > .close-heavy; }
+// .three-d          { #text-effects > .three-d; }
+// .three-d-shadow   { #text-effects > .three-d-shadow; }
+// .three-d-2        { #text-effects > .three-d-2; }
+// .inset            { #text-effects > .inset; }
+// .glowing          { #text-effects > .glowing; }
+// .superhero        { #text-effects > .superhero; }
+// .multiple-lights  { #text-effects > .multiple-lights; }
+// .soft-emboss      { #text-effects > .soft-emboss; }
+// .x-ray            { #text-effects > .x-ray; }
+// .blur             { #text-effects > .blur; }
+// .neon             { #text-effects > .neon; }
+// .anaglyph         { #text-effects > .anaglyph; }
+

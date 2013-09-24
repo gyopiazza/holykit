@@ -1,0 +1,19 @@
+// Tabs
+.init() when (@use_tabs = true) {
+
+    .tabs-nav, .tabs-nav ul { margin: 0; padding: 0; list-style: none;  }
+    .tabs-nav > li, .tabs-nav li > a { display: inline-block; }
+    
+    // Alternative tabs positions (left, right, center)
+    .tabs.left .tabs-nav, .tabs.right .tabs-nav { width: 25%; }
+    .tabs.left .tabs-content, .tabs.right .tabs-content { position: relative; }
+    .tabs.left .tabs-nav { float: left; }
+    .tabs.right .tabs-nav { float: right; }
+    .tabs.left .tabs-content { margin-left: 25%; }
+    .tabs.right .tabs-content { margin-right: 25%; }
+    .tabs.left .tabs-nav > li, .tabs.left .tabs-nav li > a,
+    .tabs.right .tabs-nav > li, .tabs.right .tabs-nav li > a { display: block; }
+    
+    .tabs.center .tabs-nav { text-align: center; }
+
+}

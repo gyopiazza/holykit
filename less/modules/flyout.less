@@ -1,0 +1,31 @@
+// Flyout
+.init() when (@use_flyout = true) {
+
+    // Flyout (hidden by default)
+    .flyout
+    {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        min-width: 150px;
+    }
+    
+    .flyout .flyout { top: 0; left: 100%; }
+    .flyout > * { margin: 0; padding: 0; float: none; position: relative; list-style: none; display: block; }
+    .flyout > * > a { display: block; }
+    
+    // Display the flyout
+    .flyout.open { display: block; }
+    
+    // Dropup variation
+    .flyout.dropup, .flyout.dropup .flyout { top: auto; bottom: 100%; }
+    
+    // Dropleft variation
+    .flyout.dropleft .flyout { left: auto; right: 100%; }
+
+}

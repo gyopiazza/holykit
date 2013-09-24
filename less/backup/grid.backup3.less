@@ -1,0 +1,671 @@
+// --------------------------------------------
+// Config                                
+// --------------------------------------------
+
+// Grid settings
+// @gutter:        40px;
+// @columns:       12;
+// @responsive:    true;
+
+// // Breakpoints
+// @xxs-max:   320px;
+// //----------------
+// @xs-min:    321px;
+// @xs-max:    639px;
+// //----------------
+// @s-min:     640px;
+// @s-max:     959px;
+// //----------------
+// @m-min:     960px;
+// @m-max:     1279px;
+// //----------------
+// @l-min:     1280px;
+// @l-max:     1599px;
+// //----------------
+// @xl-min:    1600px;
+// @xl-max:    1919px;
+// //----------------
+// @xxl-min:   1920px;
+
+// // Media queries definitions
+// @xxs: ~"screen and (max-width:" @xxs-max ~")";
+// @xs:  ~"screen and (min-width:" @xs-min ~") and (max-width:" @xs-max ~")";
+// @s:   ~"screen and (min-width:" @s-min ~") and (max-width:" @s-max ~")";
+// @m:   ~"screen and (min-width:" @m-min ~") and (max-width:" @m-max ~")";
+// @l:   ~"screen and (min-width:" @l-min ~") and (max-width:" @l-max ~")";
+// @xl:  ~"screen and (min-width:" @xl-min ~") and (max-width:" @xl-max ~")";
+// @xxl: ~"screen and (min-width:" @xxl-min ~")";
+
+// @landscape: ~"screen and (orientation: landscape)";
+// @portrait: ~"screen and (orientation: portrait)";
+
+// // TODO: Make 'retina' work
+// @retina: ~"only screen and (-webkit-min-device-pixel-ratio: 2)",
+//          ~"only screen and (   min--moz-device-pixel-ratio: 2)",
+//          ~"only screen and (     -o-min-device-pixel-ratio: 2/1)",
+//          ~"only screen and (        min-device-pixel-ratio: 2)",
+//          ~"only screen and (                min-resolution: 192dpi)",
+//          ~"only screen and (                min-resolution: 2dppx)";
+
+// Class names
+// @grid_class: grid;
+// @row_class: row;
+// @offset_class: offset;
+// @block_class: block;
+// @fraction_class: f-;
+
+
+// Initialize media queries mixins
+.xxs() {}
+.xs() {}
+.xs-up() {}
+.xs-down() {}
+.s() {}
+.s-up() {}
+.s-down() {}
+.m() {}
+.m-up() {}
+.m-down() {}
+.l() {}
+.l-up() {}
+.l-down() {}
+.xl() {}
+.xl-up() {}
+.xl-down() {}
+.xxl() {}
+.landscape() {}
+.portrait() {}
+.screen() {}
+.print() {}
+.retina() {}
+
+
+// --------------------------------------------
+// Grid System                                 
+// --------------------------------------------
+
+// Very important!
+// * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+
+// Helper to quickly change the "container" width
+.grid-container (@width: 100%, @selector: ~".container") {
+    // (~"@{selector}") { width: @width; } 
+    @{selector} { width: @width; }
+}
+
+// Make the target behave as a "row" container
+.grid-row (@g: @gutter) {
+  // .clearfix;
+  margin: 0 0 0 -(@g);
+  padding: 0;
+  letter-spacing: -0.31em;
+  > * { .grid-items; }
+  //margin:0 -(@gutter);
+}
+
+// Common properties for all the grid items
+.grid-items (@g: @gutter) {
+  //float: left;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: @g;
+  letter-spacing: normal;
+  //padding:0 @gutter;
+}
+
+// A single grid unit
+.grid-item (@index) {
+  width: (100%/@columns) * @index;
+}
+
+// A shorthand helper for semantic grids
+.grid-column (@index) {
+  .grid-items; 
+  .grid-item(@index); 
+}
+
+// Set the offset
+.grid-offset (@index) {
+  margin-left: (100%/@columns) * @index;
+}
+
+// Change the gutter
+.grid-gutter(@g: @gutter)
+{
+    .@{row_class} { .grid-row(@g); }
+    // (~".@{row_class}") { .grid-row(@g); }
+    // TODO: Check xxs-grid, xs-grid etc... maybe change ^ to * ?
+    .@{row_class} > *, [class^="@{grid_class}"] { .grid-items(@g); }
+    // (~".@{row_class} > *"), (~'[class^="@{grid_class}"]') { .grid-items(@g); }
+}
+
+// Grid loop mixin
+// --------------------------------------------
+// Generates the grid helper classes to be used in the markup
+.make-grid (@index, @prefix:~'') when (@index > 0) {
+    // Create the grid item CSS class
+    // (~".@{grid_class}@{index}") {
+    .@{prefix}@{grid_class}@{index} {
+        .grid-item (@index);
+    } 
+    // Next iteration
+    .make-grid(@index - 1, @prefix);
+}
+.make-grid (0) {}
+
+
+// Block grid loop mixin
+// --------------------------------------------
+// Generates the block grid helper classes to be used in the markup
+.make-block-grid (@index) when (@index > 0) { 
+    // Block grid classes
+    // (~".@{block_class}@{index} > *") {
+    .@{block_class}@{index} > * {
+        .grid-item (@columns/@index);
+    }
+    // Next iteration
+    .make-block-grid(@index - 1);
+}
+.make-block-grid (0) {}
+
+
+// Offset loop mixin
+// --------------------------------------------
+// Generates the offset helper classes to be used in the markup
+
+.make-offset (@index) when (@index > 0) { 
+    // Offset classes
+    // (~".@{offset_class}@{index}") {
+    .@{offset_class}@{index} {
+        .grid-offset (@index);
+    }
+    // Next iteration
+    .make-offset(@index - 1);
+}
+.make-offset (0) {}
+
+
+// Responsive grid loop mixin
+// --------------------------------------------
+// Generates the responsive grid helper classes to be used in the markup
+
+.make-responsive-grid (@index, @prefix:l) when (@index > 0) {
+    // (~".@{prefix}@{grid_class}@{index}") {
+    .@{prefix}@{grid_class}@{index} {
+        .grid-item (@index);
+    }  
+    .make-responsive-grid(@index - 1, @prefix);
+}
+.make-responsive-grid (0, @prefix:l) {}
+
+
+// Responsive block grid loop mixin
+// --------------------------------------------
+// Generates the responsive block grid helper classes to be used in the markup
+
+.make-responsive-block-grid (@index, @prefix:l) when (@index > 0) {
+    // (~".@{prefix}@{block_class}@{index} > *") {
+    .@{prefix}@{block_class}@{index} > * {
+        .grid-item (@columns/@index);
+    }
+    .make-responsive-block-grid(@index - 1, @prefix);
+}
+.make-responsive-block-grid (0, @prefix:l) {}
+
+
+// Responsive offset loop mixin
+// --------------------------------------------
+// Generates the responsive offset helper classes to be used in the markup
+
+.make-responsive-offset (@index, @prefix:l) when (@index > 0) {
+    // (~".@{prefix}@{offset_class}@{index} > *") {
+    .@{prefix}@{offset_class}@{index} > * {
+        .grid-offset (@index);
+    }
+    .make-responsive-offset (@index - 1, @prefix);
+}
+.make-responsive-offset (0, @prefix:l) {}
+
+
+// Shorthand for all the responsive mixins
+// --------------------------------------------
+.make-responsive (@index, @prefix:l) {
+    .make-grid (@index, @prefix);
+    .make-responsive-block-grid (@index, @prefix);
+    .make-responsive-offset (@index, @prefix);
+}
+
+
+
+// --------------------------------------------
+// Helpers
+// --------------------------------------------
+
+
+#grid {
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ---------------------------------------------------------------------------------------
+    // Shorthand to import all the grid helpers
+    // ---------------------------------------------------------------------------------------
+    
+    .all() {
+        #grid > .unit;
+        #grid > .fraction;
+        #grid > .block;
+        #grid > .offset;
+        #grid > .extra;
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ---------------------------------------------------------------------------------------
+    // Unit Helpers
+    // ---------------------------------------------------------------------------------------
+
+    .unit() {    
+        // (~".@{row_class}") { .grid-row; }
+        // (~'[class^="@{grid_class}"]') { .grid-items; }
+        .grid-gutter;
+        .make-grid(@columns);
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ---------------------------------------------------------------------------------------
+    // Fraction Helpers
+    // ---------------------------------------------------------------------------------------
+
+    .fraction() {
+        [class^="one-"], [class^="two-"], [class^="three-"], .golden-ratio1, .golden-ratio2 { .grid-items; }
+        .full             { .grid-item(@columns / 1); .grid-items; }
+        .half             { .grid-item(@columns / 2); .grid-items; }
+        .one-third        { .grid-item(@columns / 3); }
+        .one-fourth       { .grid-item(@columns / 4); }
+        .one-fifth        { .grid-item(@columns / 5); }
+        .one-sixth        { .grid-item(@columns / 6); }
+        .one-seventh      { .grid-item(@columns / 7); }
+        .one-eighth       { .grid-item(@columns / 8); }
+        .one-ninth        { .grid-item(@columns / 9); }
+        .one-tenth        { .grid-item(@columns / 10); }
+        .two-thirds       { .grid-item(@columns * 2/3); }
+        .two-fifths       { .grid-item(@columns * 2/5); }
+        .two-sixths       { .grid-item(@columns * 2/6); }
+        .two-sevenths     { .grid-item(@columns * 2/7); }
+        .two-eights       { .grid-item(@columns * 2/8); }
+        .two-nineths      { .grid-item(@columns * 2/9); }
+        .two-tenths       { .grid-item(@columns * 2/10); }
+        .three-fourths    { .grid-item(@columns * 3/4); }
+        .three-fifths     { .grid-item(@columns * 3/5); }
+        .three-sixths     { .grid-item(@columns * 3/6); }
+        .three-sevenths   { .grid-item(@columns * 3/7); }
+        .three-eights     { .grid-item(@columns * 3/8); }
+        .three-nineths    { .grid-item(@columns * 3/9); }
+        .three-tenths     { .grid-item(@columns * 3/10); }
+        .golden-ratio1    { .grid-item(round(@columns / 1.618)); }
+        .golden-ratio2    { .grid-item(round(@columns - ( @columns / 1.618 ))); }
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ---------------------------------------------------------------------------------------
+    // Navigation
+    // ---------------------------------------------------------------------------------------
+    
+    // Block Helpers
+    // Imports the fractional grid helper classes into the CSS
+    .block() {
+        [class^="@{block_class}"] { .grid-row; }
+        [class^="@{block_class}"] li { list-style: none; }
+        // (~'[class^="@{block_class}"]') { .grid-row; }
+        // (~'[class^="@{block_class}"] li') { list-style: none; }
+        .make-block-grid(@columns);
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ---------------------------------------------------------------------------------------
+    // Offset Helpers
+    // ---------------------------------------------------------------------------------------
+
+    .offset() {
+        .make-offset(@columns);
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ---------------------------------------------------------------------------------------
+    // Extra Helpers
+    // ---------------------------------------------------------------------------------------
+
+    .extra() {
+        
+        // Vertical grid alignment
+        .top > * { vertical-align: top; }
+        .middle > * { vertical-align: middle; }
+        .bottom > * { vertical-align: bottom; }
+        
+        // Responsive Images Helpers
+        .responsive-image { display: block; width: 100%; height: auto; }
+        
+        // Responsive Embeds Helpers
+        .responsive-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16/9 ratio */
+            padding-top: 30px; /* IE6 workaround*/
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .responsive-embed iframe,
+        .responsive-embed object,
+        .responsive-embed embed,
+        .responsive-embed video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        // Position Helpers
+        .pull-left { float:left !important; }
+        .pull-right { float:right !important; }
+       
+        // Gutter Helpers
+        .no-gutters { margin-left:0; }
+        .no-gutters > * { padding-left:0; }
+    }
+
+} // #grid
+
+// --------------------------------------------
+// Media Queries                                 
+// --------------------------------------------
+
+// The media-queries mixin needs to be called at the very END of
+// your main .less file, so that styles are properly applied.
+
+// Smartphone           ~ 320px     - xxs
+// Tablet 1             ~ 640px     - xs
+// Tablet 2             ~ 768px     - s
+// Netbook              ~ 1024px    - m
+// Standard Desktop     ~ 1280px    - l
+// Large Desktop        ~ 1600px    - xl
+// Very Large Desktop   ~ 1920px    - xxl
+
+.media-queries() {
+    
+    // xxs
+    @media @xxs { 
+      .xxs-hidden,
+      .xs-up, .s-up, .m-up, .l-up, .xl-up, .xxl-up,
+      .xs-visible, .s-visible, .m-visible, .l-visible, .xl-visible, .xxl-visible
+      { display:none; }
+      
+      .xxs;
+      
+      // .xs-down;
+      // .s-down;
+      // .m-down;
+      // .l-down;
+      // .xl-down;
+    }
+    
+    // xs
+    @media @xs { 
+      .xs-hidden,
+      .s-up, .m-up, .l-up, .xl-up, .xxl-up,
+      .xxs-visible, .s-visible, .m-visible, .l-visible, .xl-visible, .xxl-visible
+      { display:none; }
+      
+      .xs;
+      // .xs-up;
+      // .xs-down;
+      
+      // .s-down;
+      // .m-down;
+      // .l-down;
+      // .xl-down;
+    }
+    
+    // s
+    @media @s {  
+      .s-hidden,
+      .m-up, .l-up, .xl-up, .xxl-up,
+      .xs-down,
+      .xxs-visible, .xs-visible, .m-visible, .l-visible, .xl-visible, .xxl-visible
+      { display:none; }
+      
+      .s;
+      // .s-up;
+      // .s-down;
+    
+      // .xs-up;
+      
+      // .m-down;
+      // .l-down;
+      // .xl-down;
+    }
+    
+    // m
+    @media @m {  
+      .m-hidden,
+      .l-up, .xl-up, .xxl-up,
+      .xs-down, .s-down,
+      .xxs-visible, .xs-visible, .s-visible, .l-visible, .xl-visible, .xxl-visible
+      { display:none; }
+      
+      .m;
+      // .m-up;
+      // .m-down;
+    
+      // .xs-up;
+      // .s-up;
+      
+      // .l-down;
+      // .xl-down;
+      
+      // Change the gutter
+      //.grid-gutter(20px);
+    }
+    
+    // l
+    @media @l {  
+      .l-hidden,
+      .xl-up, .xxl-up,
+      .xs-down, .s-down, .m-down,
+      .xxs-visible, .xs-visible, .s-visible, .m-visible, .xl-visible, .xxl-visible
+      { display:none; }
+      
+      .l;
+      // .l-up;
+      // .l-down;
+      
+      // .xs-up;
+      // .s-up;
+      // .m-up;
+      
+      // .xl-down;
+    }
+    
+    // xl
+    @media @xl {  
+      .xl-hidden,
+      .xxl-up,
+      .xs-down, .s-down, .m-down, .l-down,
+      .xxs-visible, .xs-visible, .s-visible, .m-visible, .l-visible, .xxl-visible
+      { display:none; }
+      
+      .xl;
+      // .xl-up;
+      // .xl-down;
+      
+      // .xs-up;
+      // .s-up;
+      // .m-up;
+      // .l-up;
+    }
+    
+    // xxl
+    @media @xxl {  
+      .xxl-hidden,
+      .xs-down, .s-down, .m-down, .l-down, .xl-down,
+      .xxs-visible, .xs-visible, .s-visible, .m-visible, .l-visible, .xl-visible
+      { display:none; }
+      
+      .xxl;
+      
+      // .xs-up;
+      // .s-up;
+      // .m-up;
+      // .xl-up;
+      // .l-up;
+    }
+    
+    // Set responsive grid units (mobile-first)
+    // @media screen and (max-width:@xxs-max) {  }
+    @media screen and (min-width:@xs-min)  {  }
+    @media screen and (min-width:@s-min)   {  }
+    @media screen and (min-width:@m-min)   {  }
+    @media screen and (min-width:@l-min)   {  }
+    @media screen and (min-width:@xl-min)  {  }
+    @media screen and (min-width:@xxl-min) {  }
+    
+    
+    // Set responsive grid units (mobile-last)
+    @media screen and (min-width:@xxl-min) { .make-responsive (@columns, xxl-); }
+    @media screen and (max-width:@xl-max)  { .make-responsive (@columns, xl-); }
+    @media screen and (max-width:@l-max)   { .make-responsive (@columns, l-); }
+    @media screen and (max-width:@m-max)   { .make-responsive (@columns, m-); }
+    @media screen and (max-width:@s-max)   { .make-responsive (@columns, s-); }
+    @media screen and (max-width:@xs-max)  { .make-responsive (@columns, xs-); }
+    @media screen and (max-width:@xxs-max) { .make-responsive (@columns, xxs-); }
+        
+    // ======================================================
+    
+    
+    // Extra media queries...
+    
+    // Landscape Orientation
+    @media @landscape { 
+      .portrait-visible, .landscape-hidden { display:none; }
+      .landscape;
+    }
+    
+    // Portrait Orientation
+    @media @portrait {
+      .landscape-visible, .portrait-hidden { display:none; }
+      .portrait;
+    }
+    
+    // Screen
+    @media screen {
+      .show-on-print { display:none; }
+      .screen;
+    }
+    
+    // Print
+    @media print {
+      .hide-on-print { display:none; }
+      .print;
+    }
+    
+    // Retina Displays
+    @media @retina {
+      .retina;
+    }
+
+} // .media-queries()
+
+
+
+
+// --------------------------------------------
+// Archived Media Queries (Just for reference)                                 
+// --------------------------------------------
+
+
+// Small screens
+//@media only screen and (max-width: 767px) {  }
+
+// Medium screens
+//@media only screen and (max-width: 1279px) and (min-width: 768px) {  }
+
+// Very large screens
+//@media only screen and (min-width: 1441px) {  }
+
+// Extra Media Queries
+
+// Landscape Orientation
+//@media screen and (orientation: landscape) {  }
+
+// Portrait Orientation
+//@media screen and (orientation: portrait) {  }
+
+// Touch Detection
+//.touch .your-class {  }
+
+// ======================================================
+
+// VERY Specific Media Queries...
+
+// Smartphones (portrait and landscape) -----------
+// @media only screen 
+// and (min-device-width : 320px) 
+// and (max-device-width : 480px) {
+// }
+
+// Smartphones (landscape) -----------
+// @media only screen 
+// and (min-width : 321px) {
+// }
+
+// Smartphones (portrait) -----------
+// @media only screen 
+// and (max-width : 320px) {
+// }
+
+// iPads (portrait and landscape) -----------
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) {
+// }
+
+// iPads (landscape) -----------
+// @media only screen 
+// and (min-device-width : 768px)
+// and (max-device-width : 1024px)
+// and (orientation : landscape) {
+// }
+
+// iPads (portrait) -----------
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) 
+// and (orientation : portrait) {
+// }
+
+// Desktops and laptops -----------
+// @media only screen 
+// and (min-width : 1224px) {
+// }
+
+// Large screens -----------
+// @media only screen 
+// and (min-width : 1824px) {
+// }
+
+// Retina Dislays -----------
+// @media
+// only screen and (-webkit-min-device-pixel-ratio : 1.5),
+// only screen and (min-device-pixel-ratio : 1.5) {
+// }
+
+// Specific styles for iPhone 4, Opera Mobile 11 and other high pixel ratio devices 
+// @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+// only screen and (-o-min-device-pixel-ratio: 3/2),
+// only screen and (min--moz-device-pixel-ratio: 1.5),
+// only screen and (min-device-pixel-ratio: 1.5) {
+// }

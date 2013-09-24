@@ -1,0 +1,863 @@
+/* ============================================
+ * Skin: Plain v0.1 - Default HolyKit Skin
+ * Author: Gyo Piazza (giordanopiazza.com)
+ * ============================================ */
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Imports
+// ============================================
+
+// Use this space to load other less files
+// @import "~/holy-kit/helpers.less";
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Config
+// ============================================
+
+// Here you can override any default config values...
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Skin Config
+// ============================================
+
+// Skins can have specific config variables
+
+@border_radius: 5px;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================
+// Skin Initialization
+// ============================================
+
+// All the styling should go inside the init() mixin
+
+.init() {
+// #skins {
+    // .plain() {
+
+    // --------------------------------------------
+    // Load the core helpers
+    // --------------------------------------------
+    
+    // #grid > .all;
+    // #ui > .all;
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    // --------------------------------------------
+    // Base
+    // --------------------------------------------
+    
+    // * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+    // html { font-size: 100%; height: 100%; }
+    figure img { display:block; } // Fix the inline image bottom margin
+    
+    ::-moz-selection { background: @black_10; text-shadow: none; }
+    ::selection { background: @black_10; text-shadow: none; }
+    
+    img { vertical-align: middle; }
+    fieldset { border: 0; margin: 0; padding: 0; }
+    textarea { resize: vertical; }
+
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Typography
+    // --------------------------------------------
+
+    body {
+        // font-family: @font_family_base;
+        // font-size: 100% * (@font_size_base/16);
+        // line-height: @_doc_ratio;
+        background: @body_background;
+    }
+    
+    h1, h2, h3, h4, h5, h6,
+    p, blockquote, pre,
+    ul, ol, dl,
+    table, figure {
+      margin-top:0;
+      margin-bottom:0;
+      padding-top:0;
+      padding-bottom:0;
+      .margin-bottom;
+    }
+    
+    hr { margin: 0; padding: 0; border: 0; display: block; clear: both; border-bottom: 1px dotted #aaa; .margin-bottom(3); .padding-top(3); margin-top: -1px; }
+    
+    // <small> line-height fix
+    small { line-height:@_doc_ratio; }
+    
+    // ---
+    
+    a { color: @brand_accent; text-decoration: none; }
+    
+    // ---
+    
+    h1 { .font-size(round(@font_size_base * @a-scale-5), 4); }
+    h2 { .font-size(round(@font_size_base * @a-scale-4), 3); }
+    h3 { .font-size(round(@font_size_base * @a-scale-3), 2); }
+    h4 { .font-size(round(@font_size_base * @a-scale-2)); }
+    h5 { .font-size(14px); }
+    h6 { .font-size(12px); }
+    
+    p  { .font-size(); }
+    
+        
+    // Text Effects Helpers
+    .one-px           { #text-effects > .one-px; }
+    .letterpress      { #text-effects > .letterpress; }
+    .hard-shadow      { #text-effects > .hard-shadow; }
+    .double-shadow    { #text-effects > .double-shadow; }
+    .down-distant     { #text-effects > .down-distant; }
+    .close-heavy      { #text-effects > .close-heavy; }
+    .three-d          { #text-effects > .three-d; }
+    .three-d-shadow   { #text-effects > .three-d-shadow; }
+    .three-d-2        { #text-effects > .three-d-2; }
+    // .three-d-3        { #text-effects > .three-d-3; }
+    .inset            { #text-effects > .inset; }
+    .glowing          { #text-effects > .glowing; }
+    .superhero        { #text-effects > .superhero; }
+    .multiple-lights  { #text-effects > .multiple-lights; }
+    .soft-emboss      { #text-effects > .soft-emboss; }
+    .x-ray            { #text-effects > .x-ray; }
+    .blur             { #text-effects > .blur; }
+    .neon             { #text-effects > .neon; }
+    .anaglyph         { #text-effects > .anaglyph; }
+    
+    // Text Effects Examples
+    
+    [class*="-example"] { text-align:center; .padding-top(2); .padding-bottom; .margin-bottom(2); }
+    
+    .one-px-example { background:#ccc; }
+    .one-px { color:#333; }
+    .letterpress-example { background:#222; }
+    .hard-shadow-example { background:#ffd200; }
+    .double-shadow-example { background:#f4f4f4; }
+    .down-distant-example { background:#f4f4f4; }
+    .close-heavy-example { background:#f4f4f4; }
+    .three-d-example { background:#26d6e3; }
+    .three-d { color:#fff; }
+    .three-d-shadow-example { background:#6cc3ce; }
+    .three-d-2-example { background:#F0EFE5; }
+    .three-d-2 { color:#fff; }
+    .inset-example { background:#ccc; }
+    .glowing-example { background:#ff9900; }
+    .superhero-example { background:#26d6e3; }
+    .superhero { color:#fff; }
+    .multiple-lights-example { background:#f4f4f4; }
+    .soft-emboss-example { background:#f4f4f4; }
+    .x-ray-example { background:#f4f4f4; }
+    .blur-example { background:#26d6e3; }
+    .neon-example { background:#333; }
+    .neon { color:#fff; }
+    .anaglyph-example { background:#f4f4f4; }
+    .anaglyph { color:#333; }
+    
+    /* Temp fixes (three- collides with fraction units) ... */
+    .one-px, .one-px-example,
+    .three-d, .three-d-example,
+    .three-d-shadow, .three-d-shadow-example,
+    .three-d-2, .three-d-2-example { float: none; padding-left: 0; }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Forms
+    // --------------------------------------------
+    
+    form fieldset {
+        // padding:0;
+        // border:0;
+        // -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+        // box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+        // .padding-bottom;
+    }
+    
+    
+    fieldset + fieldset {
+        .padding-bottom;
+    }
+    
+    // form fieldset label { font-weight: bold; }
+    
+    form fieldset.form-actions {
+        border: none;
+        -webkit-box-shadow: 0;
+        box-shadow: none;
+    }
+    
+    form fieldset.check label {
+    	// display: inline;
+    	// float: none;
+    	// width: auto;
+    	// font-weight: normal;
+    	}
+    // form fieldset.radio ul li label {
+    // 	display: inline;
+    // 	float: none;
+    // 	width: auto;
+    // 	font-weight: normal;
+    // 	}
+    input[type="text"],
+    textarea,
+    .form-control.select {
+    	// display: block;
+    	
+        border-spacing: 0px;
+        margin: 0px;
+        padding: 0px;
+        space: 0px;
+    	// padding: 5px;
+        border-radius: @border_radius;
+        .padding(0.5, 0.6);
+        // .min-height(2);
+        
+    	// font-size: 14px;
+        .font(14);
+    	border: 1px solid #ddd;
+    	background: #f5f5f5;
+    	// -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    	// -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    	// -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    	// -webkit-border-radius: 4px;
+    	// -moz-border-radius: 4px;
+    	// border-radius: 4px;
+    }
+    
+    form fieldset input[type="text"]:focus,
+    form fieldset textarea:focus,
+    .form-control.select.foxus {
+    	border: 1px solid #ffd200;
+    	background: #fff;
+        outline: 0;
+        // outline:3px solid #ffd200;
+    }
+    // form fieldset textarea {
+    // 	min-height:unit(@line_height_base*4, px);
+    // 	}
+    form fieldset select {
+    	min-width: 25%;
+    	margin: 0;
+    }
+    // form fieldset.radio ul {
+    // 	// margin: 5px 0 0 20%;
+    // 	}
+    // form fieldset.radio ul li {
+    // 	// margin: 0 0 5px 0;
+    // 	}
+    // form fieldset.radio ul li:last-child {
+    // 	margin: 0;
+    // 	}
+    form fieldset p.form-help {
+    	margin: 0 0 0 20%;
+    	font-size: 12px;
+    	color: #999;
+    	}
+
+    
+    // Selectbox arrow
+    .select-arrow i {
+        display: inline-block;
+        width: 0; 
+    	height: 0; 
+    	border-left: 4px solid transparent;
+    	border-right: 4px solid transparent;
+    	border-top: 4px solid #000;
+        margin: 0 0 2px 6px;
+    }
+    
+    // Navbar form-search
+    .navbar .form-search {
+        .padding(0.50, 0.50);
+    }
+
+    // Radio buttons
+    .radio-widget {
+        vertical-align: top;
+        display: inline-block;
+        width: 1.1em;
+        height: 1.1em;
+        margin-right: .5em;
+        border-radius: 100%;
+        // background: #202325;
+        border: 3px solid #555;
+    }
+    
+    .radio-widget:before {
+        content: '';
+        width: .5em;
+        height: .5em;
+        margin: 0 0 0.4em .1em;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: rgba(0,0,0,0);
+    }
+    
+    .radio-widget:hover:before {
+        background-color: rgba(255,255,255, .9);
+    }
+    
+    .checked .radio-widget {
+        color: #f8f8f8;
+    }
+    
+    .checked .radio-widget:before {
+        background-color: #555;
+        // width: .75em;
+        // height: .75em;
+        // margin: .2em;
+    }
+    
+    
+    // Checkbox
+    
+    .check .checkbox-widget {
+        width: 1.1em;
+        height: 1.1em;
+        margin-right: .5em;
+	    position: relative;
+        display: inline-block;
+        
+    }
+    
+    .check .checkbox-widget i {
+    	position: absolute;
+    	width: 100%;
+    	height: 100%;
+    	top: 0;
+        left: 0;
+    	border-radius: 4px;
+        cursor: pointer;
+    
+    	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    	background: #f4f4f4;
+    
+    	background: -webkit-linear-gradient(top, #f4f4f4 0%, #e2e2e2 40%, #bcbcbc 100%);
+    	background: -moz-linear-gradient(top, #f4f4f4 0%, #e2e2e2 40%, #bcbcbc 100%);
+    	background: -o-linear-gradient(top, #f4f4f4 0%, #e2e2e2 40%, #bcbcbc 100%);
+    	background: -ms-linear-gradient(top, #f4f4f4 0%, #e2e2e2 40%, #bcbcbc 100%);
+    	background: linear-gradient(top, #f4f4f4 0%, #e2e2e2 40%, #bcbcbc 100%);
+    	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#bcbcbc', GradientType=0 );
+    }
+    
+    .check .checkbox-widget i:after {
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    	filter: alpha(opacity=0);
+    	opacity: 0;
+    	content: '';
+    	position: absolute;
+    	width: 9px;
+    	height: 5px;
+    	background: transparent;
+    	top: 4px;
+    	left: 4px;
+    	border: 3px solid #333;
+    	border-top: none;
+    	border-right: none;
+    
+    	-webkit-transform: rotate(-45deg);
+    	-moz-transform: rotate(-45deg);
+    	-o-transform: rotate(-45deg);
+    	-ms-transform: rotate(-45deg);
+    	transform: rotate(-45deg);
+    }
+    
+    .check .checkbox-widget i:hover::after {
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    	filter: alpha(opacity=30);
+    	opacity: 0.5;
+    }
+    
+    .checked .checkbox-widget i:after {
+    	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    	filter: alpha(opacity=100);
+    	opacity: 1;
+    }
+        
+    
+    // Checkbox and Radio
+
+    // iCheck plugin Flat skin, aero
+    
+    // .icheckbox_flat-aero,
+    // .iradio_flat-aero {
+    //     display: block;
+    //     float: left;
+    //     margin: 0 7px 0 0;
+    //     padding: 0;
+    //     width: 20px;
+    //     height: 20px;
+    //     background: url("../img/aero.png") no-repeat;
+    //     border: none;
+    //     cursor: pointer;
+    // }
+    
+    // .icheckbox_flat-aero {
+    //     background-position: 0 0;
+    // }
+    //     .icheckbox_flat-aero.checked {
+    //         background-position: -22px 0;
+    //     }
+    //     .icheckbox_flat-aero.disabled {
+    //         background-position: -44px 0;
+    //         cursor: default;
+    //     }
+    //     .icheckbox_flat-aero.checked.disabled {
+    //         background-position: -66px 0;
+    //     }
+    
+    // .iradio_flat-aero {
+    //     background-position: -88px 0;
+    // }
+    //     .iradio_flat-aero.checked {
+    //         background-position: -110px 0;
+    //     }
+    //     .iradio_flat-aero.disabled {
+    //         background-position: -132px 0;
+    //         cursor: default;
+    //     }
+    //     .iradio_flat-aero.checked.disabled {
+    //         background-position: -154px 0;
+    //     }
+    
+    // // Focus
+    // .icheckbox_flat-aero.focus, .iradio_flat-aero.focus {
+    //     // outline: 3px solid red;
+    // }
+    
+    // /* Retina support */
+    // @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    //        only screen and (-moz-min-device-pixel-ratio: 1.5),
+    //        only screen and (-o-min-device-pixel-ratio: 3/2),
+    //        only screen and (min-device-pixel-ratio: 1.5) {
+    //     .icheckbox_flat-aero,
+    //     .iradio_flat-aero {
+    //         background-image: url("../img/aero@2x.png");
+    //         -webkit-background-size: 176px 22px;
+    //         background-size: 176px 22px;
+    //     }
+    // }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Search Form
+    // --------------------------------------------
+    
+    .search input[type="submit"] { .border-left-radius(0); margin-left: 5px; }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Navigation
+    // --------------------------------------------
+    
+    // Flyout
+    .flyout { /*.padding(0.5);*/ background: #333; border-radius: @border_radius; }
+    .flyout a { .font(12); .padding(0.1, 0.5); color: #fff; text-decoration: none; }
+    .flyout .hover > a, .flyout a:hover { background: @green; }
+    .flyout > * a { border-radius: 3px; margin: 3px; }
+    // Fix for nested menus
+    .flyout .flyout { top: -3px; }    
+    // Variation UP
+    .flyout.dropup .flyout { .margin-bottom(-1); }
+
+    // Navbar
+    .navbar { background: #333; border-radius: @border_radius; }
+    .navbar a { .font(16); .padding(1, 1); color: #fff; text-decoration: none; }
+    .navbar .hover > a, .navbar a:hover { color: @green; background: #444; }
+    .navbar .divider { .padding(1.5); border-left: 1px solid #222; border-right: 1px solid #444; }
+    
+    // Navlist
+    .navlist li a { .font(12); .padding(0, 0.5); }
+    .navlist li a:hover { background: #f0f0f0; border-radius: 4px; }
+    .navlist span.meta { color: #bbb; }
+    .navlist .nav-header { .font(12); color: @black_30; text-transform: uppercase; font-weight: bold; }
+    .navlist .divider { .padding-top(0.5); .margin-bottom(0.5); margin-top: -1px; border-bottom: 1px solid #ccc; }
+    
+    // ul.flyout.open, ul.flyout:hover { opacity: 1; }
+    
+    // ul.flyout li { .padding(1, 1); }
+    
+    
+    // Essentials - configure this
+    // .navbar ul { width: 130px; }
+    // .navbar ul ul { left: 131px; }
+    // .navbar ul { white-space: nowrap; min-width: 130px; }
+    // .navbar ul ul { left: 100%; }
+    
+    // .navbar { /*border-radius: 7px;*/ /*height: 24px;*/ -moz-background-clip: padding; -webkit-background-clip: padding; background-clip: padding-box; .clearfix; }
+    // .navbar *:hover { background-color: none; }
+    // .navbar a { color: #fff; .font(16); .padding(1, 1); text-decoration: none; }
+    // .navbar li { background-color: #2c3e50; }
+    // .navbar li.hover > a { color: #2ecc71; }
+    // .navbar > li > ul { top: 100%; margin-top: 10px; border-radius: @border_radius; }
+    
+    // .navbar ul ul { left: 100%; padding-left: 5px;}
+    // .navbar ul li { padding: 6px; background-color: #2c3e50; }
+    // .navbar ul li a { color:#fff; padding: 6px 12px; font-size: 12px; border-radius: @border_radius; /*background-color: #5E5A5A; */}
+    // .navbar ul a.has-subnav {  }
+    // .navbar ul a.hover { color:#fff; background-color: #2ecc71; }
+    // .navbar ul a { border-bottom: 1px solid white; }
+    // .navbar ul a { border-bottom: none; } // I also needed this for IE6/7
+    
+    // Rounded corners
+    // .navbar > li:first-child { .border-left-radius(6px); }
+    // .navbar > li:last-child { .border-right-radius(6px); }
+    // .navbar ul > li:first-child { .border-top-radius(6px); }
+    // .navbar ul > li:last-child { .border-bottom-radius(6px); }
+    
+    // Submenu Arrow
+    // .navbar > li > ul:after { position:absolute; content:""; width:0; height:0; top:-6px; left:15px; border-style: solid; border-width: 0 6px 6px 6px; border-color: transparent transparent #2c3e50 transparent; }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Buttons
+    // --------------------------------------------
+
+    .btn, input[type="submit"], input[type="button"], input[type="reset"], button { /*display: inline-block; *//*.padding(0.5, 1);*/ .padding(0, 1); .font(14, 2); border: 0; border-radius: @border_radius; color: #fff; background-color: @brand_accent; text-decoration: none; }
+    .btn:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:hover { background-color: lighten(@brand_accent, 15%); }
+    .btn:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active, button:active { background-color: darken(@brand_accent, 15%); }
+    .btn > a { color: #fff; }
+    
+    // Disabled state
+    .btn.disabled, .btn:disabled { cursor: default; background: #ccc; color: #999; }
+
+    .btn-group { .clearfix; }
+    .btn-group > * { border-radius: 0; border-left: 1px solid darken(@brand_accent, 10%); }
+    .btn-group > *:first-child { border-left: 0; border-radius: @border_radius 0 0 @border_radius; }
+    .btn-group > .btn:last-child { border-radius: 0 @border_radius @border_radius 0; }
+    // .btn-group > * { border-radius: 0; border-left: 1px solid darken(@brand_accent, 10%); }
+    // .btn-group > *:first-child { border-left: 0; border-radius: @border_radius 0 0 @border_radius; }
+    // .btn-group > *:last-child { border-radius: 0 @border_radius @border_radius 0; }
+    .btn-group .active { background-color: darken(@brand_accent, 15%); }
+    
+    // Forms addons...
+    .add-on { display: inline-block; .height(2); .font(14, 2); .padding(0, 0.5); text-align: center; text-shadow: 0 1px 0 #fff; background-color: #eee; border-radius: @border_radius; border: 1px solid #ccc; }
+    
+    .prepend .btn, .append .btn { border-radius: 0; }
+    .prepend .add-on:first-child, .prepend .btn:first-child { border-radius: @border_radius 0 0 @border_radius; /*.border-right-radius(0);*/ }
+    .prepend .add-on:first-child { border-right: 0; }
+    .append .add-on:last-child, .append .btn:last-child { border-radius: 0 @border_radius @border_radius 0; /*.border-left-radius(0);*/ }
+    .append .add-on:last-child { border-left: 0; }
+    
+    .prepend input, .prepend select { .border-left-radius(0); }
+    .append input, .append select { .border-right-radius(0); }
+    .prepend.append input, .prepend.append select { border-radius: 0; }
+    
+    // Fix for prepend/append labels
+    label.add-on { width: auto; }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Pagination
+    // --------------------------------------------
+    
+    .pagination {
+        font-size: 0; // Fix unwanted bottom white-space (it's necessary to set the font size on <li>)
+    }
+        
+    // Default state
+    .pagination ul > li > a,
+    .pagination ul > li > span {
+        margin-left: 1px; color:#fff; background-color:#e74c3c; .font(12, 1); .padding(0.5, 1);
+    }
+    
+    // Hover and active
+    .pagination ul > li > a:hover,
+    .pagination ul > li > a:focus,
+    .pagination ul > .active > a,
+    .pagination ul > .active > span {
+      background-color: lighten(#e74c3c, 15%);
+    }
+    
+    // Active
+    .pagination ul > .active > a,
+    .pagination ul > .active > span {
+      //color: @grayLight;
+      //cursor: default;
+    }
+    
+    // Disabled
+    .pagination ul > .disabled > span,
+    .pagination ul > .disabled > a,
+    .pagination ul > .disabled > a:hover,
+    .pagination ul > .disabled > a:focus {
+      color: #999;
+      background-color: #ccc;
+      cursor: default;
+    }
+    
+    // First element
+    .pagination ul > li:first-child > a,
+    .pagination ul > li:first-child > span {
+      //border-left-width: 1px;
+      //.border-left-radius(@baseBorderRadius);
+      margin-left: 0;
+      border-radius: @border_radius 0 0 @border_radius;
+    }
+    
+    // Last element
+    .pagination ul > li:last-child > a,
+    .pagination ul > li:last-child > span {
+      //.border-right-radius(@baseBorderRadius);
+      border-radius: 0 @border_radius @border_radius 0;
+      
+    }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Breadcrumbs
+    // --------------------------------------------
+    
+    .breadcrumbs { font-size: 14px; color: #ccc; }
+    
+    .breadcrumbs a { text-decoration: none; color: #999; }
+    .breadcrumbs a:hover,
+    .breadcrumbs a:focus { color: #333; }
+    .breadcrumbs a:active { color: #666; }
+    .breadcrumbs li:last-child, .breadcrumbs li:last-child a { font-weight: bold; color: #333; }
+    
+    // Dividers
+    .breadcrumbs li:before { content: "/"; display: inline-block; padding: 0 13px 0 10px; }
+    .breadcrumbs li:first-child:before { display: none; }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Tabs
+    // --------------------------------------------
+    
+    .tabs { position: relative; .clearfix; .margin-bottom; }
+    
+    // Tabs navigation area
+    .tabs-nav { border-bottom: 1px solid #999; }
+    
+    // Default state
+    .tabs-nav li { padding-right: 0; margin-bottom: -1px; border-radius: @border_radius @border_radius 0 0;}
+    // Active and active+hover
+    .tabs-nav li.active, .tabs-nav li.active:hover { border: 1px solid #999; border-bottom-color: transparent; background-color: #fff;}
+    // Hover
+    .tabs-nav li:hover { background-color: #f4f4f4;}
+    // Links
+    .tabs-nav a { margin-right: 2px; /*padding: 8px 18px;*/ .padding(1, 1); border: 1px solid transparent; color: #444; text-decoration: none;}
+    
+    // Tabs content area
+    .tabs-content { .padding(1, 1); border: 1px solid #999; border-top: 0; }
+    .tabs-content p { margin-top: 0; }
+    .tabs-content p:last-child { margin-bottom: 0; }
+    
+    // Left tabs
+    .tabs.left .tabs-nav { position: absolute; top: 0; bottom: 0; left: 0; border: 0; border-right: 1px solid #999;  }
+    .tabs.left .tabs-nav li { border-radius: @border_radius 0 0 @border_radius; margin-bottom: 0; }
+    .tabs.left .tabs-nav li:hover { margin-right: 0; }
+    .tabs.left .tabs-nav li.active, .tabs.left .tabs-nav li.active:hover { margin-right: -1px; border: 1px solid #999; border-right-color: transparent; }
+    .tabs.left .tabs-content { border: 1px solid #999; border-left: 0; }
+    
+    // Right tabs
+    .tabs.right .tabs-nav { position: absolute; top: 0; bottom: 0; right: 0; border: 0; border-left: 1px solid #999;  }
+    .tabs.right .tabs-nav li { border-radius: 0 @border_radius @border_radius 0; margin-bottom: 0; text-align: right; }
+    .tabs.right .tabs-nav li:hover { margin-left: 0; }
+    .tabs.right .tabs-nav li.active, .tabs.right .tabs-nav li.active:hover { margin-left: -1px; border: 1px solid #999; border-left-color: transparent; }
+    .tabs.right .tabs-content { border: 1px solid #999; border-right: 0; }
+    
+    // Bottom tabs
+    .tabs.bottom .tabs-nav { border: 0; border-top: 1px solid #999;  }
+    .tabs.bottom .tabs-nav li { border-radius: 0 0 @border_radius @border_radius; margin-bottom: 0; }
+    .tabs.bottom .tabs-nav li:hover { margin-top: 0; }
+    .tabs.bottom .tabs-nav li.active, .tabs.bottom .tabs-nav li.active:hover { margin-top: -1px; border: 1px solid #999; border-top-color: transparent; }
+    .tabs.bottom .tabs-content { border: 1px solid #999; border-bottom: 0; }
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Media Objects
+    // --------------------------------------------
+        
+    // Proper spacing between instances of .media
+    .media,
+    .media .media { .margin-top(2); }
+    .media:first-child { margin-top: 0; }
+
+    // Reset margins on headings for tighter default spacing
+    // .media-heading { margin-bottom: 0; }
+    
+    
+    // Media image alignment
+    // -------------------------
+    
+    .media-object { margin-right: 10px; }
+    .media-object.pull-right { margin-left: 10px; }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Labels + Badges
+    // --------------------------------------------
+    
+    // Base classes
+    .label,
+    .badge {
+        .font(14, 0.80);
+        // .padding(0.10, 0.40);
+        // padding: 2px 4px;
+        // font-weight: bold;
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+        background-color: @black_30;
+    }
+    // Set unique padding and border-radii
+    .label {
+        .padding(0.10, 0.25);
+        border-radius: 3px;
+    }
+    .badge {
+        .padding(0.10, 0.40);
+        border-radius: 9px;
+    }
+    
+    // Hover/focus state, but only for links
+    a {
+      &.label:hover,
+      &.label:focus,
+      &.badge:hover,
+      &.badge:focus {
+        color: #fff;
+      }
+    }
+    
+    // Colors
+    // Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+    .label,
+    .badge {
+      // Important (red)
+      &-important         { background-color: @danger_color; }
+      &-important[href]   { background-color: darken(@danger_color, 10%); }
+      // Warnings (orange)
+      &-warning           { background-color: @warning_color; }
+      &-warning[href]     { background-color: darken(@warning_color, 10%); }
+      // Success (green)
+      &-success           { background-color: @success_color; }
+      &-success[href]     { background-color: darken(@success_color, 10%); }
+      // Info (turquoise)
+      &-info              { background-color: @info_color; }
+      &-info[href]        { background-color: darken(@info_color, 10%); }
+      // Inverse (black)
+      &-inverse           { background-color: @black_70; }
+      &-inverse[href]     { background-color: darken(@black_70, 10%); }
+    }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // --------------------------------------------
+    // Labels + Badges
+    // --------------------------------------------
+    
+    //Generic Styling, for Desktops/Laptops 
+    
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+    }
+    
+    // Zebra striping
+    tr:nth-of-type(odd) { 
+      background: #eee; 
+    }
+    th { 
+      background: #333; 
+      color: white; 
+      font-weight: bold; 
+    }
+    td, th { 
+      padding: 6px; 
+      border: 1px solid #ccc; 
+      text-align: left; 
+    }
+    
+    
+    .xs-down() {
+        
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+    		display: block; 
+    	}
+    	
+    	/* Hide table headers (but not display: none;, for accessibility) */
+    	thead tr { 
+    		position: absolute;
+    		top: -9999px;
+    		left: -9999px;
+    	}
+    	
+    	tr { border: 1px solid #ccc; }
+    	
+    	td { 
+    		/* Behave  like a "row" */
+    		border: none;
+    		border-bottom: 1px solid #eee; 
+    		position: relative;
+    		padding-left: 50%; 
+    	}
+    	
+    	td:before { 
+    		/* Now like a table header */
+    		position: absolute;
+    		/* Top/left values mimic padding */
+    		top: 6px;
+    		left: 6px;
+    		width: 45%; 
+    		padding-right: 10px; 
+    		white-space: nowrap;
+    	}
+    }
+    
+    
+    
+} // .init()
+
+
+
+

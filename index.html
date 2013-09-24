@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Holy Kit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/demo.css" media="screen" type="text/css" />
+    
+</head>
+<body>
+    
+    <header id="main-header">
+        <div class="container">
+    
+            <!-- 
+           
+            <div class="portrait-visible">portrait</div>
+            <div class="landscape-visible">landscape</div>
+           
+            <hr />
+           
+            <div class="xs-down">.xs-down</div>
+            <div class="s-down">.s-down</div>
+            <div class="m-down">.m-down</div>
+            <div class="l-down">.l-down</div>
+            <div class="xl-down">.xl-down</div>
+            <div class="xxl-down">.xxl-down</div>
+          
+            <hr />
+          
+            <div class="xs-up">.xs-up</div>
+            <div class="s-up">.s-up</div>
+            <div class="m-up">.m-up</div>
+            <div class="l-up">.l-up</div>
+            <div class="xl-up">.xl-up</div>
+            <div class="xxl-up">.xxl-up</div>
+          
+            <hr />
+          
+            <div class="xxs-visible">.xxs-visible</div>
+            <div class="xs-visible">.xs-visible</div>
+            <div class="s-visible">.s-visible</div>
+            <div class="m-visible">.m-visible</div>
+            <div class="l-visible">.l-visible</div>
+            <div class="xl-visible">.xl-visible</div>
+            <div class="xxl-visible">.xxl-visible</div>
+          
+            <hr />
+          
+            <div class="xxs-hidden">.xxs-hidden</div>
+            <div class="xs-hidden">.xs-hidden</div>
+            <div class="s-hidden">.s-hidden</div>
+            <div class="m-hidden">.m-hidden</div>
+            <div class="l-hidden">.l-hidden</div>
+            <div class="xl-hidden">.xl-hidden</div>
+            <div class="xxl-hidden">.xxl-hidden</div>
+            
+            -->
+        
+            <div id="logo"><img src="img/holy-kit.png" alt="Holy Kit"></div>
+            <p>A <strong>fluid grid</strong> with support for <strong>fixed width margins</strong> (gutters). Built with LESS and a LOT of love, it allows for any amount of columns, it's responsive and semantic ready!</p>
+        
+        </div><!-- / .container -->
+    </header>
+    
+    <div id="masthead">
+        <h2>Building blocks for front-end designers</h2>
+    </div>
+    
+    <div id="main-features">
+        <div class="container">
+            <ul class="block4 s-block2 xs-block1">  
+                
+                <li>
+                    <div class="feature-icon"><i class="icon-lightning"></i></div>
+                    <h3>No Bloat</h3>
+                    <p>We seriously mean it. Take full control of what goes into your CSS.</p>
+                </li>
+                
+                <li>
+                    <div class="feature-icon"><i class="icon-cog"></i></div>
+                    <h3>Flexible</h3>
+                    <p>It's not just a buzz word. Use it and customize it at your pleasure.</p>
+                </li>
+                
+                <li>
+                    <div class="feature-icon"><i class="icon-screen"></i></div>
+                    <h3>Responsive</h3>
+                    <p>There are 7 configurable breakpoints for you to play with.</p>
+                </li>
+                
+                <li>
+                    <div class="feature-icon"><i class="icon-pencil"></i></div>
+                    <h3>Semantic</h3>
+                    <p>With the included mixins you can write clean semantic HTML.</p>
+                </li>
+                
+            </ul>
+        </div>    
+    </div><!-- / #main-features -->
+    
+    <!-- ======================================================= -->
+    
+    <div class="container">
+        <div class="row middle">
+            
+            <div class="half">
+                <img style="width: 66px; height: 66px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+            </div>
+            
+            <div class="half">
+                <p style="margin: 0;">NAV 1 | NAV 2 | NAV 3</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- ======================================================= -->
+    
+    <div class="container">        
+        
+        <h3>Navigation</h3>
+        
+        <ul class="navbar">
+            <li>
+                <a href="#">Dropdown 1</a>
+                <ul class="flyout">
+                    <li>
+                        <a href="#">Very Large Menu item 1</a>
+                        <ul class="flyout">
+                            <li>
+                                <a href="#">Submenu item 1</a>
+                                <ul class="flyout">
+                                    <li><a href="#">Menu item 1</a></li>
+                                    <li><a href="#">Menu item 2</a></li>
+                                    <li><a href="#">Menu item 3</a></li>
+                                    <li><a href="#">Menu item 4</a></li>
+                                    <li><a href="#">Menu item 5</a></li>
+                                    <li><a href="#">Menu item 6</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Submenu item 1</a></li>
+                            <li><a href="#">Submenu item 1</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Menu item 2</a>
+                        <ul class="flyout">
+                            <li>
+                                <a href="#">Submenu item 1</a>
+                                <ul class="flyout">
+                                    <li><a href="#">Menu item 1</a></li>
+                                    <li><a href="#">Menu item 2</a></li>
+                                    <li><a href="#">Menu item 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Submenu item 1</a></li>
+                            <li><a href="#">Submenu item 1</a></li>
+                        </ul>        
+                    </li>
+                    <li><a href="#">Menu item 3</a></li>
+                    <li><a href="#">Menu item 4</a></li>
+                    <li><a href="#">Menu item 5</a></li>
+                    <li><a href="#">Menu item 6</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#">Dropdown 2</a>
+                <ul class="flyout">
+                    <li><a href="#">Menu item 1</a></li>
+                    <li><a href="#">Menu item 2</a></li>
+                    <li><a href="#">Menu item 3</a></li>
+                    <li><a href="#">Menu item 4</a></li>
+                    <li><a href="#">Menu item 5</a></li>
+                    <li><a href="#">Menu item 6</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dropdown 3</a>
+                <ul class="flyout">
+                    <li><a href="#">Menu item 1</a></li>
+                    <li><a href="#">Menu item 2</a></li>
+                    <li><a href="#">Menu item 3</a></li>
+                    <li><a href="#">Menu item 4</a></li>
+                    <li><a href="#">Menu item 5</a></li>
+                    <li><a href="#">Menu item 6</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="pull-right">
+                <form class="form-search append">
+                    <fieldset>
+                        <input type="text" id="q" class="form-text" />
+                        <button class="btn" type="button">Search</button>
+                    </fieldset>
+                </form>
+            </li>
+        </ul>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Labels + Badges</h3>
+        <div>
+            <p>
+                This is the 
+                <span class="label">Default</span> 
+                label, we also have 
+                <span class="label label-success">Success</span>
+                <span class="label label-warning">Warning</span>
+                <span class="label label-important">Important</span>
+                <span class="label label-info">Info</span> 
+                and 
+                <span class="label label-inverse">Inverse</span>
+            </p>
+        </div>
+        
+        <div>
+            <p>
+                These are the badges: 
+                <span class="badge">1</span>
+                <span class="badge badge-success">2</span>
+                <span class="badge badge-warning">4</span>
+                <span class="badge badge-important">6</span>
+                <span class="badge badge-info">8</span>
+                <span class="badge badge-inverse">10</span>
+            </p>
+        </div>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+                
+        <div class="row">
+            
+            <div class="full">
+            
+                <p>
+                    This is a test of inline flyout
+                    <span>
+                        <a href="#" class="btn">[+]</a>
+                        <span class="flyout dropup">
+                            <span>
+                                <a href="#">Submenu item 1</a>
+                                <span class="flyout">
+                                    <span><a href="#">Yay!</a></span>
+                                </span>
+                            </span>
+                            <span><a href="#">Submenu item 1</a></span>
+                            <span><a href="#">Submenu item 1</a></span>
+                        </span>
+                    </span>
+                </p>
+                
+            </div>
+            
+            <div class="one-third">
+                <h3>Flyout</h3>
+                
+                <div class="btn-group">
+                    <a href="#" class="btn">Action</a>
+                    <a href="#" class="btn" data-toggle="next" data-toggle-event="click">+</a>
+                    <div class="flyout" data-trigger-event="click">
+                        <div>
+                            <a href="#">Submenu item 1</a>
+                            <div class="flyout">
+                                <p><a href="#">Yay!</a></p>
+                            </div>
+                        </div>
+                        <p><a href="#">Submenu item 1</a></p>
+                        <p><a href="#">Submenu item 1</a></p>
+                    </div>
+                </div>
+                
+                <!--<div class="btn-group">-->
+                <!--    <a href="#" class="btn">Action</a>-->
+                <!--    <div class="btn">-->
+                <!--        <a href="#">+</a>-->
+                <!--        <div class="flyout" data-trigger="prev" data-trigger-event="click">-->
+                <!--            <div>-->
+                <!--                <a href="#">Submenu item 1</a>-->
+                <!--                <div class="flyout">-->
+                <!--                    <p><a href="#">Yay!</a></p>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <p><a href="#">Submenu item 1</a></p>-->
+                <!--            <p><a href="#">Submenu item 1</a></p>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+                
+            </div>
+                
+                
+            <div class="one-third">
+                <h3>Flyout (up)</h3>
+        
+                <div class="btn-group">
+                    <a href="#" class="btn">Action</a>
+                    <div class="btn">
+                        <a href="#">+</a>
+                        <div class="flyout dropup">
+                            <div>
+                                <a href="#">Submenu item 1</a>
+                                <div class="flyout">
+                                    <p><a href="#">Yay!</a></p>
+                                    <p><a href="#">Yay!</a></p>
+                                    <p><a href="#">Yay!</a></p>
+                                    <p><a href="#">Yay!</a></p>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#">Submenu item 2</a>
+                                <div class="flyout">
+                                    <p><a href="#">Yay!</a></p>
+                                    <p><a href="#">Yay!</a></p>
+                                    <p><a href="#">Yay!</a></p>
+                                    <p><a href="#">Yay!</a></p>
+                                </div>    
+                            </div>
+                            <p><a href="#">Submenu item 3</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="one-third">
+                <h3>Flyout (left)</h3>
+        
+                <div class="btn-group">
+                    <a href="#" class="btn">Action</a>
+                    <div class="btn">
+                        <a href="#">+</a>
+                        <div class="flyout dropleft">
+                            <div>
+                                <a href="#">Submenu item 1</a>
+                                <div class="flyout">
+                                    <p><a href="#">Yay!</a></p>
+                                </div>
+                            </div>
+                            <p><a href="#">Submenu item 1</a></p>
+                            <p><a href="#">Submenu item 1</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- <ul class="btn-group">
+            <li><a href="#" class="btn">Action</a></li>
+            <li>
+                <a href="#" class="btn">+</a>
+                <ul class="flyout">
+                    <li>
+                        <a href="#">Submenu item 1</a>
+                        <ul class="flyout">
+                            <li><a href="#">Menu item 1</a></li>
+                            <li><a href="#">Menu item 2</a></li>
+                            <li><a href="#">Menu item 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Submenu item 1</a></li>
+                    <li><a href="#">Submenu item 1</a></li>
+                </ul>
+            </li>
+        </ul> -->
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Navlist</h3>
+        <ul class="navlist">
+            <li class="nav-header">Categories</li>
+            <li><a href="#"><span class="meta">123</span> Cheddar</a></li>
+            <li><a href="#"><span class="meta">34</span> Swiss</a></li>
+            <li><a href="#"><span class="meta">8</span> Gouda</a></li>
+            <li><a href="#"><span class="meta">1,987</span> Manchego</a></li>
+            
+            <li class="divider"></li>
+            
+            <li class="nav-header">Subjects</li>
+            <li><a href="#"><span class="meta badge">42</span> Cheddar</a></li>
+            <li><a href="#"><span class="meta">7</span> Manchego</a></li>
+            <li><a href="#"><span class="meta">34</span> Swiss</a></li>
+        	<li><a href="#"><span class="meta">56</span> Gouda</a></li>
+        </ul>
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Pagination</h3>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">Prev</a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="disabled"><a href="#">4</a></li>
+                <li class="disabled"><a href="#">5</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+        
+        <p></p>
+        
+        <div class="pagination">
+            <ul>
+                <li><a href="#"><i class="icon-arrow-left-2"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="disabled"><a href="#">4</a></li>
+                <li class="disabled"><a href="#">5</a></li>
+                <li><a href="#"><i class="icon-arrow-right-2"></i></a></li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Buttons</h3>
+        <div>
+            <a href="#" class="btn">Button 1</a>
+            <a href="#" class="btn">Button 2</a>
+            <a href="#" class="btn">Button 3</a>
+        </div>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Buttons group</h3>
+        <div class="row">
+        
+            <div class="half">
+                <div class="btn-group">
+                    <a href="#" class="btn">Button 1</a>
+                    <a href="#" class="btn">Button 2</a>
+                    <a href="#" class="btn">Button 3</a>
+                </div>
+            </div>
+            
+            <div class="half">
+                <div class="btn-group">
+                    <!--<a href="#" class="btn icon-home"> <i>Italic</i></a>-->
+                    <!--<a href="#" class="btn">B</a>-->
+                    <!--<a href="#" class="btn active">C</a>-->
+                    <!--<a href="#" class="btn">D</a>-->
+                    <a href="#" class="btn"><i class="icon-home"></i></a>
+                    <a href="#" class="btn"><i class="icon-newspaper"></i></a>
+                    <a href="#" class="btn active"><i class="icon-diamonds"></i></a>
+                    <a href="#" class="btn"><i class="icon-pencil"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <hr>
+        
+        <h3>Buttons group justified</h3>
+        
+        <div class="btn-group justified">
+            <a href="#" class="btn">Button 1</a>
+            <a href="#" class="btn">Button 2</a>
+            <a href="#" class="btn">Button 3</a>
+        </div>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Breadcrumbs</h3>
+        <ul class="breadcrumbs">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Some title</a></li>
+            <li><a href="#">Another link</a></li>
+            <li><strong>Current page</strong></li>
+        </ul>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Append</h3>
+        <form class="append">
+            <fieldset>
+                <input type="text" id="q" class="form-text" />
+                <!--<input type="submit" value="Search" class="btn" />-->
+                <button class="btn" type="button">Search</button>
+            </fieldset>
+        </form>
+        
+        <hr>
+        
+        <h3>Prepend</h3>
+        <form class="prepend">
+            <fieldset>
+                <span class="add-on">http://</span>
+                <input type="text" id="q" class="form-text" />
+            </fieldset>
+        </form>
+        
+        <hr>
+        
+        <h3>Combined Append/Prepend</h3>
+        <form class="append prepend">
+            <fieldset>
+                <span class="add-on">&euro;</span>
+                <input type="text" id="q" class="form-text" />
+                <span class="add-on">.00</span>
+                <!--<input type="submit" value="Search" class="btn" />-->
+                <!--<button class="btn" type="button">Search</button>-->
+            </fieldset>
+        </form>
+        
+        <hr>
+        
+        <h3>Prepend Label</h3>
+        <form class="prepend">
+            <fieldset>
+                <label for="email-address" class="add-on">@</label>
+                <input type="text" id="email-address" class="form-text" />
+            </fieldset>
+        </form>
+        
+        <hr>
+        
+        <h3>Multiple Appends</h3>
+        <form class="append">
+            <fieldset>
+                <input type="text" id="q" class="form-text" />
+                <a href="#" class="btn"><i class="icon-cog"></i></a>
+                <div class="btn">
+                    <a href="#">+</a>
+                    <div class="flyout">
+                        <div>
+                            <a href="#">Submenu item 1</a>
+                            <div class="flyout">
+                                <p><a href="#">Yay!</a></p>
+                            </div>
+                        </div>
+                        <p><a href="#">Submenu item 1</a></p>
+                        <p><a href="#">Submenu item 1</a></p>
+                    </div>
+                </div>
+                <button class="btn" type="button">Search</button>
+            </fieldset>
+        </form>
+
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Media Objects</h3>
+        <div class="media">
+          <a href="#">
+            <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+        <div class="media">
+          <a href="#">
+            <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            <div class="media">
+              <a href="#">
+                <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Media List</h3>
+        <ul class="media-list">
+          <li class="media">
+            <a href="#">
+              <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">Media heading</h4>
+              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+              <!-- Nested media object -->
+              <div class="media">
+                <a href="#">
+                  <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Nested media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                  <!-- Nested media object -->
+                  <div class="media">
+                    <a href="#">
+                      <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Nested media heading</h4>
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Nested media object -->
+              <div class="media">
+                <a href="#">
+                  <img class="media-object" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Nested media heading</h4>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="media">
+            <a href="#">
+              <img class="media-object pull-right" alt="72x72" style="width: 72px; height: 72px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACtUlEQVR4Xu2Y24upYRTGl0lGmNQUhXCDmRqTKCmH8q87C2mmqYkiLpTcIGfGYfaziuxmz+x8tv1dWOtG38e73nc96/DLq+n3+zu6YtOIAFIB0gIyA654BpIMQaGAUEAoIBQQClyxAoJBwaBgUDAoGLxiCMifIcGgYFAwKBgUDAoGr1iBszFYr9ep2+3Sbrcjm81GDw8PpNFoDpL+ogy9v7+TwWCgYDD423ff6X4Jn9/tdZYAtVqNOp0OabVa9r9er8ntdpPX6+VniJJKpfi9TqejeDxONzc3P9bbJXz+tKFiATabDaXTac5oIpGgj48ParfbdHd3Rw6Hg/dsNBr8DqbX6ykWi9F0OqXX11cWLRQK0WQyIQR9e3tLz8/PlM1mT/Z5XHGndrNiAVarFR92u91y0IvFglvA5/PxGebzOeVyOXK5XDQajWg2m7FQOGylUqHhcEj39/e8Dt+harBeqc9TA9//XrEA6O1qtcp+kE2UOQxBPD09cZDj8ZiSySSVSiVaLpcHAY7Fwxqz2UzhcJjO8fnfBUCG8/k8l240GuUsFotF7nW/38/iGI1Gcjqd1Gw2uVI8Hg8/w1qtFr+HRSIRrqJzfSoRQXEFIOOYAehtCLB/hgCPj4/08vLy5TwYgKgIDMdMJnOoGovFQoFA4OBDic+/DdfvxFEsAIJABSBrdrudPweDAVmtVq4AlDkMByuXyxwcMo3g3t7eqNfrcYVgHaoDAxBrlfpUkn2sUSwAFmOAFQoFAhFgaAf0MoI8NrQGBAAFMBAhyJ4eEALcxxzZ0+RUn6pQ4DhAoAxmMpmUJuLLukv4/NPhzqqAfxatio5EALkRkhshuRGSGyEVh7DqWwsFhAJCAaGAUED1UaziAYQCQgGhgFBAKKDiEFZ9a6GAUEAoIBQQCqg+ilU8gFDg2inwCQx0jZ8W40NiAAAAAElFTkSuQmCC">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">Media heading</h4>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+            </div>
+          </li>
+        </ul>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Horizontal Tabs</h3>
+        <div class="tabs">
+            <ul class="tabs-nav">
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#layout">Layout</a></li>
+            </ul>
+            
+            <div class="tabs-content">
+                <div id="forms"><p>Look now at the wondrous traditional story of how this island was settled by the red-men. Thus goes the legend. In olden times an eagle swooped down upon the New England coast, and carried off an infant Indian in his talons. With loud lament the parents saw their child borne out of sight over the wide waters. They resolved to follow in the same direction. Setting out in their canoes, after a perilous passage they discovered the island, and there they found an empty ivory casket,&mdash;the poor little Indian's skeleton.</p></div>
+                <div id="buttons"><p>It was at this point that Hare-Lip rose to his feet, an expression of  huge contempt on his face.</p><p>"Granser," he announced, "you make me sick with your gabble. Why don't  you tell about the Red Death? If you ain't going to, say so, an' we'll  start back for camp."</p></div>
+                <div id="tables"><p>The Long Noses form a peculiar company, under the direct patronage of the god Tingou.  Attired after the fashion of the Middle Ages, they bore upon their shoulders a splendid pair of wings; but what especially distinguished them was the long noses which were fastened to their faces, and the uses which they made of them.  These noses were made of bamboo, and were five, six, and even ten feet long, some straight, others curved, some ribboned, and some having imitation warts upon them.  It was upon these appendages, fixed tightly on their real noses, that they performed their gymnastic exercises.  A dozen of these sectaries of Tingou lay flat upon their backs, while others, dressed to represent lightning-rods, came and frolicked on their noses, jumping from one to another, and performing the most skilful leapings and somersaults.</p></div>
+                <div id="layout"><p>Again the weary and apparently interminable marching became a perfect nightmare of horrors to me.  The more firmly fixed became the realization that the girl's friendship had meant so much to me, the more I came to miss it; and the more impregnable the barrier of silly pride.  But I was very young and would not ask Ghak for the explanation which I was sure he could give, and that might have made everything all right again.</p></div>
+            </div>
+        </div>
+        
+        <div class="center tabs">
+            <ul class="tabs-nav">
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#layout">Layout</a></li>
+            </ul>
+            
+            <div class="tabs-content">
+                <div id="forms"><p>Look now at the wondrous traditional story of how this island was settled by the red-men. Thus goes the legend. In olden times an eagle swooped down upon the New England coast, and carried off an infant Indian in his talons. With loud lament the parents saw their child borne out of sight over the wide waters. They resolved to follow in the same direction. Setting out in their canoes, after a perilous passage they discovered the island, and there they found an empty ivory casket,&mdash;the poor little Indian's skeleton.</p></div>
+                <div id="buttons"><p>It was at this point that Hare-Lip rose to his feet, an expression of  huge contempt on his face.</p><p>"Granser," he announced, "you make me sick with your gabble. Why don't  you tell about the Red Death? If you ain't going to, say so, an' we'll  start back for camp."</p></div>
+                <div id="tables"><p>The Long Noses form a peculiar company, under the direct patronage of the god Tingou.  Attired after the fashion of the Middle Ages, they bore upon their shoulders a splendid pair of wings; but what especially distinguished them was the long noses which were fastened to their faces, and the uses which they made of them.  These noses were made of bamboo, and were five, six, and even ten feet long, some straight, others curved, some ribboned, and some having imitation warts upon them.  It was upon these appendages, fixed tightly on their real noses, that they performed their gymnastic exercises.  A dozen of these sectaries of Tingou lay flat upon their backs, while others, dressed to represent lightning-rods, came and frolicked on their noses, jumping from one to another, and performing the most skilful leapings and somersaults.</p></div>
+                <div id="layout"><p>Again the weary and apparently interminable marching became a perfect nightmare of horrors to me.  The more firmly fixed became the realization that the girl's friendship had meant so much to me, the more I came to miss it; and the more impregnable the barrier of silly pride.  But I was very young and would not ask Ghak for the explanation which I was sure he could give, and that might have made everything all right again.</p></div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <!-- ======================================================= -->
+        
+        <h3>Vertical Tabs</h3>
+        <div class="left tabs">
+            <ul class="tabs-nav">
+                <li><a href="#forms2">Forms</a></li>
+                <li><a href="#buttons2">Buttons</a></li>
+                <li><a href="#tables2">Tables</a></li>
+                <li><a href="#layout2">Layout</a></li>
+            </ul>
+            
+            <div class="tabs-content">
+                <div id="forms2"><p>Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-lines; for, though not so durable as hemp, it is stronger, and far more soft and elastic; and I will add (since there is an aesthetics in all things), is much more handsome and becoming to the boat, than hemp. Hemp is a dusky, dark fellow, a sort of Indian; but Manilla is as a golden-haired Circassian to behold.</p><p>The whale-line is only two-thirds of an inch in thickness. At first sight, you would not think it so strong as it really is. By experiment its one and fifty yarns will each suspend a weight of one hundred and twenty pounds; so that the whole rope will bear a strain nearly equal to three tons. In length, the common sperm whale-line measures something over two hundred fathoms. Towards the stern of the boat it is spirally coiled away in the tub, not like the worm-pipe of a still though, but so as to form one round, cheese-shaped mass of densely bedded "sheaves," or layers of concentric spiralizations, without any hollow but the "heart," or minute vertical tube formed at the axis of the cheese. As the least tangle or kink in the coiling would, in running out, infallibly take somebody's arm, leg, or entire body off, the utmost precaution is used in stowing the line in its tub. Some harpooneers will consume almost an entire morning in this business, carrying the line high aloft and then reeving it downwards through a block towards the tub, so as in the act of coiling to free it from all possible wrinkles and twists.</p><p>In the English boats two tubs are used instead of one; the same line being continuously coiled in both tubs. There is some advantage in this; because these twin-tubs being so small they fit more readily into the boat, and do not strain it so much; whereas, the American tub, nearly three feet in diameter and of proportionate depth, makes a rather bulky freight for a craft whose planks are but one half-inch in thickness; for the bottom of the whale-boat is like critical ice, which will bear up a considerable distributed weight, but not very much of a concentrated one. When the painted canvas cover is clapped on the American line-tub, the boat looks as if it were pulling off with a prodigious great wedding-cake to present to the whales.</p></div>
+                <div id="buttons2"><p>"And now behold Jonah taken up as an anchor and dropped into the sea; when instantly an oily calmness floats out from the east, and the sea is still, as Jonah carries down the gale with him, leaving smooth water behind. He goes down in the whirling heart of such a masterless commotion that he scarce heeds the moment when he drops seething into the yawning jaws awaiting him; and the whale shoots-to all his ivory teeth, like so many white bolts, upon his prison. Then Jonah prayed unto the Lord out of the fish's belly. But observe his prayer, and learn a weighty lesson. For sinful as he is, Jonah does not weep and wail for direct deliverance. He feels that his dreadful punishment is just. He leaves all his deliverance to God, contenting himself with this, that spite of all his pains and pangs, he will still look towards His holy temple. And here, shipmates, is true and faithful repentance; not clamorous for pardon, but grateful for punishment. And how pleasing to God was this conduct in Jonah, is shown in the eventual deliverance of him from the sea and the whale. Shipmates, I do not place Jonah before you to be copied for his sin but I do place him before you as a model for repentance. Sin not; but if you do, take heed to repent of it like Jonah."</p><p>While he was speaking these words, the howling of the shrieking, slanting storm without seemed to add new power to the preacher, who, when describing Jonah's sea-storm, seemed tossed by a storm himself. His deep chest heaved as with a ground-swell; his tossed arms seemed the warring elements at work; and the thunders that rolled away from off his swarthy brow, and the light leaping from his eye, made all his simple hearers look on him with a quick fear that was strange to them.</p></div>
+                <div id="tables2"><p>Other poets have warbled the praises of the soft eye of the antelope, and the lovely plumage of the bird that never alights; less celestial, I celebrate a tail.</p><p>Reckoning the largest sized Sperm Whale's tail to begin at that point of the trunk where it tapers to about the girth of a man, it comprises upon its upper surface alone, an area of at least fifty square feet. The compact round body of its root expands into two broad, firm, flat palms or flukes, gradually shoaling away to less than an inch in thickness. At the crotch or junction, these flukes slightly overlap, then sideways recede from each other like wings, leaving a wide vacancy between. In no living thing are the lines of beauty more exquisitely defined than in the crescentic borders of these flukes. At its utmost expansion in the full grown whale, the tail will considerably exceed twenty feet across.</p></div>
+                <div id="layout2"><p>The boy, who led the way, checking the eagerness of his muscles to  the slow progress of the elder, likewise wore a single garment&mdash;a  ragged-edged piece of bear-skin, with a hole in the middle through which  he had thrust his head. He could not have been more than twelve years  old. Tucked coquettishly over one ear was the freshly severed tail of a  pig. In one hand he carried a medium-sized bow and an arrow.</p><p>On his back was a quiverful of arrows. From a sheath hanging about his  neck on a thong, projected the battered handle of a hunting knife. He  was as brown as a berry, and walked softly, with almost a catlike tread.  In marked contrast with his sunburned skin were his eyes&mdash;blue, deep  blue, but keen and sharp as a pair of gimlets. They seemed to bore into  aft about him in a way that was habitual. As he went along he smelled  things, as well, his distended, quivering nostrils carrying to his brain  an endless series of messages from the outside world. Also, his hearing  was acute, and had been so trained that it operated automatically.  Without conscious effort, he heard all the slight sounds in the apparent  quiet&mdash;heard, and differentiated, and classified these sounds&mdash;whether  they were of the wind rustling the leaves, of the humming of bees and  gnats, of the distant rumble of the sea that drifted to him only in  lulls, or of the gopher, just under his foot, shoving a pouchful of  earth into the entrance of his hole.</p></div>
+            </div>
+        </div>
+        
+        <div class="right tabs">
+            <ul class="tabs-nav">
+                <li><a href="#forms3">Forms</a></li>
+                <li><a href="#buttons3">Buttons</a></li>
+                <li><a href="#tables3">Tables</a></li>
+                <li><a href="#layout3">Layout</a></li>
+            </ul>
+            
+            <div class="tabs-content">
+                <div id="forms3"><p>Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-lines; for, though not so durable as hemp, it is stronger, and far more soft and elastic; and I will add (since there is an aesthetics in all things), is much more handsome and becoming to the boat, than hemp. Hemp is a dusky, dark fellow, a sort of Indian; but Manilla is as a golden-haired Circassian to behold.</p><p>The whale-line is only two-thirds of an inch in thickness. At first sight, you would not think it so strong as it really is. By experiment its one and fifty yarns will each suspend a weight of one hundred and twenty pounds; so that the whole rope will bear a strain nearly equal to three tons. In length, the common sperm whale-line measures something over two hundred fathoms. Towards the stern of the boat it is spirally coiled away in the tub, not like the worm-pipe of a still though, but so as to form one round, cheese-shaped mass of densely bedded "sheaves," or layers of concentric spiralizations, without any hollow but the "heart," or minute vertical tube formed at the axis of the cheese. As the least tangle or kink in the coiling would, in running out, infallibly take somebody's arm, leg, or entire body off, the utmost precaution is used in stowing the line in its tub. Some harpooneers will consume almost an entire morning in this business, carrying the line high aloft and then reeving it downwards through a block towards the tub, so as in the act of coiling to free it from all possible wrinkles and twists.</p><p>In the English boats two tubs are used instead of one; the same line being continuously coiled in both tubs. There is some advantage in this; because these twin-tubs being so small they fit more readily into the boat, and do not strain it so much; whereas, the American tub, nearly three feet in diameter and of proportionate depth, makes a rather bulky freight for a craft whose planks are but one half-inch in thickness; for the bottom of the whale-boat is like critical ice, which will bear up a considerable distributed weight, but not very much of a concentrated one. When the painted canvas cover is clapped on the American line-tub, the boat looks as if it were pulling off with a prodigious great wedding-cake to present to the whales.</p></div>
+                <div id="buttons3"><p>"And now behold Jonah taken up as an anchor and dropped into the sea; when instantly an oily calmness floats out from the east, and the sea is still, as Jonah carries down the gale with him, leaving smooth water behind. He goes down in the whirling heart of such a masterless commotion that he scarce heeds the moment when he drops seething into the yawning jaws awaiting him; and the whale shoots-to all his ivory teeth, like so many white bolts, upon his prison. Then Jonah prayed unto the Lord out of the fish's belly. But observe his prayer, and learn a weighty lesson. For sinful as he is, Jonah does not weep and wail for direct deliverance. He feels that his dreadful punishment is just. He leaves all his deliverance to God, contenting himself with this, that spite of all his pains and pangs, he will still look towards His holy temple. And here, shipmates, is true and faithful repentance; not clamorous for pardon, but grateful for punishment. And how pleasing to God was this conduct in Jonah, is shown in the eventual deliverance of him from the sea and the whale. Shipmates, I do not place Jonah before you to be copied for his sin but I do place him before you as a model for repentance. Sin not; but if you do, take heed to repent of it like Jonah."</p><p>While he was speaking these words, the howling of the shrieking, slanting storm without seemed to add new power to the preacher, who, when describing Jonah's sea-storm, seemed tossed by a storm himself. His deep chest heaved as with a ground-swell; his tossed arms seemed the warring elements at work; and the thunders that rolled away from off his swarthy brow, and the light leaping from his eye, made all his simple hearers look on him with a quick fear that was strange to them.</p></div>
+                <div id="tables3"><p>Other poets have warbled the praises of the soft eye of the antelope, and the lovely plumage of the bird that never alights; less celestial, I celebrate a tail.</p><p>Reckoning the largest sized Sperm Whale's tail to begin at that point of the trunk where it tapers to about the girth of a man, it comprises upon its upper surface alone, an area of at least fifty square feet. The compact round body of its root expands into two broad, firm, flat palms or flukes, gradually shoaling away to less than an inch in thickness. At the crotch or junction, these flukes slightly overlap, then sideways recede from each other like wings, leaving a wide vacancy between. In no living thing are the lines of beauty more exquisitely defined than in the crescentic borders of these flukes. At its utmost expansion in the full grown whale, the tail will considerably exceed twenty feet across.</p></div>
+                <div id="layout3"><p>The boy, who led the way, checking the eagerness of his muscles to  the slow progress of the elder, likewise wore a single garment&mdash;a  ragged-edged piece of bear-skin, with a hole in the middle through which  he had thrust his head. He could not have been more than twelve years  old. Tucked coquettishly over one ear was the freshly severed tail of a  pig. In one hand he carried a medium-sized bow and an arrow.</p><p>On his back was a quiverful of arrows. From a sheath hanging about his  neck on a thong, projected the battered handle of a hunting knife. He  was as brown as a berry, and walked softly, with almost a catlike tread.  In marked contrast with his sunburned skin were his eyes&mdash;blue, deep  blue, but keen and sharp as a pair of gimlets. They seemed to bore into  aft about him in a way that was habitual. As he went along he smelled  things, as well, his distended, quivering nostrils carrying to his brain  an endless series of messages from the outside world. Also, his hearing  was acute, and had been so trained that it operated automatically.  Without conscious effort, he heard all the slight sounds in the apparent  quiet&mdash;heard, and differentiated, and classified these sounds&mdash;whether  they were of the wind rustling the leaves, of the humming of bees and  gnats, of the distant rumble of the sea that drifted to him only in  lulls, or of the gopher, just under his foot, shoving a pouchful of  earth into the entrance of his hole.</p></div>
+            </div>
+        </div>
+        
+        <div class="bottom tabs">        
+            <div class="tabs-content">
+                <div id="forms4"><p>Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-lines; for, though not so durable as hemp, it is stronger, and far more soft and elastic; and I will add (since there is an aesthetics in all things), is much more handsome and becoming to the boat, than hemp. Hemp is a dusky, dark fellow, a sort of Indian; but Manilla is as a golden-haired Circassian to behold.</p><p>The whale-line is only two-thirds of an inch in thickness. At first sight, you would not think it so strong as it really is. By experiment its one and fifty yarns will each suspend a weight of one hundred and twenty pounds; so that the whole rope will bear a strain nearly equal to three tons. In length, the common sperm whale-line measures something over two hundred fathoms. Towards the stern of the boat it is spirally coiled away in the tub, not like the worm-pipe of a still though, but so as to form one round, cheese-shaped mass of densely bedded "sheaves," or layers of concentric spiralizations, without any hollow but the "heart," or minute vertical tube formed at the axis of the cheese. As the least tangle or kink in the coiling would, in running out, infallibly take somebody's arm, leg, or entire body off, the utmost precaution is used in stowing the line in its tub. Some harpooneers will consume almost an entire morning in this business, carrying the line high aloft and then reeving it downwards through a block towards the tub, so as in the act of coiling to free it from all possible wrinkles and twists.</p><p>In the English boats two tubs are used instead of one; the same line being continuously coiled in both tubs. There is some advantage in this; because these twin-tubs being so small they fit more readily into the boat, and do not strain it so much; whereas, the American tub, nearly three feet in diameter and of proportionate depth, makes a rather bulky freight for a craft whose planks are but one half-inch in thickness; for the bottom of the whale-boat is like critical ice, which will bear up a considerable distributed weight, but not very much of a concentrated one. When the painted canvas cover is clapped on the American line-tub, the boat looks as if it were pulling off with a prodigious great wedding-cake to present to the whales.</p></div>
+                <div id="buttons4"><p>"And now behold Jonah taken up as an anchor and dropped into the sea; when instantly an oily calmness floats out from the east, and the sea is still, as Jonah carries down the gale with him, leaving smooth water behind. He goes down in the whirling heart of such a masterless commotion that he scarce heeds the moment when he drops seething into the yawning jaws awaiting him; and the whale shoots-to all his ivory teeth, like so many white bolts, upon his prison. Then Jonah prayed unto the Lord out of the fish's belly. But observe his prayer, and learn a weighty lesson. For sinful as he is, Jonah does not weep and wail for direct deliverance. He feels that his dreadful punishment is just. He leaves all his deliverance to God, contenting himself with this, that spite of all his pains and pangs, he will still look towards His holy temple. And here, shipmates, is true and faithful repentance; not clamorous for pardon, but grateful for punishment. And how pleasing to God was this conduct in Jonah, is shown in the eventual deliverance of him from the sea and the whale. Shipmates, I do not place Jonah before you to be copied for his sin but I do place him before you as a model for repentance. Sin not; but if you do, take heed to repent of it like Jonah."</p><p>While he was speaking these words, the howling of the shrieking, slanting storm without seemed to add new power to the preacher, who, when describing Jonah's sea-storm, seemed tossed by a storm himself. His deep chest heaved as with a ground-swell; his tossed arms seemed the warring elements at work; and the thunders that rolled away from off his swarthy brow, and the light leaping from his eye, made all his simple hearers look on him with a quick fear that was strange to them.</p></div>
+                <div id="tables4"><p>Other poets have warbled the praises of the soft eye of the antelope, and the lovely plumage of the bird that never alights; less celestial, I celebrate a tail.</p><p>Reckoning the largest sized Sperm Whale's tail to begin at that point of the trunk where it tapers to about the girth of a man, it comprises upon its upper surface alone, an area of at least fifty square feet. The compact round body of its root expands into two broad, firm, flat palms or flukes, gradually shoaling away to less than an inch in thickness. At the crotch or junction, these flukes slightly overlap, then sideways recede from each other like wings, leaving a wide vacancy between. In no living thing are the lines of beauty more exquisitely defined than in the crescentic borders of these flukes. At its utmost expansion in the full grown whale, the tail will considerably exceed twenty feet across.</p></div>
+                <div id="layout4"><p>The boy, who led the way, checking the eagerness of his muscles to  the slow progress of the elder, likewise wore a single garment&mdash;a  ragged-edged piece of bear-skin, with a hole in the middle through which  he had thrust his head. He could not have been more than twelve years  old. Tucked coquettishly over one ear was the freshly severed tail of a  pig. In one hand he carried a medium-sized bow and an arrow.</p><p>On his back was a quiverful of arrows. From a sheath hanging about his  neck on a thong, projected the battered handle of a hunting knife. He  was as brown as a berry, and walked softly, with almost a catlike tread.  In marked contrast with his sunburned skin were his eyes&mdash;blue, deep  blue, but keen and sharp as a pair of gimlets. They seemed to bore into  aft about him in a way that was habitual. As he went along he smelled  things, as well, his distended, quivering nostrils carrying to his brain  an endless series of messages from the outside world. Also, his hearing  was acute, and had been so trained that it operated automatically.  Without conscious effort, he heard all the slight sounds in the apparent  quiet&mdash;heard, and differentiated, and classified these sounds&mdash;whether  they were of the wind rustling the leaves, of the humming of bees and  gnats, of the distant rumble of the sea that drifted to him only in  lulls, or of the gopher, just under his foot, shoving a pouchful of  earth into the entrance of his hole.</p></div>
+            </div>
+            
+            <ul class="tabs-nav">
+                <li><a href="#forms4">Forms</a></li>
+                <li><a href="#buttons4">Buttons</a></li>
+                <li><a href="#tables4">Tables</a></li>
+                <li><a href="#layout4">Layout</a></li>
+            </ul>
+        </div>
+    
+    </div> <!-- / .container-->
+    
+    <hr>
+    
+    <!-- ======================================================= -->
+    
+    <div class="container">
+        <h1>Heading 1</h1>
+        <h3>Heading 2</h3>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        
+        <p hidden>This should be hidden in all browsers, apart from IE6</p>
+        
+        <section>
+        	<h1>Section Heading 1</h1>
+        	<article>
+        		<h4>Article Heading 2</h4>
+        		<address>Address: somewhere, world</address>
+        		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+        		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+        	</article>
+        </section>
+        
+        <h1>Text-level semantics</h1>
+        
+        <p>
+        The <a href="#">a element</a> example<br>
+        The <abbr title="Title text">abbr element</abbr> example<br>
+        The <b>b element</b> example<br>
+        The <cite>cite element</cite> example<br>
+        The <code>code element</code> example<br>
+        The <del>del element</del> example<br>
+        The <dfn>dfn element</dfn> example<br>
+        The <em>em element</em> example<br>
+        The <i>i element</i> example<br>
+        The img element <img src="http://placekitten.com/16/16" alt=""> example<br>
+        The <ins>ins element</ins> example<br>
+        The <kbd>kbd element</kbd> example<br>
+        The <mark>mark element</mark> example<br>
+        The <q>q element <q>inside</q> a q element</q> example<br>
+        The <s>s element</s> example<br>
+        The <samp>samp element</samp> example<br>
+        
+        <!-- <small> Breaks the vertical rhythm -->
+        The <small>small element</small> example<br>
+        
+        The <span>span element</span> example<br>
+        The <strike>strike element</strike> example<br>
+        The <strong>strong element</strong> example<br>
+        The <sub>sub element</sub> example<br>
+        The <sup>sup element</sup> example<br>
+        The <var>var element</var> example<br>
+        The <u>u element</u> example
+        </p>
+        
+        <!--   <h1>Embedded content</h1>-->
+        	
+        <!--<h3>audio</h3>-->
+        
+        <!--<audio controls></audio>-->
+        <!--<audio></audio>-->
+        
+        <!--<h3>img</h3>-->
+        
+        <!--<img src="http://placekitten.com/100/100" alt="">-->
+        <!--<a href="#"><img src="http://placekitten.com/100/100" alt=""></a>-->
+        
+        <!--<h3>svg</h3>-->
+        
+        <!--<svg style="width:100px; height:100px;"><circle cx="100" cy="100" r="100" fill="#ff0000"></svg>        -->
+        
+        <!--<h3>video</h3>-->
+        
+        <!--<video controls></video>-->
+        <!--<video></video>-->
+        
+        <h1>Grouping content</h1>
+        
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+        
+        <h3>pre</h3>
+        
+        <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
+        
+        <pre><code>&lt;html>
+        &lt;head>
+        &lt;/head>
+        &lt;body>
+        &lt;div class="main"> &lt;div>
+        &lt;/body>
+        &lt;/html></code></pre>
+        
+        <h3>blockquote</h3>
+        
+        <blockquote>
+        	<p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
+            <cite>Some Author</cite>
+        </blockquote>
+        
+        <blockquote>Even better philosophical quote marked up with just a &lt;blockquote> element. <cite>Some Author</cite></blockquote>
+        
+        <h3>ordered list</h3>
+        
+        <ol>
+        	<li>list item 1</li>
+        	<li>list item 1
+        		<ol>
+        			<li>list item 2</li>
+        			<li>list item 2
+        				<ol>
+        					<li>list item 3</li>
+        					<li>list item 3</li>
+        				</ol>
+        			</li>
+        			<li>list item 2</li>
+        			<li>list item 2</li>
+        		</ol>
+        	</li>
+        	<li>list item 1</li>
+        	<li>list item 1</li>
+        </ol>
+        
+        <h3>unordered list</h3>
+        
+        <ul>
+        	<li>list item 1</li>
+        	<li>list item 1
+        		<ul>
+        			<li>list item 2</li>
+        			<li>list item 2
+        				<ul>
+        					<li>list item 3</li>
+        					<li>list item 3</li>
+        				</ul>
+        			</li>
+        			<li>list item 2</li>
+        			<li>list item 2</li>
+        		</ul>
+        	</li>
+        	<li>list item 1</li>
+        	<li>list item 1</li>
+        </ul>
+        
+        <h3>description list</h3>
+        
+        <dl>
+        	<dt>Description name</dt>
+        	<dd>Description value</dd>
+        	<dt>Description name</dt>
+        	<dd>Description value</dd>
+        	<dd>Description value</dd>
+        	<dt>Description name</dt>
+        	<dt>Description name</dt>
+        	<dd>Description value</dd>
+        </dl>
+        
+        <h3>figure</h3>
+        
+        <figure>
+        	<img src="http://placekitten.com/400/240" alt="">
+        	<figcaption>Figcaption content</figcaption>
+        </figure>
+        
+        <!--<h1>Tabular data</h1>-->
+        
+        <!--<table summary="Jimi Hendrix albums">-->
+        <!--	<caption>Jimi Hendrix - albums</caption>-->
+        <!--	<thead>-->
+        <!--		<tr>-->
+        <!--			<th>Album</th>-->
+        <!--			<th>Year</th>-->
+        <!--			<th>Price</th>-->
+        <!--		</tr>-->
+        <!--	</thead>-->
+        <!--	<tfoot>-->
+        <!--		<tr>-->
+        <!--			<th>Album</th>-->
+        <!--			<th>Year</th>-->
+        <!--			<th>Price</th>-->
+        <!--		</tr>-->
+        <!--	</tfoot>-->
+        <!--	<tbody>-->
+        <!--		<tr>-->
+        <!--			<td>Are You Experienced</td>-->
+        <!--			<td>1967</td>-->
+        <!--			<td>$10.00</td>-->
+        <!--		</tr>-->
+        <!--		<tr>-->
+        <!--			<td>Axis: Bold as Love</td>-->
+        <!--			<td>1967</td>-->
+        <!--			<td>$12.00</td>-->
+        <!--		</tr>-->
+        <!--		<tr>-->
+        <!--			<td>Electric Ladyland</td>-->
+        <!--			<td>1968</td>-->
+        <!--			<td>$10.00</td>-->
+        <!--		</tr>-->
+        <!--		<tr>-->
+        <!--			<td>Band of Gypsys</td>-->
+        <!--			<td>1970</td>-->
+        <!--			<td>$12.00</td>-->
+        <!--		</tr>-->
+        <!--	</tbody>-->
+        <!--</table>-->
+        
+        <h1>Forms</h1>
+        
+        <form>
+        
+            <fieldset>
+        		<label for="name">Name</label>
+        		<input type="text" id="name" />
+        		<p class="form-help">This is help text under the form field.</p>
+        	</fieldset>
+        	
+        	<fieldset>
+        		<label for="email">Email</label>
+        		<input type="text" id="email" />
+        	</fieldset>
+        	
+        	<fieldset>
+        		<label for="gender">Gender</label>
+        		<select id="gender">
+        			<option>Male</option>
+        			<option>Female</option>
+        			<option>Cylon</option>
+        		</select>
+        	</fieldset>
+        
+        	<fieldset class="radio">
+                <label for="notifications">Notifications</label>
+                <ul>
+                    <li><label><input type="radio" name="notifications" /> Send me email</label></li>
+                    <li><label><input type="radio" name="notifications" /> Don't send me email</label></li>
+                    <li><label><input type="radio" name="notifications" /> Send me flowers</label></li>
+                </ul>
+        	</fieldset>
+        
+        	<fieldset>
+        		<label for="url">URL</label>
+        		<input type="text" id="url" placeholder="http://yourdomain.com" />
+        	</fieldset>
+        
+        	<fieldset>
+        		<label for="bio">Bio</label>
+        		<textarea id="bio"></textarea>
+        	</fieldset>
+
+        	<fieldset class="check">
+                <input type="checkbox" id="checkbox" />
+        		<label for="checkbox">I accept the terms of service and lorem ipsum.</label>
+        	</fieldset>
+        
+        	<fieldset class="form-actions">
+        		<input type="submit" value="Submit" />
+        	</fieldset>
+            
+            <!-- -->
+        
+        	<!--<fieldset>-->
+        	<!--	<legend>Inputs as descendents of labels (form legend)</legend>-->
+        		
+        <!--          <p><label>Text input <input type="text" value="default value"></label></p>-->
+        	<!--	<p><label>Email input <input type="email"></label></p>-->
+        	<!--	<p><label>Search input <input type="search"></label></p>-->
+        	<!--	<p><label>Tel input <input type="tel"></label></p>-->
+        	<!--	<p><label>URL input <input type="url" placeholder="http://"></label></p>-->
+        	<!--	<p><label>Password input <input type="password" value="password"></label></p>-->
+        	<!--	<p><label>File input <input type="file"></label></p>-->
+        		
+        	<!--	<p><label>Radio input <input type="radio" name="rad"></label></p>-->
+        	<!--	<p><label>Checkbox input <input type="checkbox"></label></p>-->
+        	<!--	<p><label><input type="radio" name="rad"> Radio input</label></p>-->
+        	<!--	<p><label><input type="checkbox"> Checkbox input</label></p>-->
+        		
+        	<!--	<p><label>Select field <select><option>Option 01</option><option>Option 02</option></select></label></p>-->
+        	<!--	<p><label>Textarea <textarea cols="30" rows="5" >Textarea text</textarea></label></p>-->
+        	<!--</fieldset>-->
+        	
+        	<!--<fieldset>-->
+        	<!--	<legend>Inputs as siblings of labels</legend>-->
+        	<!--	<p><label for="ic">Color input</label> <input type="color" id="ic" value="color"></p>-->
+        	<!--	<p><label for="in">Number input</label> <input type="number" id="in" min="0" max="10" value="5"></p>-->
+        	<!--	<p><label for="ir">Range input</label> <input type="range" id="ir" value="range"></p>-->
+        	<!--	<p><label for="idd">Date input</label> <input type="date" id="idd" value="date"></p>-->
+        	<!--	<p><label for="idm">Month input</label> <input type="month" id="idm" value="month"></p>-->
+        	<!--	<p><label for="idw">Week input</label> <input type="week" id="idw" value="week"></p>-->
+        	<!--	<p><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="datetime"></p>-->
+        	<!--	<p><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="datetime-local"></p>-->
+            
+        	<!--	<p><label for="irb">Radio input</label> <input type="radio" id="irb" name="rad"></p>-->
+        	<!--	<p><label for="icb">Checkbox input</label> <input type="checkbox" id="icb"></p>-->
+        	<!--	<p><input type="radio" id="irb2" name="rad"> <label for="irb2">Radio input</label></p>-->
+        	<!--	<p><input type="checkbox" id="icb2"> <label for="icb2">Checkbox input</label></p>-->
+        		
+        	<!--	<p><label for="s">Select field</label> <select id="s"><option>Option 01</option><option>Option 02</option></select></p>-->
+        	<!--	<p><label for="t">Textarea</label> <textarea id="t" cols="30" rows="5" >Textarea text</textarea></p>-->
+        	<!--</fieldset>-->
+        	
+            
+        	<fieldset>
+        		<legend>Clickable inputs and buttons</legend>
+        		<p><input type="image" src="http://placekitten.com/90/24" alt="Image (input)"></p>
+        		<p><input type="reset" value="Reset (input)"></p>
+        		<p><input type="button" value="Button (input)"></p>
+        		<p><input type="submit" value="Submit (input)"></p>
+                
+        		<p><button type="reset">Reset (button)</button></p>
+        		<p><button type="button">Button (button)</button></p>
+        		<p><button type="submit">Submit (button)</button></p>
+        	</fieldset>
+        	
+        </form>
+        
+        <h1>What was them stone houses for? Hare-Lip queried.</h1>
+        
+        <p>You remember when your dad taught you to swim? The boy nodded.  "Well, in the University of California&mdash;that is the name we had for  the houses&mdash;we taught young men and women how to think, just as I have  taught you now, by sand and pebbles and shells, to know how many people  lived in those days. There was very much to teach. The young men and  women we taught were called students. We had large rooms in which we  taught. I talked to them, forty or fifty at a time, just as I am talking  to you now. I told them about the books other men had written before  their time, and even, sometimes, in their time&mdash;</p>
+        
+        <h3>Was that all you did?&mdash;just talk, talk, talk? Hoo-Hoo demanded. "Who  hunted your meat for you? and milked the goats? and caught the fish?"</h3>
+        
+        <p>A sensible question, Hoo-Hoo, a sensible question. As I have told you,  in those days food-getting was easy. We were very wise. A few men got  the food for many men. The other men did other things. As you say, I  talked. I talked all the time, and for this food was given me&mdash;much  food, fine food, beautiful food, food that I have not tasted in sixty  years and shall never taste again. I sometimes think the most wonderful  achievement of our tremendous civilization was food&mdash;its inconceivable  abundance, its infinite variety, its marvellous delicacy. O my  grandsons, life was life in those days, when we had such wonderful  things to eat."</p>
+        
+        <h3>This was beyond the boys, and they let it slip by, words and thoughts,  as a mere senile wandering in the narrative.</h3>
+        
+        <p>Our food-getters were called freemen. This was a joke. We of the  ruling classes owned all the land, all the machines, everything. These  food-getters were our slaves. We took almost all the food they got, and  left them a little so that they might eat, and work, and get us more  food&mdash;</p>
+        
+        <p>I'd have gone into the forest and got food for myself, Hare-Lip  announced; and if any man tried to take it away from me, I'd have  killed him.</p>
+        
+        <h4>The old man laughed.</h4>
+        
+        <p>Did I not tell you that we of the ruling class owned all the land, all  the forest, everything? Any food-getter who would not get food for us,  him we punished or compelled to starve to death. And very few did that.  They preferred to get food for us, and make clothes for us, and prepare and administer to us a thousand&mdash;a mussel-shell, Hoo-Hoo&mdash;a thousand  satisfactions and delights. And I was Professor Smith in those  days&mdash;Professor James Howard Smith. And my lecture courses were very  popular&mdash;that is, very many of the young men and women liked to hear me  talk about the books other men had written.</p>
+        
+        <p>And I was very happy, and I had beautiful things to eat. And my hands  were soft, because I did no work with them, and my body was clean  all over and dressed in the softest garments&mdash;</p>
+        
+        
+        <h3>Text Effects</h3>
+        
+        <div id="text-effects">
+        
+            <h4>One Pixel</h4>
+            <div class="one-px-example">
+              <h1 class="one-px">ONE PX</h1>
+            </div>
+                
+            <h4>Letterpress</h4>
+            <div class="letterpress-example">
+              <h1 class="letterpress">LETTERPRESS</h1>
+            </div>
+            
+            <h4>Hard Shadow</h4>
+            <div class="hard-shadow-example">
+              <h1 class="hard-shadow">HARD SHADOW</h1>
+            </div>
+            
+            <h4>Double Shadow</h4>
+            <div class="double-shadow-example">
+              <h1 class="double-shadow">DOUBLE SHADOW</h1>
+            </div>
+            
+            <h4>Down Distant</h4>
+            <div class="down-distant-example">
+              <h1 class="down-distant">DOWN DISTANT</h1>
+            </div>
+            
+            <h4>Close Heavy</h4>
+            <div class="close-heavy-example">
+              <h1 class="close-heavy">CLOSE HEAVY</h1>
+            </div>
+            
+            <h4>Three D</h4>
+            <div class="three-d-example">
+              <h1 class="three-d">THREE D</h1>
+            </div>
+            
+            <h4>Three D Shadow</h4>
+            <div class="three-d-shadow-example">
+              <h1 class="three-d-shadow">THREE D SHADOW</h1>
+            </div>
+            
+            <h4>Three D 2</h4>
+            <div class="three-d-2-example">
+              <h1 class="three-d-2">THREE D 2</h1>
+            </div>
+            
+            <h4>Inset</h4>
+            <div class="inset-example">
+              <h1 class="inset">INSET</h1>
+            </div>
+            
+            <h4>Glowing</h4>
+            <div class="glowing-example">
+              <h1 class="glowing">GLOWING</h1>
+            </div>
+            
+            <h4>Superhero</h4>
+            <div class="superhero-example">
+              <h1 class="superhero">SUPERHERO</h1>
+            </div>
+            
+            <h4>Multiple Lights</h4>
+            <div class="multiple-lights-example">
+              <h1 class="multiple-lights">MULTIPLE LIGHTS</h1>
+            </div>
+            
+            <h4>Soft Emboss</h4>
+            <div class="soft-emboss-example">
+              <h1 class="soft-emboss">SOFT EMBOSS</h1>
+            </div>
+            
+            <h4>X-Ray</h4>
+            <div class="x-ray-example">
+              <h1 class="x-ray">X-RAY</h1>
+            </div>
+            
+            <h4>Blur</h4>
+            <div class="blur-example">
+              <h1 class="blur">BLUR</h1>
+            </div>
+            
+            <h4>Neon</h4>
+            <div class="neon-example">
+              <h1 class="neon">NEON</h1>
+            </div>
+            
+            <h4>Anaglyph</h4>
+            <div class="anaglyph-example">
+              <h1 class="anaglyph">ANAGLYPH</h1>
+            </div>
+        </div> <!-- / #text-effects -->
+        
+    </div>
+    
+    <!-- ======================================================= -->
+    
+    <a href="#test-popup" class="inline-popup">Show inline popup</a>
+    
+    <div class="hidden">
+        <div id="test-popup">
+            <!-- <div class="scrollbar">
+        		<div class="handle">
+        			<div class="mousearea"></div>
+        		</div>
+        	</div> -->
+        
+        	<div class="frame" id="forcecentered">
+                <ul class="clearfix">
+            		<li><a href="img/slide1.jpg" title="Slide 1" class="image-popup"><img src="img/slide1.jpg"></a></li>
+            		<li><a href="img/slide2.jpg" title="Slide 2" class="image-popup"><img src="img/slide2.jpg"></a></li>
+            		<li><a href="img/slide3.jpg" title="Slide 3" class="image-popup"><img src="img/slide3.jpg"></a></li>
+            		<li><a href="img/slide4.jpg" title="Slide 4" class="image-popup"><img src="img/slide4.jpg"></a></li>
+        		</ul>
+        	</div>
+        
+        	<div class="controls center">
+        		<button class="btn prev"><i class="icon-chevron-left"></i> prev</button>
+        		<button class="btn next">next <i class="icon-chevron-right"></i></button>
+        	</div>
+        </div>
+    </div>
+    
+    <!-- ======================================================= -->
+    
+    <div id="grid" class="container">
+        
+        <h3>The Grid</h3>
+        <p>The examples are based on a <strong>12 columns</strong> grid with a gutter of <strong>10px</strong>.</p>
+        
+        <!-- ================================================ -->
+        <!-- Simple Layouts -->
+        <!-- ================================================ -->
+        
+        <h2>Single Grid Units <small>The units depend on the amount of columns</small></h2>
+        
+        <div class="row">    
+            <div class="grid12"><span>.grid12</span></div>
+            
+            <div class="grid6"><span>.grid6</span></div>
+            <div class="grid6"><span>grid6</span></div>
+            
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid4"><span>.grid4</span></div>
+            
+            <div class="grid3"><span>.grid3</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+        </div> <!-- / .row -->
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Complex Layouts -->
+        <!-- ================================================ -->
+        
+        <h2>Complex Layouts <small>Infinitely nestable, mixed widths and offsets</small></h2>
+        
+        <div class="row">
+            
+            <div class="grid6">
+                <div class="row">
+                    <div class="grid6"><span>.grid6</span></div>
+                    <div class="grid6">
+                        <div class="row">
+                            <div class="grid6"><span>.grid6</span></div>
+                            <div class="grid6"><span>.grid6</span></div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="grid6"><span>.grid6</span></div>
+            
+            <div class="grid12">
+            <div class="row">
+                <div class="grid6">
+                    <div class="row">
+                        <div class="grid6"><span>.grid6</span></div>
+                        <div class="grid6"><span>.grid6</span></div>
+                    </div>
+                </div>
+                <div class="grid6"><span>.grid6</span></div>
+            </div>
+            </div>
+            
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid8"><span>.grid8</span></div>
+            
+            <div class="grid5"><span>.grid5</span></div>
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            
+            <div class="grid6"><span>.grid6</span></div>
+            <div class="grid6"><span>.grid6</span></div>
+            
+            <div class="grid2 offset1"><span>.grid2 .offset1</span></div>
+            <div class="grid2 offset1"><span>.grid2 .offset1</span></div>
+            <div class="grid3 offset3"><span>.grid3 .offset2</span></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Responsive Layouts -->
+        <!-- ================================================ -->
+        
+        <h2>Responsive Layouts <small>Change elements size depending on media queries</small></h2>
+        
+        <div class="row">
+        <div class="grid10 s-grid8"><span>.grid10 .s-grid8</span></div>
+        <div class="grid2 s-grid4"><span>.grid2 .s-grid4</span></div>
+        
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Helpers -->
+        <!-- ================================================ -->
+        
+        <h2>Helpers <small>Independent by the amount of columns</small></h2>
+        
+        <div class="row">
+        <div class="full"><span>.full</span></div>
+        
+        <div class="half"><span>.half</span></div>
+        <div class="half"><span>.half</span></div>
+        
+        <div class="one-third"><span>.one-third</span></div>
+        <div class="one-third"><span>.one-third</span></div>
+        <div class="one-third"><span>.one-third</span></div>
+        
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        </div>
+        
+        <h3>More combinations...</h3>
+        <div class="row">
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="three-fourths"><span>.three-fourths</span></div>
+            
+            <div class="one-third"><span>.one-third</span></div>
+            <div class="two-thirds"><span>.two-thirds</span></div>
+            
+            <div class="two-fifths"><span>.two-fifths</span></div>
+            <div class="three-fifths"><span>.three-fifths</span></div>
+            
+            <div class="golden-ratio1"><span>.golden-ratio1</span></div>
+            <div class="golden-ratio2"><span>.golden-ratio2</span></div>  
+        </div>
+        
+        <h3>Even more combinations...</h3>
+        <div class="row">
+            <div class="two-thirds pull-left"><span>.two-thirds .pull-left (1)</span></div>
+            
+            <div class="one-third pull-right"><span>.one-third .pull-right (2)<br/>with text<br/> on multiple<br/>lines</span></div>
+            
+            <div class="one-third pull-left"><span>.one-third .pull-left (3)</span></div>
+            <div class="one-third pull-left"><span>.one-third .pull-left (4)</span></div>
+        </div>
+        
+        <hr>
+        
+        <h3>Look mom, no gutters!</h3>
+        <div class="row no-gutters">
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Semantic Grid -->
+        <!-- ================================================ -->
+        
+        <h2>Semantic Grid</h2>
+        <p>By using the <strong>.grid-column()</strong> mixin you can keep the HTML document free from non-semantic classes (like grid12, grid6 etc...).</p>
+        
+        <section>
+            
+          <article>
+            <div>
+                <header><span>header { .grid-item(8); }</span></header>
+                <aside><span>aside { .grid-item(4); }</span></aside>
+            </div>
+          </article>
+            
+          <article>
+            <div>
+                <header><span>header { .grid-item(8); }</span></header>
+                <aside><span>aside { .grid-item(4); }</span></aside>
+            </div>
+          </article>
+            
+        </section>
+        
+        <hr />
+    
+        <!-- ================================================ -->
+        <!-- Block Grid -->
+        <!-- ================================================ -->
+    
+        <h2>Block Grid <small>Create a grid of elements of the same size</small></h2>
+        
+        <h3>Elements with <em>.block2</em> class</h3>
+        
+        <div class="block2">
+            <img src="http://placehold.it/350x155" />
+            <img src="http://placehold.it/350x155" />
+        </div>
+        
+        <h3>Elements with <em>.block3</em> class</h3>
+        
+        <div class="block3">
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+        </div>
+        
+        <h3>Elements with <em>.block4 class</em></h3>
+        
+        <div class="block4">
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+        </div>
+        
+        <h3>Responsive elements with <em>.block4 .m-block2 .s-block1</em> classes</h3>  
+        
+        <div class="block4 m-block2 s-block1">
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Responsive Embeds -->
+        <!-- ================================================ -->
+      
+        <h3>Responsive elements with <em>.block4 .m-block2 .s-block1</em> classes</h3>
+        
+        <div class="row">
+            <div class="grid6">
+                <div class="responsive-embed">
+                    <iframe src="http://player.vimeo.com/video/40058332" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+            </div>
+            
+            <div class="grid6">
+                <div class="responsive-embed">
+                    <iframe width="560" height="315" src="http://www.youtube.com/embed/1xGbw7nnH-o" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <hr />
+    
+        <!-- ================================================ -->
+        <!-- Responsive Table Example -->
+        <!-- ================================================ -->
+        
+        <h2>Responsive Table Example <small>Change the table rows/columns depending on the viewport size.</small></h2>
+        
+        <div class="clearfix">
+            <!--<div class="full">-->
+            <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th class="l-up">Three</th>
+                    <th>Four</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <td>Foo</td>
+                    <td>86-91</td>
+                    <td>97-102</td>
+                    <td class="l-up">107-112</td>
+                    <td>117-122</td>
+                  </tr>
+                
+                  <tr>
+                    <td>Bar</td>
+                    <td>76-81</td>
+                    <td>81-84</td>
+                    <td class="l-up">84-86</td>
+                    <td>91-97</td>
+                  </tr>
+                </tbody>
+            </table>
+            <!--</div>-->
+        </div>
+        
+        <hr />
+    
+        <!-- ================================================ -->
+        <!-- Layout Example -->
+        <!-- ================================================ -->
+    
+        <h2>Layout Example</h2>
+        <div class="row">
+        
+            <div class="full">
+                <img src="http://placehold.it/350x150" class="responsive-image" />
+            </div>
+            
+            <div class="grid4">
+                <img src="http://placehold.it/350x150" class="responsive-image"/>
+                <h3>Test 1</h3>
+                <p>Nam nibh magna, gravida a rutrum quis, dapibus ut risus. Fusce non arcu justo. Donec facilisis malesuada ante, eget porttitor turpis tempus in. Curabitur semper mattis nisl at mollis.</p>
+                <p><a href="#">Some link &rarr;</a></p>
+            </div>
+            
+            <div class="grid4">
+                <img src="http://placehold.it/350x150" class="responsive-image"/>
+                <h3>Test 2</h3>
+                <p>Nam nibh magna, gravida a rutrum quis, dapibus ut risus. Fusce non arcu justo. Donec facilisis malesuada ante, eget porttitor turpis tempus in. Curabitur semper mattis nisl at mollis.</p>
+                <p><a href="#">Some link &rarr;</a></p>
+            </div>
+            
+            <div class="grid4">
+                <img src="http://placehold.it/350x150" class="responsive-image"/>
+                <h3>Test 3</h3>
+                <p>Nam nibh magna, gravida a rutrum quis, dapibus ut risus. Fusce non arcu justo. Donec facilisis malesuada ante, eget porttitor turpis tempus in. Curabitur semper mattis nisl at mollis.</p>
+                <p><a href="#">Some link &rarr;</a></p>
+            </div>
+            
+        </div>
+        
+        <hr>
+        <p>Test</p>
+        
+    </div><!-- / .container -->
+    
+    <!-- ======================================================= -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/resize.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/icheck.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/scroller.js"></script>
+    <script src="js/panzoom.js"></script>
+    
+    <script type='text/javascript'>
+        $(function() {
+            
+            // Dropdown navigation
+            // $('.dropnav').dropnav({open:'open animated fadeIn fast'});
+            $('.flyout').dropnav({open:'open animated fadeIn fast'});
+            
+            // Dropdown navigation 2
+            // $('.dropdown').each(function () {
+            //     $(this).parent().eq(0).hover(function () {
+            //         $(this).addClass('hover');
+            //         $('.dropdown:eq(0)', this).addClass('open animated fast fadeInDown');
+            //         // $('.dropdown:eq(0)', this).show();
+            //     }, function () {
+            //         $(this).removeClass('hover');
+            //         $('.dropdown:eq(0)', this).removeClass('open animated fast fadeInDown');
+            //         // $('.dropdown:eq(0)', this).hide();
+            //     });
+            // });
+            
+            // Tabs
+            $('.tabs').easytabs({animate:false});
+            
+            // Checkbox and Radio buttons
+            // $('input[type="checkbox"], input[type="radio"]').iCheck({checkboxClass: 'icheckbox_flat-aero', radioClass: 'iradio_flat-aero'});
+            
+            $('select, input[type="checkbox"], input[type="radio"]').icbiaControl();
+            
+
+            // Scroller
+    		var $frame = $('#forcecentered');
+    		var $wrap  = $frame.parent();
+            var options = {
+                horizontal: 1,
+                itemNav: 'forceCentered',
+                smart: 1,
+                activateMiddle: 1,
+                activateOn: 'click',
+                mouseDragging: 1,
+                touchDragging: 1,
+                releaseSwing: 1,
+                startAt: 0,
+                scrollBar: $wrap.find('.scrollbar'),
+                scrollBy: 1,
+                speed: 1800,
+                elasticBounds: 1,
+                easing: 'easeOutExpo',
+                dragHandle: 1,
+                dynamicHandle: 1,
+                clickBar: 1,
+    
+    			// Buttons
+    			prev: $wrap.find('.prev'),
+    			next: $wrap.find('.next')
+    		};
+            
+            var slyder = new Sly($frame, options).init();
+            var slyder_first_run = true;
+            
+            // TODO: DELETE!!!
+            // $.slyder = slyder;
+                
+
+            // Lightbox
+            $.initLightbox = function(){
+                $('.inline-popup').magnificPopup({
+                  type:'inline',
+                  midClick: true,
+                  callbacks: {
+                    open: function() {
+                        // console.log(slyder);
+                        
+                        if (slyder_first_run) {
+                            slyder_first_run = false;
+                            slyder.reload();
+                            slyder.toStart();
+                        } else {
+                            slyder.reload();
+                        }
+                    }
+                  }
+                });
+                
+                // $('.image-popup').magnificPopup({ 
+                //   closeBtnInside: true,
+                //   type: 'image'    
+                // });
+                
+                // $('.gallery-popup').magnificPopup({
+                //     type: 'image',
+                //     delegate: 'a',
+                //     gallery: {
+                //         enabled: true,
+                //         navigateByImgClick: true,
+                //         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                //     }
+                // });
+            }
+            
+            $.initLightbox();
+            
+            
+            $(window).on("debouncedresize", function( event ) {
+                slyder.reload();
+                // console.log('debounce');
+            });
+            
+            // or...
+            // $(window).on("throttledresize", function( event ) {
+                // Your event handler code goes here.
+            // });
+            
+            // unbind at will
+            // $(window).off( "debouncedresize" );
+            
+            
+   //          $('#forcecentered img').touchPanView({
+   //  			width: 	600,
+			// 	height: 300,
+			// 	startZoomedOut: true
+			// });
+        });
+    </script>
+    
+</body>
+</html>

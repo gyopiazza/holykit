@@ -1,0 +1,44 @@
+// Media object
+.init() when (@use_media = true) {
+    
+    .media { .clearfix(); }
+    
+    .media-object {
+        float:left;
+        // margin:0 5px 0 0;
+    }
+    
+    .media-body {
+        display:table-cell; /* 1 */
+        width:10000px; /* 2 */
+        *width:auto; /* 3 */
+        *zoom:1; /* 4 */
+    }
+    
+    // Common styles
+    // -------------------------
+    
+    // Clear the floats
+    // .media,
+    // .media-body {
+    //   overflow: hidden;
+    //   *overflow: visible;
+    //   zoom: 1;
+    // }
+        
+    // // // For images and videos, set to block
+    // .media-object {
+    //   display: block;
+    // }
+    
+    // Media list variation
+    // -------------------------
+    
+    // Undo default ul/ol styles
+    .media-list {
+      margin-left: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+}

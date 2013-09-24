@@ -1,0 +1,199 @@
+// ============================================
+// Default Config Values
+// ============================================
+
+
+// Colours
+// --------------------------------------------
+
+// Grayscale
+@black_10:                  darken(#fff, 10%);
+@black_20:                  darken(#fff, 20%);
+@black_30:                  darken(#fff, 30%);
+@black_40:                  darken(#fff, 40%);
+@black_50:                  darken(#fff, 50%);
+@black_60:                  darken(#fff, 60%);
+@black_70:                  darken(#fff, 70%);
+@black_80:                  darken(#fff, 80%);
+@black_90:                  darken(#fff, 90%);
+
+// Brand colors
+@brand_primary:             #ed5b58;
+@brand_secondary:           #2e2e2e;
+@brand_accent:              #00e9cf;
+
+// Generic colors
+@blue:                      #3498DB;
+@blueDark:                  #2C3E50;
+@green:                     #18BC9C;
+@red:                       #E74C3C;
+@yellow:                    #e6bb0d;
+@orange:                    #F39C12;
+@pink:                      #ff6699;
+@purple:                    #8E44AD;
+
+// Accent colors
+@success_color:             #5cb85c;
+@warning_color:             #f0ad4e;
+@danger_color:              #d9534f;
+@info_color:                #5bc0de;
+@disabled_color:            #cccccc;
+
+// Scaffolding
+@body_background:           #fff;
+@text_color:                @black_50;
+
+// Links
+@link_color:                @brand_primary;
+@link_color_hover:          darken(@link_color, 15%);
+
+
+// Modules
+// --------------------------------------------
+
+@debug_mode:                true;
+
+// Generic
+@use_base:                  true;
+@use_normalize:             true;
+@use_images:                true;
+@use_icons:                 true;
+@use_animate:               true;
+@use_helpers:               true;
+@use_print:                 true;
+
+
+// Grid
+@use_grid:                  true;
+@use_grid_units:            true;
+@use_grid_fractions:        true;
+@use_grid_blocks:           true;
+@use_grid_offsets:          true;
+@use_grid_extras:           true;
+@use_media_queries:         true;
+
+
+// UI - Navigation
+@use_nav:                   true;
+@use_navbar:                true;
+@use_flyout:                true;
+@use_navlist:               true;
+
+// UI - Various
+@use_buttons:               true;
+@use_forms:                 true;
+@use_labels:                true;
+@use_breadcrumbs:           true;
+@use_media:                 true;
+@use_pagination:            true;
+@use_tabs:                  true;
+@use_overlay:               true;
+@use_lightbox:              true;
+@use_scroller:              true;
+
+
+// Typography
+// --------------------------------------------
+
+@font_family_sans_serif:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font_family_serif:         Georgia, "Times New Roman", Times, serif;
+@font_family_monospace:     Monaco, Menlo, Consolas, "Courier New", monospace;
+@font_family_base:          @font_family_sans_serif;
+
+// Base font-size and line-height
+@font_size_base:            16;
+@line_height_base:          24;
+
+// Size variations
+@font_size_large:           @font_size_base * 1.25;
+@font_size_small:           @font_size_base * 0.85;
+@font_size_mini:            @font_size_base * 0.75;
+
+@headings_font_family:      inherit;
+@headings_font_weight:      500;
+
+// Used by margin, padding and line-height
+@global_multiplier:         1;
+
+// Scale ratio used for font sizes
+@scale_ratio:               1.618;
+
+// Use 16 for a default scale
+@magic_number:              16;
+
+// Forms
+@input_color_placeholder:   lighten(@text_color, 25%);
+
+// Private variable: no need to change it (using 16 as the 'common' default)
+@_doc_ratio:                @line_height_base / 16;
+// @_doc_ratio: @line_height_base / @font_size_base;
+
+
+// Grid
+// --------------------------------------------
+
+@gutter:                    40px;
+@columns:                   12;
+@responsive:                true;
+
+
+// Media Queries Breakpoints
+// --------------------------------------------
+
+@xxs-max:                   320px;
+
+@xs-min:                    (@xxs-max + 1);
+@xs-max:                    (@s-min - 1);
+
+@s-min:                     640px;
+@s-max:                     (@m-min - 1);
+
+@m-min:                     960px;
+@m-max:                     (@l-min - 1);
+
+@l-min:                     1280px;
+@l-max:                     (@xl-min - 1);
+
+@xl-min:                    1600px;
+@xl-max:                    (@xxl-min - 1);
+
+@xxl-min:                   1920px;
+
+
+// Media queries definitions
+// --------------------------------------------
+
+// TODO: Rename to '*-mq' ?
+@xxs:                       ~"screen and (max-width:" @xxs-max ~")";
+@xs:                        ~"screen and (min-width:" @xs-min ~") and (max-width:" @xs-max ~")";
+@s:                         ~"screen and (min-width:" @s-min ~") and (max-width:" @s-max ~")";
+@m:                         ~"screen and (min-width:" @m-min ~") and (max-width:" @m-max ~")";
+@l:                         ~"screen and (min-width:" @l-min ~") and (max-width:" @l-max ~")";
+@xl:                        ~"screen and (min-width:" @xl-min ~") and (max-width:" @xl-max ~")";
+@xxl:                       ~"screen and (min-width:" @xxl-min ~")";
+
+@landscape:                 ~"screen and (orientation: landscape)";
+@portrait:                  ~"screen and (orientation: portrait)";
+
+// TODO: Make 'retina' work
+@retina:                    ~"only screen and (-webkit-min-device-pixel-ratio: 2)",
+                            ~"only screen and (   min--moz-device-pixel-ratio: 2)",
+                            ~"only screen and (     -o-min-device-pixel-ratio: 2/1)",
+                            ~"only screen and (        min-device-pixel-ratio: 2)",
+                            ~"only screen and (                min-resolution: 192dpi)",
+                            ~"only screen and (                min-resolution: 2dppx)";
+
+
+// Grid elements class names
+// --------------------------------------------
+
+@grid_class:                grid;
+@row_class:                 row;
+@offset_class:              offset;
+@block_class:               block;
+@fraction_class:            f-;
+
+// Selectors (currently not in use)
+// --------------------------------------------
+@container_selector:        ~".container";
+

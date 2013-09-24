@@ -1,0 +1,40 @@
+// Forms
+.init() when (@use_forms = true) {
+
+    fieldset { display: block; margin: 0; padding: 0; border: 0; }
+    
+    fieldset label { float: left; width: 20%; }
+    fieldset.form-actions { margin: 0 0 0 20%; }
+    
+    input[type="text"] { .height(2); }
+    textarea { .height(4); }
+    // input[type="text"], textarea { width: 80%; }
+    
+    fieldset.check, fieldset.radio ul { padding-left: 20%; list-style: none; }
+    fieldset.check label, fieldset.radio li label { display: inline; float: none; width: auto; }
+    
+    // Fix whitespace
+    input[type="image"] { display: block; }
+    
+    .field {
+        position: relative;
+        max-width: 100%;
+        // overflow: hidden;
+        vertical-align: middle;
+    }
+    
+    .append, .prepend {
+        font-size: 0;
+        white-space: nowrap;
+        position: relative;
+    }
+    
+    .append .add-on, .prepend .add-on,
+    .append .btn, .prepend .btn,
+    .append .btn-group, .prepend .btn-group,
+    .append input, .prepend input {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+}

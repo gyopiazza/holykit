@@ -1,0 +1,32 @@
+// Grid Fractions
+.init() when (@use_grid_fractions = true) {
+    
+    [class^="one-"], [class^="two-"], [class^="three-"], .golden-ratio1, .golden-ratio2 { .grid-items; }
+    .full             { .grid-item(@columns / 1); .grid-items; }
+    .half             { .grid-item(@columns / 2); .grid-items; }
+    .one-third        { .grid-item(@columns / 3); }
+    .one-fourth       { .grid-item(@columns / 4); }
+    .one-fifth        { .grid-item(@columns / 5); }
+    .one-sixth        { .grid-item(@columns / 6); }
+    .one-seventh      { .grid-item(@columns / 7); }
+    .one-eighth       { .grid-item(@columns / 8); }
+    .one-ninth        { .grid-item(@columns / 9); }
+    .one-tenth        { .grid-item(@columns / 10); }
+    .two-thirds       { .grid-item(@columns * 2/3); }
+    .two-fifths       { .grid-item(@columns * 2/5); }
+    .two-sixths       { .grid-item(@columns * 2/6); }
+    .two-sevenths     { .grid-item(@columns * 2/7); }
+    .two-eights       { .grid-item(@columns * 2/8); }
+    .two-nineths      { .grid-item(@columns * 2/9); }
+    .two-tenths       { .grid-item(@columns * 2/10); }
+    .three-fourths    { .grid-item(@columns * 3/4); }
+    .three-fifths     { .grid-item(@columns * 3/5); }
+    .three-sixths     { .grid-item(@columns * 3/6); }
+    .three-sevenths   { .grid-item(@columns * 3/7); }
+    .three-eights     { .grid-item(@columns * 3/8); }
+    .three-nineths    { .grid-item(@columns * 3/9); }
+    .three-tenths     { .grid-item(@columns * 3/10); }
+    .golden-ratio1    { .grid-item(round(@columns / 1.618)); }
+    .golden-ratio2    { .grid-item(round(@columns - ( @columns / 1.618 ))); }
+    
+}
