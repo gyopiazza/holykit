@@ -81,7 +81,7 @@
 @font_family_monospace:     Monaco, Menlo, Consolas, "Courier New", monospace;
 @font_family_base:          @font_family_sans_serif;
 
-@debug_mode:                true;
+@debug_mode:                false;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -143,6 +143,44 @@ body { .padding(2); }
     #main-features p { padding: 0 10%; }
     #main-features li:last-child { margin-bottom: 0; }
 }
+
+/////// Temp stuff...
+
+// Grid example
+// .grid [class^="grid"] span {
+#grid .row > * span {
+	display:block;
+	background-color: @brand_accent;
+	// padding: 6px 8px;
+	.padding(0.5, 0.5);
+	.line-height(1);
+	border-radius: 5px;
+	// margin-bottom: @gutter*2;
+	// font-size:12px;
+}
+
+
+// #grid .row.divided > * {
+// 	border-right: 1px solid #ccc;
+// }
+
+// #grid .row.divided > *:last-child {
+// 	border-right: none;
+// }
+
+.example-block-equal > * {
+	background-color: #e8e8e8;
+}
+
+small {
+	font-size: 0.3em;
+	.line-height(1);
+}
+
+.inline-popup { display: block; margin-bottom: 16px; }
+
+/////// End temp stuff
+
 
 // h3 { font-weight: normal; }
 

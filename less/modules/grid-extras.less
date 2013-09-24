@@ -30,13 +30,20 @@
     }
     
     // Position Helpers
-    .pull-left { float:left !important; }
-    .pull-right { float:right !important; }
+    .pull-left { float: left !important; }
+    .pull-right { float: right !important; }
    
     // Gutter Helpers
-    .no-gutters { margin-left:0; }
-    .no-gutters > * { padding-left:0; }
+    .no-gutters { margin-left: 0; margin-right: 0; }
+    .no-gutters > * { padding-left: 0; padding-right: 0; }
     
-    .half-gutters { margin-left: -(round(@gutter/2)); }
-    .half-gutters > * { padding-left: round(@gutter/2); }
+    .half-gutters { margin-left: -(round(@gutter/2)); margin-right: -(round(@gutter/2)); }
+    .half-gutters > * { padding-left: round(@gutter/2); padding-right: round(@gutter/2); }
+
+    // Equal height columns
+    .row.equal-height,
+    [class^="block"].equal-height { display: table; }
+    .row.equal-height > *,
+    [class^="block"].equal-height > * { display: table-cell; }
+
 }

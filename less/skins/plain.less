@@ -58,6 +58,7 @@
     
     //////////////////////////////////////////////////////////////////////////////////////////
     
+
     // --------------------------------------------
     // Base
     // --------------------------------------------
@@ -73,10 +74,24 @@
     fieldset { border: 0; margin: 0; padding: 0; }
     textarea { resize: vertical; }
 
-    
+
     //////////////////////////////////////////////////////////////////////////////////////////
     
+
+    // --------------------------------------------
+    // Grid
+    // --------------------------------------------
+
+    // Divided
+    .row.divided > * { border-right: 1px solid #ccc; }
+    .row.divided > *:last-child { border-right: none; }
     
+    // Celled
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+
     // --------------------------------------------
     // Typography
     // --------------------------------------------
@@ -246,7 +261,8 @@
     form fieldset input[type="text"]:focus,
     form fieldset textarea:focus,
     .form-control.select.foxus {
-    	border: 1px solid #ffd200;
+        border: 1px solid #ccc;
+    	// border: 1px solid #ffd200;
     	background: #fff;
         outline: 0;
         // outline:3px solid #ffd200;
@@ -477,16 +493,6 @@
     // Navigation
     // --------------------------------------------
     
-    // Flyout
-    .flyout { /*.padding(0.5);*/ background: #333; border-radius: @border_radius; }
-    .flyout a { .font(12); .padding(0.1, 0.5); color: #fff; text-decoration: none; }
-    .flyout .hover > a, .flyout a:hover { background: @green; }
-    .flyout > * a { border-radius: 3px; margin: 3px; }
-    // Fix for nested menus
-    .flyout .flyout { top: -3px; }    
-    // Variation UP
-    .flyout.dropup .flyout { .margin-bottom(-1); }
-
     // Navbar
     .navbar { background: #333; border-radius: @border_radius; }
     .navbar a { .font(16); .padding(1, 1); color: #fff; text-decoration: none; }
@@ -500,6 +506,16 @@
     .navlist .nav-header { .font(12); color: @black_30; text-transform: uppercase; font-weight: bold; }
     .navlist .divider { .padding-top(0.5); .margin-bottom(0.5); margin-top: -1px; border-bottom: 1px solid #ccc; }
     
+    // Flyout
+    .flyout { /*.padding(0.5);*/ background: #333; border-radius: @border_radius; }
+    .flyout a { .font(12); .padding(0.1, 0.5); color: #fff; text-decoration: none; }
+    .flyout .hover > a, .flyout a:hover { color: #444; background: @green; }
+    .flyout > * a { border-radius: 3px; margin: 3px; }
+    // Fix for nested menus
+    .flyout .flyout { top: -3px; }    
+    // Variation UP
+    .flyout.dropup .flyout { .margin-bottom(-1); }
+
     // ul.flyout.open, ul.flyout:hover { opacity: 1; }
     
     // ul.flyout li { .padding(1, 1); }
@@ -679,7 +695,7 @@
     .tabs-nav a { margin-right: 2px; /*padding: 8px 18px;*/ .padding(1, 1); border: 1px solid transparent; color: #444; text-decoration: none;}
     
     // Tabs content area
-    .tabs-content { .padding(1, 1); border: 1px solid #999; border-top: 0; }
+    .tabs-content { .padding(1, 1); background-color: #fff; border: 1px solid #999; border-top: 0; }
     .tabs-content p { margin-top: 0; }
     .tabs-content p:last-child { margin-bottom: 0; }
     

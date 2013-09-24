@@ -415,13 +415,13 @@
         
         <div class="pagination">
             <ul>
-                <li><a href="#"><i class="icon-arrow-left-2"></i></a></li>
+                <li><a href="#">&larr;</a></li>
                 <li><a href="#">1</a></li>
                 <li class="active"><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
                 <li class="disabled"><a href="#">4</a></li>
                 <li class="disabled"><a href="#">5</a></li>
-                <li><a href="#"><i class="icon-arrow-right-2"></i></a></li>
+                <li><a href="#">&rarr;</a></li>
             </ul>
         </div>
         
@@ -825,12 +825,11 @@
         <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
         
         <pre><code>&lt;html>
-        &lt;head>
-        &lt;/head>
-        &lt;body>
+    &lt;head>&lt;/head>
+    &lt;body>
         &lt;div class="main"> &lt;div>
-        &lt;/body>
-        &lt;/html></code></pre>
+    &lt;/body>
+&lt;/html></code></pre>
         
         <h3>blockquote</h3>
         
@@ -1427,7 +1426,37 @@
             <div class="one-fourth"><span>.one-fourth</span></div>
         </div>
         
-        <hr />
+        <hr>
+
+        <h3>Column dividers and equal height</h3>
+        <div class="row divided equal-height">
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="one-fourth"><p>Our food-getters were called freemen. This was a joke. We of the ruling classes owned all the land, all the machines, everything.</p></div>
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+        </div>
+    
+        <hr>
+
+        <h3>Block grid and equal height</h3>
+        <div class=" block4  ">
+            <div><p>You remember when your dad taught you to swim?</p></div>
+            <div><p>Our food-getters were called freemen. This was a joke. We of the ruling classes owned all the land, all the machines, everything.</p></div>
+            <div><p>You remember when your dad taught you to swim?</p></div>
+            <div><p>You remember when your dad taught you to swim?</p></div>
+        </div>
+
+        <hr>
+
+        <h3>Celled columns</h3>
+        <div class="row celled">
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="three-fourths"><p>Our food-getters were called freemen. This was a joke. We of the ruling classes owned all the land, all the machines, everything.</p></div>
+            <div class="half"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="half"><p>You remember when your dad taught you to swim?</p></div>
+        </div>
+
+        <hr>
         
         <!-- ================================================ -->
         <!-- Semantic Grid -->

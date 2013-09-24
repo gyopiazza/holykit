@@ -97,11 +97,11 @@
 // Make the target behave as a "row" container
 .grid-row (@g: @gutter) {
   // .clearfix;
-  margin: 0 0 0 -(@g);
+  // margin: 0 0 0 -(@g);
   padding: 0;
   letter-spacing: -0.31em;
   > * { .grid-items(); }
-  //margin:0 -(@gutter);
+  margin: 0 -(@g);
 }
 
 // Common properties for all the grid items
@@ -109,9 +109,9 @@
   //float: left;
   display: inline-block;
   vertical-align: top;
-  padding-left: @g;
+  // padding-left: @g;
   letter-spacing: normal;
-  //padding:0 @gutter;
+  padding: 0 @g;
 }
 
 // A single grid unit
@@ -130,12 +130,20 @@
   margin-left: (100%/@columns) * @index;
 }
 
-// Change the gutter
+// Change the gutter (instead of typing .row {  } )
 .grid-gutter(@g: @gutter)
 {
+    // TODO: remove grid-row and change to
+    // .@{row_class} {
+      // margin: 0 -(@g);
+      // > * {
+      //  padding: 0 @g;
+      // }
+    // }
     .@{row_class} { .grid-row(@g); }
+
     // (~".@{row_class}") { .grid-row(@g); }
-    // TODO: Check xxs-grid, xs-grid etc... maybe change ^ to * ?
+    // TODO: Check xxs-gridN, xs-gridN etc... maybe change ^ to * ?
     .@{row_class} > *, [class^="@{grid_class}"] { .grid-items(@g); }
     // (~".@{row_class} > *"), (~'[class^="@{grid_class}"]') { .grid-items(@g); }
 }
