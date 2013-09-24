@@ -2,13 +2,26 @@ Holy-Kit
 ========
 
 
-Concept
-- Include holy-kit.less (nothing gets into the CSS)
-- 
-- 
+
+Building blocks for front-end designers.
+Holy-Kit includes a **fluid grid** with support for **fixed width margins** (gutters). Made with **LESS/CSS**, it allows for **any amount of columns**, it's **responsive** and **semantic**.
+
+Supported by real browsers and IE8+.
 
 
-TODO
+
+
+Getting Started
+---------------
+- Include holy-kit.less
+- Todo...
+
+
+
+Todo
+----
+- Complete the "Getting Started" section
+- Write docs
 - Rename "make-" to "generate-"
 - "generate-" mixins echo classes/styles to the CSS
 - "make-" mixins will be used for semantic styling (example: make-row, make-column, make-inline-list, etc...)
@@ -16,22 +29,8 @@ TODO
 
 
 
-
-A **fluid grid** with support for **fixed width margins** (gutters). Made with **LESS/CSS**, it allows for any amount of columns, 
-it's **responsive** and **semantic** ready! It uses a combination of *box-sizing* and *padding* to achieve the result.
-
-Supported by real browsers and IE8+.
-
-[View the demo &rarr;](http://codepen.io/gyopiazza/fullpage/irILa)
-
-
-
-
-
-
-
-
 Changes made on 3rd party libraries
+
 - Removed the grid-system from Preboot
 - Renamed @input_color_placeholder variable in Preboot (line~132)
 - Renamed preboot.less to utilities.less
