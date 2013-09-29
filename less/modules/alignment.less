@@ -1,0 +1,16 @@
+// Alignment
+.init() when (@use_alignment = true) {
+    
+    // Vertical alignment
+    .top > * { vertical-align: top; }
+    .middle > * { vertical-align: middle; }
+    .bottom > * { vertical-align: bottom; }
+    
+    // Position Helpers
+    .pull-left { float: left !important; }
+    .pull-right { float: right !important; }
+
+    // Justify elements
+    .justified { display: table; width: 100%; }
+    .justified > * { display: table-cell; float: none; }
+}

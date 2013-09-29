@@ -97,21 +97,20 @@
 // Make the target behave as a "row" container
 .grid-row (@g: @gutter) {
   // .clearfix;
-  // margin: 0 0 0 -(@g);
+  margin: 0 0 0 -(@g);
+  // margin: 0 -(@g);
   padding: 0;
   letter-spacing: -0.31em;
   > * { .grid-items(); }
-  margin: 0 -(@g);
 }
 
 // Common properties for all the grid items
 .grid-items (@g: @gutter) {
-  //float: left;
   display: inline-block;
   vertical-align: top;
-  // padding-left: @g;
+  padding-left: @g;
+  // padding: 0 @g;
   letter-spacing: normal;
-  padding: 0 @g;
 }
 
 // A single grid unit

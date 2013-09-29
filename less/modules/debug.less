@@ -168,7 +168,16 @@
     // Media Query Tester
     // --------------------------------------------
     
-    body:before { position:fixed; top:0; right:0; padding:15px; background:#00e9cf; color:#000; text-shadow: 0 1px 0 rgba(255,255,255,0.9); }
+    body:before {
+        position:fixed;
+        top:0;
+        right:0;
+        padding:15px;
+        background:#00e9cf;
+        color:#000;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+        z-index: 9999;
+    }
     
     .xxs() { body:before { content:"xxs"; } }
     .xs()  { body:before { content:"xs"; } }
@@ -200,17 +209,7 @@
     // .l-up()   { .mq-tester:after { content:" / l-up"; } }
     // .xl-up()  { .mq-tester:after { content:" / xl-up"; } }
     
-    
-    /* -------------------------------------------- */
-    /* Background baseline                          */
-    /* -------------------------------------------- */
-    
-    /** 
-     * Baseline overlay by Basehold.it
-     * A quick, painless, javascript-free baseline overlay.
-     * by Dan Eden & Michael Wright
-     * http://.basehold.it
-     **/
+        
     /**
      * Vertical rhythm baseline grid
      */
@@ -219,7 +218,7 @@
     }
     
     body:after {
-      background: url("http://basehold.it/image.php?height=@{line_height_base}") repeat scroll left top transparent;
+        background: url("http://basehold.it/image.php?height=@{line_height_base}") repeat scroll left top transparent;
         bottom: 0;
         content: "";
         display: block;

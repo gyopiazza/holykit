@@ -20,7 +20,10 @@
       }
     }
     
-    // Hover/focus state, but only for links
+    /*
+     * Hover/focus state, but only for links
+     */
+
     a {
       &.label:hover,
       &.label:focus,
@@ -31,7 +34,10 @@
       }
     }
     
-    // Quick fix for labels/badges in buttons
+    /*
+     * Quick fix for labels/badges in buttons
+     */
+
     .btn {
       .label,
       .badge {
@@ -46,4 +52,49 @@
       }
     }
 
+    
+    /*
+     * Pointing arrows
+     */
+
+    .pointing {
+      position: relative;
+    }
+    
+    /* Down (default) */
+    .pointing:after {
+      position: absolute;
+      display: block;
+      content: "";  
+      border-color: #eee transparent transparent transparent;
+      border-style: solid;
+      border-width: 5px;
+      height:0;
+      width:0;
+      position:absolute;
+      bottom: -10px;
+    }
+  
+    /* Up */
+    .pointing.up:after {
+      border-color: transparent transparent #eee transparent;
+      bottom: auto;
+      top: -10px;
+    }
+  
+    /* Right */
+    .pointing.right:after {
+      border-color: transparent transparent transparent #eee;
+      bottom: 50%;
+      right: -10px;
+      margin-bottom: -5px;
+    }
+  
+    /* Left */
+    .pointing.left:after {
+      border-color: transparent #eee transparent transparent;
+      bottom: 50%;
+      left: -10px;
+      margin-bottom: -5px;
+    }
 }

@@ -1,7 +1,15 @@
 // Breadcrumbs
 .init() when (@use_breadcrumbs = true) {
 
-    .breadcrumbs, .breadcrumbs ul { margin: 0; padding: 0; .line-height; }
-    .breadcrumbs li { display: inline; }
+    .breadcrumbs,
+    .breadcrumbs ul {
+    	.line-height();
+    	margin: 0;
+    	padding: 0;
+    }
+
+    .breadcrumbs li {
+    	display: inline;
+    }
 
 }

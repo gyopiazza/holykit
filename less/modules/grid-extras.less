@@ -1,49 +1,37 @@
 // Grid Extras
-.init() when (@use_grid_extras = true) {
+.init() when (@use_grid_extras = true) { 
     
-    // Vertical grid alignment
-    .top > * { vertical-align: top; }
-    .middle > * { vertical-align: middle; }
-    .bottom > * { vertical-align: bottom; }
+    // Gutters helpers
+    .no-gutters { margin-left: 0; /*margin-right: 0;*/ }
+    .no-gutters > * { padding-left: 0; /*padding-right: 0;*/ }
     
-    // Responsive Images Helpers
-    .responsive-image { display: block; width: 100%; height: auto; }
+    .half-gutters { margin-left: -(round(@gutter/2)); /*margin-right: -(round(@gutter/2));*/ }
+    .half-gutters > * { padding-left: round(@gutter/2); /*padding-right: round(@gutter/2);*/ }
     
-    // Responsive Embeds Helpers
-    .responsive-embed {
-        position: relative;
-        padding-bottom: 56.25%; /* 16/9 ratio */
-        padding-top: 30px; /* IE6 workaround*/
-        height: 0;
-        overflow: hidden;
-    }
-    
-    .responsive-embed iframe,
-    .responsive-embed object,
-    .responsive-embed embed,
-    .responsive-embed video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    // Position Helpers
-    .pull-left { float: left !important; }
-    .pull-right { float: right !important; }
-   
-    // Gutter Helpers
-    .no-gutters { margin-left: 0; margin-right: 0; }
-    .no-gutters > * { padding-left: 0; padding-right: 0; }
-    
-    .half-gutters { margin-left: -(round(@gutter/2)); margin-right: -(round(@gutter/2)); }
-    .half-gutters > * { padding-left: round(@gutter/2); padding-right: round(@gutter/2); }
+    .double-gutters { margin-left: -(round(@gutter*2)); /*margin-right: -(round(@gutter/2));*/ }
+    .double-gutters > * { padding-left: round(@gutter*2); /*padding-right: round(@gutter/2);*/ }
 
     // Equal height columns
     .row.equal-height,
     [class^="block"].equal-height { display: table; }
     .row.equal-height > *,
     [class^="block"].equal-height > * { display: table-cell; }
+    
+    /* Modify the gutters to fit the available width */
+    .justified-grid {
+      text-align: justify;
+    }
 
+    .justified-grid:after{
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 0;
+        font-size:0;
+        line-height:0;
+    }
+
+    .justified-grid > * {
+      text-align: left;
+    }
 }

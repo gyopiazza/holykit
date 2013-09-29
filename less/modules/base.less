@@ -3,14 +3,20 @@
     
     * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
     
-    html { font: (100%*(@font_size_base/16))~'/'@_doc_ratio @font_family_base;
-        // font-family: @font_family_base;
-        // font-size: 100% * (@font_size_base/16);
-        // line-height: @_doc_ratio;
+    html {
+        font: 100%~'/'@_doc_ratio @font_family_base;
+        overflow-y:scroll;
+        min-height:100%;
     }
+    // html { font: (100%*(@font_size_base/16))~'/'@_doc_ratio @font_family_base; }
     
     figure img { display:block; } // Fix the inline image bottom margin 
     img { vertical-align: middle; }
     fieldset { border: 0; margin: 0; padding: 0; }
-    textarea { resize: vertical; }   
+    textarea { resize: vertical; }
+    
+    /* Remove the bottom margin from the last paragraph */
+    p:last-child {
+        margin-bottom: 0;
+    }
 }

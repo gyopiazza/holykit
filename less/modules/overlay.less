@@ -1,30 +1,235 @@
 // Overlay
 .init() when (@use_overlay = true) {
 
+    // By default the overlay is centered horizontally & vertically
+    // Example 1: .overlay>p
+    // Example 2: .overlay.>div>p*2
+    // Example 3: .overlay.bottom-right>p
+
+    /*
+     * Overlay structure
+     */
+
     .overlay { 
-        position: absolute; 
-        top: 0; 
-        right: 0; 
-        bottom: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        // display: none;
-        z-index: 100; 
-        background: transparent no-repeat center center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      letter-spacing: -0.31em;
+      background: transparent no-repeat center center;
+    }
+
+    .overlay:before {
+      content: '';
+      display: inline-block;
+      height: 100%; 
+      vertical-align: middle;
     }
     
-    .overlay > * { 
-        display: table; 
-        position: absolute; 
-        width: 100%; 
-        height: 100%;
+    .overlay > * {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%;
+      letter-spacing: normal;
     }
-    
-    .overlay > * > * { 
-        display: table-cell; 
-        vertical-align: middle; 
-        text-align: center;
+  
+    .overlay-content {
+      display: inline-block;
     }
+
+    /*
+     * Variations
+     */
+
+    /* Top Left */
+    .overlay.top-left > * {
+      vertical-align: top;
+      text-align: left;
+    }
+
+    /* Top Right */
+    .overlay.top-right > * {
+      vertical-align: top;
+      text-align: right;
+    }
+
+    /* Bottom Right */
+    .overlay.bottom-right > * {
+      vertical-align: bottom;
+      text-align: right;
+    }
+
+    /* Bottom Left */
+    .overlay.bottom-left > * {
+      vertical-align: bottom;
+      text-align: left;
+    }
+
+    /* Center Top */
+    .overlay.center-top > * {
+      vertical-align: top;
+      text-align: center;
+    }
+
+    /* Center Right */
+    .overlay.center-right > * {
+      vertical-align: middle;
+      text-align: right;
+    }
+
+    /* Center Bottom */
+    .overlay.center-bottom > * {
+      vertical-align: bottom;
+      text-align: center;
+    }
+
+    /* Center Left */
+    .overlay.center-left > * {
+      vertical-align: middle;
+      text-align: left;
+    }
+
+
+    // .overlay { 
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 100;
+    //   background: transparent no-repeat center center;
+    // }
+
+    // .overlay > * {
+    //   display: table;
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    // .overlay > * > * {
+    //   display: table-cell;
+    //   vertical-align: middle;
+    //   text-align: center;
+    //   white-space: pre-line;
+    // }
+
+    // .overlay > * > * > * {
+    //     display: inline-block;
+    // }
+
+    // /* Set content white-space to allow text alignment */
+    // .overlay-content {
+    //   white-space: normal;
+    // }
+
+    // /* Top Left */
+    // .overlay.top-left > * > * {
+    //   vertical-align: top;
+    //   text-align: left;
+    // }
+
+    // /* Top Right */
+    // .overlay.top-right > * > * {
+    //   vertical-align: top;
+    //   text-align: right;
+    // }
+
+    // /* Bottom Right */
+    // .overlay.bottom-right > * > * {
+    //   vertical-align: bottom;
+    //   text-align: right;
+    // }
+
+    // /* Bottom Left */
+    // .overlay.bottom-left > * > * {
+    //   vertical-align: bottom;
+    //   text-align: left;
+    // }
+
+    // /* Middle Top */
+    // .overlay.middle-top > * > * {
+    //   vertical-align: top;
+    //   text-align: center;
+    // }
+
+    // /* Middle Right */
+    // .overlay.middle-right > * > * {
+    //   vertical-align: middle;
+    //   text-align: right;
+    // }
+
+    // /* Middle Bottom */
+    // .overlay.middle-bottom > * > * {
+    //   vertical-align: bottom;
+    //   text-align: center;
+    // }
+
+    // /* Middle Left */
+    // .overlay.middle-left > * > * {
+    //   vertical-align: middle;
+    //   text-align: left;
+    // }
+
+    // .overlay { position: absolute; z-index: 100; }
+
+    // // Horizontally/Vertically centered overlay
+    // // div.overlay>div>div>content
+    // .overlay.centered { 
+    //     position: absolute;
+    //     top: 0; 
+    //     right: 0; 
+    //     bottom: 0; 
+    //     left: 0; 
+    //     width: 100%; 
+    //     height: 100%; 
+    //     z-index: 100;
+    //     background: transparent no-repeat center center;
+    // }
     
+    // .overlay.centered > * {
+    //     display: table; 
+    //     position: absolute; 
+    //     width: 100%; 
+    //     height: 100%;
+    // }
+    
+    // .overlay.centered > * > * { 
+    //     display: table-cell; 
+    //     vertical-align: middle; 
+    //     text-align: center;
+    // }
+    
+    // // .overlay-content { position: absolute; }
+
+    // // Top Left
+    // .overlay.top-left {
+    //     top: 0;
+    //     left: 0;
+    // }
+
+    // // Top Right
+    // .overlay.top-right {
+    //     top: 0;
+    //     right: 0;
+    // }
+
+    // // Bottom Right
+    // .overlay.bottom-right {
+    //     bottom: 0;
+    //     right: 0;
+    // }
+
+    // // Bottom Left
+    // .overlay.bottom-left {
+    //     bottom: 0;
+    //     left: 0;
+    // }
 }

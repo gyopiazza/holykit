@@ -1,9 +1,13 @@
 // Grid Blocks
 .init() when (@use_grid_blocks = true) {
     
-    [class^="@{block_class}"] { .grid-row(); width: 100%; }
-    [class^="@{block_class}"] li { list-style: none; }
+	/*
+	 * Block grid
+	 */
 
+    [class^="@{block_class}"], [class*=" @{block_class}"] { .grid-row(); width: auto; }
+    [class^="@{block_class}"] li, [class*=" @{block_class}"] li { list-style: none; }
+	
     .generate-block-grid(@columns);
     
 }
