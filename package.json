@@ -1,0 +1,24 @@
+{
+  "name": "Holy-Kit",
+  "version": "0.0.1",
+  "description": "Building blocks for front-end designers",
+  "main": "index.html",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gyopiazza/Holy-Kit.git"
+  },
+  "keywords": [
+    "front-end",
+    "ui",
+    "grid"
+  ],
+  "author": "Giordano Piazza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gyopiazza/Holy-Kit/issues"
+  }
+}
