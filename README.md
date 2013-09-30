@@ -2,9 +2,8 @@ Holy-Kit
 ========
 
 
-
-Building blocks for front-end designers.
-Holy-Kit includes a **fluid grid** with support for **fixed width margins** (gutters). Made with **LESS/CSS**, it allows for **any amount of columns**, it's **responsive** and **semantic**.
+Holy-Kit is a collection of building blocks for front-end designers.
+It includes a **fluid grid** with support for **fixed width margins** (gutters). Made with **LESS/CSS**, it allows for **any amount of columns**, it's **responsive** and **semantic**.
 
 Supported by browsers and IE8+.
 
