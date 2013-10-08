@@ -1,6 +1,6 @@
 {
   "name": "Holy-Kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Building blocks for front-end designers",
   "main": "index.html",
   "private": true,
@@ -20,5 +20,10 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gyopiazza/Holy-Kit/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.7.0"
   }
 }

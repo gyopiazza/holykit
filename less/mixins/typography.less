@@ -83,7 +83,7 @@
 // PX + REMs
 .font-rem (@size: @font_size_base) {
     font-size: 0px + @size;
-    font-size: 0rem + @size / @font_size_base;
+    font-size: 0rem + (@size / @font_size_base);
 }
 
 // Just font-size and line-height
@@ -142,7 +142,8 @@
 
 // $a-scale is based on $base-number and give bigger numbers
 //@a-scale: @font_size_base/16; // this is the base font size
-@a-scale: @magic_number/16;
+// @a-scale: @magic_number/16;
+@a-scale: @magic_number / @font_size_base;
 
 @a-scale-2: @a-scale * @scale_ratio;
 @a-scale-3: @a-scale-2 * @scale_ratio;

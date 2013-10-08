@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Holy Kit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/demo.css" media="screen" type="text/css" />
+    
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="btn">Some text REM</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="btn" style="font-size: 14px;">Some text 14px</div><p></p>
+
+        <h1>What was them stone houses for? Hare-Lip queried.</h1>
+        
+        <p>You remember when your dad taught you to swim? The boy nodded. "Well, in the University of California&mdash;that is the name we had for  the houses&mdash;we taught young men and women how to think, just as I have  taught you now, by sand and pebbles and shells, to know how many people  lived in those days. There was very much to teach. The young men and  women we taught were called students. We had large rooms in which we  taught. I talked to them, forty or fifty at a time, just as I am talking  to you now. I told them about the books other men had written before  their time, and even, sometimes, in their time&mdash;</p>
+        
+        <h2>Was that all you did?&mdash;just talk, talk, talk? Hoo-Hoo demanded. "Who hunted your meat for you? and milked the goats? and caught the fish?"</h2>
+        
+        <p>A sensible question, Hoo-Hoo, a sensible question. As I have told you, in those days food-getting was easy. We were very wise. A few men got  the food for many men. The other men did other things. As you say, I  talked. I talked all the time, and for this food was given me&mdash;much  food, fine food, beautiful food, food that I have not tasted in sixty  years and shall never taste again. I sometimes think the most wonderful  achievement of our tremendous civilization was food&mdash;its inconceivable  abundance, its infinite variety, its marvellous delicacy. O my  grandsons, life was life in those days, when we had such wonderful  things to eat."</p>
+        
+        <h3>This was beyond the boys, and they let it slip by, words and thoughts, as a mere senile wandering in the narrative.</h3>
+        
+        <p>Our food-getters were called freemen. This was a joke. We of the  ruling classes owned all the land, all the machines, everything. These  food-getters were our slaves. We took almost all the food they got, and  left them a little so that they might eat, and work, and get us more  food&mdash;</p>
+        
+        <p>I'd have gone into the forest and got food for myself, Hare-Lip announced; and if any man tried to take it away from me, I'd have  killed him.</p>
+        
+        <h4>The old man laughed.</h4>
+        
+        <p>Did I not tell you that we of the ruling class owned all the land, all the forest, everything? Any food-getter who would not get food for us,  him we punished or compelled to starve to death. And very few did that.  They preferred to get food for us, and make clothes for us, and prepare and administer to us a thousand&mdash;a mussel-shell, Hoo-Hoo&mdash;a thousand  satisfactions and delights. And I was Professor Smith in those  days&mdash;Professor James Howard Smith. And my lecture courses were very  popular&mdash;that is, very many of the young men and women liked to hear me  talk about the books other men had written.</p>
+        
+        <p>And I was very happy, and I had beautiful things to eat. And my hands were soft, because I did no work with them, and my body was clean  all over and dressed in the softest garments&mdash;</p>
+        
+    </div><!-- / .container -->
+    
+    <!-- ======================================================= -->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/easing.js"></script>
+    <script src="../js/resize.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/tabs.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/icheck.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/scroller.js"></script>
+    <script src="../js/panzoom.js"></script>
+    
+    <script type='text/javascript'>
+        $(function() {
+            
+            // Dropdown navigation
+            // $('.dropnav').dropnav({open:'open animated fadeIn fast'});
+            $('.flyout').dropnav({open:'open animated fadeIn shake fast'});
+            
+            // Dropdown navigation 2
+            // $('.dropdown').each(function () {
+            //     $(this).parent().eq(0).hover(function () {
+            //         $(this).addClass('hover');
+            //         $('.dropdown:eq(0)', this).addClass('open animated fast fadeInDown');
+            //         // $('.dropdown:eq(0)', this).show();
+            //     }, function () {
+            //         $(this).removeClass('hover');
+            //         $('.dropdown:eq(0)', this).removeClass('open animated fast fadeInDown');
+            //         // $('.dropdown:eq(0)', this).hide();
+            //     });
+            // });
+            
+            // Tabs
+            $('.tabs').easytabs({animate:false});
+            
+            // Checkbox and Radio buttons
+            // $('input[type="checkbox"], input[type="radio"]').iCheck({checkboxClass: 'icheckbox_flat-aero', radioClass: 'iradio_flat-aero'});
+            
+            $('select, input[type="checkbox"], input[type="radio"]').icbiaControl();
+            
+
+            // Scroller
+    		var $frame = $('#forcecentered');
+    		var $wrap  = $frame.parent();
+            var options = {
+                horizontal: 1,
+                itemNav: 'forceCentered',
+                smart: 1,
+                activateMiddle: 1,
+                activateOn: 'click',
+                mouseDragging: 1,
+                touchDragging: 1,
+                releaseSwing: 1,
+                startAt: 0,
+                scrollBar: $wrap.find('.scrollbar'),
+                scrollBy: 1,
+                speed: 1800,
+                elasticBounds: 1,
+                easing: 'easeOutExpo',
+                dragHandle: 1,
+                dynamicHandle: 1,
+                clickBar: 1,
+    
+    			// Buttons
+    			prev: $wrap.find('.prev'),
+    			next: $wrap.find('.next')
+    		};
+            
+            var slyder = new Sly($frame, options).init();
+            var slyder_first_run = true;
+            
+            // TODO: DELETE!!!
+            // $.slyder = slyder;
+                
+
+            // Lightbox
+            $.initLightbox = function(){
+                $('.inline-popup').magnificPopup({
+                  type:'inline',
+                  midClick: true,
+                  callbacks: {
+                    open: function() {
+                        // console.log(slyder);
+                        
+                        if (slyder_first_run) {
+                            slyder_first_run = false;
+                            slyder.reload();
+                            slyder.toStart();
+                        } else {
+                            slyder.reload();
+                        }
+                    }
+                  }
+                });
+                
+                // $('.image-popup').magnificPopup({ 
+                //   closeBtnInside: true,
+                //   type: 'image'    
+                // });
+                
+                // $('.gallery-popup').magnificPopup({
+                //     type: 'image',
+                //     delegate: 'a',
+                //     gallery: {
+                //         enabled: true,
+                //         navigateByImgClick: true,
+                //         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                //     }
+                // });
+            }
+            
+            $.initLightbox();
+            
+            
+            $(window).on("debouncedresize", function( event ) {
+                slyder.reload();
+                // console.log('debounce');
+            });
+            
+            // or...
+            // $(window).on("throttledresize", function( event ) {
+                // Your event handler code goes here.
+            // });
+            
+            // unbind at will
+            // $(window).off( "debouncedresize" );
+            
+            
+   //          $('#forcecentered img').touchPanView({
+   //  			width: 	600,
+			// 	height: 300,
+			// 	startZoomedOut: true
+			// });
+        });
+    </script>
+    
+</body>
+</html>
