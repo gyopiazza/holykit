@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Slider | Holy Kit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/demo.css" media="screen" type="text/css" />
+        
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    
+        
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/slide1.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/slide2.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/slide3.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/slide4.jpg" alt="">
+          </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+        
+    
+    <!-- ======================================================= -->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/easing.js"></script>
+    <script src="../js/resize.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/tabs.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/icheck.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/slider.js"></script>
+    <script src="../js/panzoom.js"></script>
+    
+    <script type='text/javascript'>
+        $(function() {
+            
+            // Slider
+            var mySwiper = new Swiper('.swiper-container',{
+                pagination: '.pagination',
+                paginationClickable: true,
+                centeredSlides: true
+            });
+        });
+    </script>
+    
+</body>
+</html>

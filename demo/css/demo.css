@@ -5352,83 +5352,98 @@ img.mfp-img {
   right: 0;
   padding-top: 0;
 }
-/* Frame */
-.frame {
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* Fix of Webkit flickering */
+
+  z-index: 1;
 }
-.frame img {
-  max-width: none;
-}
-.frame ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-size: 50px;
-}
-.frame ul li {
-  float: left;
-  height: 100%;
-  margin: 0 1px 0 0;
-  padding: 0;
-  background: #333;
-  color: #ddd;
-  text-align: center;
-  cursor: pointer;
-}
-.frame ul li.active {
-  color: #fff;
-  background: #a03232;
-}
-/* Scrollbar */
-.scrollbar {
-  margin: 0 0 1em 0;
-  height: 2px;
-  background: #ccc;
-  line-height: 0;
-}
-.scrollbar .handle {
-  width: 100px;
-  height: 100%;
-  background: #292a33;
-  cursor: pointer;
-}
-.scrollbar .handle .mousearea {
-  position: absolute;
-  top: -9px;
-  left: 0;
+.swiper-wrapper {
+  position: relative;
   width: 100%;
-  height: 20px;
+  -webkit-transition-property: -webkit-transform, left, top;
+  -webkit-transition-duration: 0s;
+  -webkit-transform: translate3d(0px, 0, 0);
+  -webkit-transition-timing-function: ease;
+  -moz-transition-property: -moz-transform, left, top;
+  -moz-transition-duration: 0s;
+  -moz-transform: translate3d(0px, 0, 0);
+  -moz-transition-timing-function: ease;
+  -o-transition-property: -o-transform, left, top;
+  -o-transition-duration: 0s;
+  -o-transform: translate3d(0px, 0, 0);
+  -o-transition-timing-function: ease;
+  -o-transform: translate(0px, 0px);
+  -ms-transition-property: -ms-transform, left, top;
+  -ms-transition-duration: 0s;
+  -ms-transform: translate3d(0px, 0, 0);
+  -ms-transition-timing-function: ease;
+  transition-property: transform, left, top;
+  transition-duration: 0s;
+  transform: translate3d(0px, 0, 0);
+  transition-timing-function: ease;
 }
-/* Pages */
-.pages {
-  list-style: none;
-  margin: 20px 0;
-  padding: 0;
-  text-align: center;
+.swiper-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  margin: 0 auto;
 }
-.pages li {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin: 0 4px;
-  text-indent: -999px;
-  border-radius: 10px;
-  cursor: pointer;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+.swiper-slide {
+  float: left;
 }
-.pages li:hover {
-  background: #aaa;
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+  -ms-touch-action: pan-y;
 }
-.pages li.active {
-  background: #666;
+.swiper-wp8-vertical {
+  -ms-touch-action: pan-x;
 }
-/* Controls */
-.controls {
-  margin: 25px 0;
-  text-align: center;
+/* ===============================================================
+Your custom styles, here you need to specify container's and slide's
+sizes, pagination, etc.
+================================================================*/
+.swiper-container {
+  /* Specify Swiper's Size: */
+
+  /*width:200px;
+    height: 100px;*/
+
+}
+.swiper-slide {
+  /* Specify Slides's Size: */
+
+  /*width: 100%;
+    height: 100%;*/
+
+}
+.swiper-slide-active {
+  /* Specific active slide styling: */
+
+}
+.swiper-slide-visible {
+  /* Specific visible slide styling: */
+}
+/* ===============================================================
+Pagination Styles
+================================================================*/
+.swiper-pagination-switch {
+  /* Stylize pagination button: */
+}
+.swiper-active-switch {
+  /* Specific active button style: */
+}
+.swiper-visible-switch {
+  /* Specific visible button style: */
 }
 /**
      * Enable this stylesheet to visually detect any improperly nested or
