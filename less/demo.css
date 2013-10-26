@@ -58,8 +58,6 @@ html {
   /* 1 */
 
   -ms-text-size-adjust: 100%;
-  /* 2 */
-
   -webkit-text-size-adjust: 100%;
   /* 2 */
 
@@ -450,7 +448,7 @@ figure > img {
   letter-spacing: normal;
 }
 .row > *,
-[class^="grid"] {
+[class^="@{grid_class}"] {
   display: inline-block;
   vertical-align: top;
   padding-left: 20px;
@@ -495,22 +493,22 @@ figure > img {
 /*
 	 * Block grid
 	 */
-[class^="block"],
-[class*=" block"] {
+[class^="@{block_class}"],
+[class*=" @{block_class}"] {
   margin: 0 0 0 -20px;
   padding: 0;
   letter-spacing: -0.31em;
   width: auto;
 }
-[class^="block"] > *,
-[class*=" block"] > * {
+[class^="@{block_class}"] > *,
+[class*=" @{block_class}"] > * {
   display: inline-block;
   vertical-align: top;
   padding-left: 20px;
   letter-spacing: normal;
 }
-[class^="block"] li,
-[class*=" block"] li {
+[class^="@{block_class}"] li,
+[class*=" @{block_class}"] li {
   list-style: none;
 }
 .block12 > * {
@@ -921,8 +919,7 @@ figure > img {
   display: block;
 }
 .flyout ul,
-.flyout li,
-.flyout > p {
+.flyout li {
   margin: 0;
   padding: 0;
   list-style: none;

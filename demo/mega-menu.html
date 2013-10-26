@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Holy Kit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/demo.css" media="screen" type="text/css" />
+    
+</head>
+<body>
+        
+    <div class="container">        
+        
+        <h3>Navigation</h3>
+        
+        <ul class="navbar">
+            <li>
+                <a href="#">Dropdown 1</a>
+                <div class="flyout">
+                    <div class="block3">
+                        <div><a href="#">Very Large Menu item 1</a></div>
+                        <div><a href="#">Very Large Menu item 1</a></div>
+                        <div><a href="#">Very Large Menu item 1</a></div>
+                    </div>
+                </div>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#">Dropdown 2</a>
+                <ul class="flyout">
+                    <li><a href="#">Menu item 1</a></li>
+                    <li><a href="#">Menu item 2</a></li>
+                    <li><a href="#">Menu item 3</a></li>
+                    <li><a href="#">Menu item 4</a></li>
+                    <li><a href="#">Menu item 5</a></li>
+                    <li><a href="#">Menu item 6</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dropdown 3</a>
+                <ul class="flyout">
+                    <li><a href="#">Menu item 1</a></li>
+                    <li><a href="#">Menu item 2</a></li>
+                    <li><a href="#">Menu item 3</a></li>
+                    <li><a href="#">Menu item 4</a></li>
+                    <li><a href="#">Menu item 5</a></li>
+                    <li><a href="#">Menu item 6</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="pull-right">
+                <form class="form-search append">
+                    <fieldset>
+                        <input type="text" id="q" class="form-text" />
+                        <button class="btn" type="button">Search</button>
+                    </fieldset>
+                </form>
+            </li>
+        </ul>
+    
+    </div>
+
+    <!-- ======================================================= -->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/easing.js"></script>
+    <script src="../js/resize.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/tabs.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/icheck.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/scroller.js"></script>
+    <script src="../js/panzoom.js"></script>
+    
+    <script type='text/javascript'>
+        $(function() {
+            
+            // Dropdown navigation
+            // $('.dropnav').dropnav({open:'open animated fadeIn fast'});
+            $('.flyout').dropnav({open:'open animated fadeIn shake fast'});
+            
+            // Dropdown navigation 2
+            // $('.dropdown').each(function () {
+            //     $(this).parent().eq(0).hover(function () {
+            //         $(this).addClass('hover');
+            //         $('.dropdown:eq(0)', this).addClass('open animated fast fadeInDown');
+            //         // $('.dropdown:eq(0)', this).show();
+            //     }, function () {
+            //         $(this).removeClass('hover');
+            //         $('.dropdown:eq(0)', this).removeClass('open animated fast fadeInDown');
+            //         // $('.dropdown:eq(0)', this).hide();
+            //     });
+            // });
+            
+            // Tabs
+            $('.tabs').easytabs({animate:false});
+            
+            // Checkbox and Radio buttons
+            // $('input[type="checkbox"], input[type="radio"]').iCheck({checkboxClass: 'icheckbox_flat-aero', radioClass: 'iradio_flat-aero'});
+            
+            $('select, input[type="checkbox"], input[type="radio"]').icbiaControl();
+            
+
+            // Scroller
+    		var $frame = $('#forcecentered');
+    		var $wrap  = $frame.parent();
+            var options = {
+                horizontal: 1,
+                itemNav: 'forceCentered',
+                smart: 1,
+                activateMiddle: 1,
+                activateOn: 'click',
+                mouseDragging: 1,
+                touchDragging: 1,
+                releaseSwing: 1,
+                startAt: 0,
+                scrollBar: $wrap.find('.scrollbar'),
+                scrollBy: 1,
+                speed: 1800,
+                elasticBounds: 1,
+                easing: 'easeOutExpo',
+                dragHandle: 1,
+                dynamicHandle: 1,
+                clickBar: 1,
+    
+    			// Buttons
+    			prev: $wrap.find('.prev'),
+    			next: $wrap.find('.next')
+    		};
+            
+            var slyder = new Sly($frame, options).init();
+            var slyder_first_run = true;
+            
+            // TODO: DELETE!!!
+            // $.slyder = slyder;
+                
+
+            // Lightbox
+            $.initLightbox = function(){
+                $('.inline-popup').magnificPopup({
+                  type:'inline',
+                  midClick: true,
+                  callbacks: {
+                    open: function() {
+                        // console.log(slyder);
+                        
+                        if (slyder_first_run) {
+                            slyder_first_run = false;
+                            slyder.reload();
+                            slyder.toStart();
+                        } else {
+                            slyder.reload();
+                        }
+                    }
+                  }
+                });
+                
+                // $('.image-popup').magnificPopup({ 
+                //   closeBtnInside: true,
+                //   type: 'image'    
+                // });
+                
+                // $('.gallery-popup').magnificPopup({
+                //     type: 'image',
+                //     delegate: 'a',
+                //     gallery: {
+                //         enabled: true,
+                //         navigateByImgClick: true,
+                //         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                //     }
+                // });
+            }
+            
+            $.initLightbox();
+            
+            
+            $(window).on("debouncedresize", function( event ) {
+                slyder.reload();
+                // console.log('debounce');
+            });
+            
+            // or...
+            // $(window).on("throttledresize", function( event ) {
+                // Your event handler code goes here.
+            // });
+            
+            // unbind at will
+            // $(window).off( "debouncedresize" );
+            
+            
+   //          $('#forcecentered img').touchPanView({
+   //  			width: 	600,
+			// 	height: 300,
+			// 	startZoomedOut: true
+			// });
+        });
+    </script>
+    
+</body>
+</html>
