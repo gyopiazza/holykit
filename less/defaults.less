@@ -3,7 +3,7 @@
 // ============================================
 
 
-// Colours
+// Colours palette
 // --------------------------------------------
 
 // Grayscale
@@ -143,23 +143,24 @@
 // Media Queries Breakpoints
 // --------------------------------------------
 
+// xxs
 @xxs-max:                   320px;
-
+// xs
 @xs-min:                    (@xxs-max + 1);
 @xs-max:                    (@s-min - 1);
-
+// s
 @s-min:                     640px;
 @s-max:                     (@m-min - 1);
-
+// m
 @m-min:                     960px;
 @m-max:                     (@l-min - 1);
-
+// l
 @l-min:                     1280px;
 @l-max:                     (@xl-min - 1);
-
+// xl
 @xl-min:                    1600px;
 @xl-max:                    (@xxl-min - 1);
-
+// xxl
 @xxl-min:                   1920px;
 
 
@@ -178,7 +179,7 @@
 @landscape:                 ~"screen and (orientation: landscape)";
 @portrait:                  ~"screen and (orientation: portrait)";
 
-// TODO: Make 'retina' work
+// TODO: Make this work
 @retina:                    ~"only screen and (-webkit-min-device-pixel-ratio: 2)",
                             ~"only screen and (   min--moz-device-pixel-ratio: 2)",
                             ~"only screen and (     -o-min-device-pixel-ratio: 2/1)",
@@ -196,7 +197,9 @@
 @block_class:               block;
 @fraction_class:            f-;
 
+
 // Selectors (currently not in use)
 // --------------------------------------------
+
 @container_selector:        ~".container";
 

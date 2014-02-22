@@ -358,8 +358,8 @@ table {
   box-sizing: border-box;
 }
 html {
-  font-size: 75%;
-  line-height: 1.8333333333333333;
+  font-size: 125%;
+  line-height: 1.1;
   font-family: "Montserrat", sans-serif;
 }
 figure img {
@@ -376,7 +376,6 @@ fieldset {
 textarea {
   resize: vertical;
 }
-/* Remove the bottom margin from the last paragraph */
 p:last-child {
   margin-bottom: 0;
 }
@@ -408,22 +407,22 @@ img[height] {
 .img--right {
   float: right;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
   margin-left: 22px;
-  margin-left: 1.8333333333333333rem;
+  margin-left: 1.1rem;
 }
 .img--left {
   float: left;
   margin-right: 22px;
-  margin-right: 1.8333333333333333rem;
+  margin-right: 1.1rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 .img--center {
   display: block;
   margin-right: auto;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
   margin-left: auto;
 }
 /**
@@ -1093,7 +1092,7 @@ a.badge:focus {
 .breadcrumbs,
 .breadcrumbs ul {
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin: 0;
   padding: 0;
 }
@@ -1416,9 +1415,9 @@ a.badge:focus {
      */
 .message {
   padding: 22px 22px;
-  padding: 1.8333333333333333rem 1.8333333333333333rem;
+  padding: 1.1rem 1.1rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
   background-color: #efefef;
   background-repeat: no-repeat;
   background-position: left center;
@@ -5594,7 +5593,7 @@ figure {
   padding-top: 0;
   padding-bottom: 0;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 hr {
   margin: 0;
@@ -5604,13 +5603,13 @@ hr {
   clear: both;
   border-bottom: 1px dotted #aaa;
   margin-bottom: 66px;
-  margin-bottom: 5.5rem;
+  margin-bottom: 3.3000000000000003rem;
   padding-top: 66px;
-  padding-top: 5.5rem;
+  padding-top: 3.3000000000000003rem;
   margin-top: -1px;
 }
 small {
-  line-height: 1.8333333333333333;
+  line-height: 1.1;
 }
 a {
   color: #4ad391;
@@ -5619,65 +5618,65 @@ a {
 h1 {
   margin: 0;
   font-size: 110px;
-  font-size: 9.166666666666666rem;
+  font-size: 5.5rem;
   line-height: 88px;
-  line-height: 7.333333333333333rem;
+  line-height: 4.4rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 h2 {
   margin: 0;
   font-size: 68px;
-  font-size: 5.666666666666667rem;
+  font-size: 3.4rem;
   line-height: 66px;
-  line-height: 5.5rem;
+  line-height: 3.3000000000000003rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 h3 {
   margin: 0;
   font-size: 42px;
-  font-size: 3.5rem;
+  font-size: 2.1rem;
   line-height: 44px;
-  line-height: 3.6666666666666665rem;
+  line-height: 2.2rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 h4 {
   margin: 0;
   font-size: 26px;
-  font-size: 2.1666666666666665rem;
+  font-size: 1.3rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 h5 {
   margin: 0;
   font-size: 14px;
-  font-size: 1.1666666666666667rem;
+  font-size: 0.7rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 h6 {
   margin: 0;
   font-size: 12px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 p {
   margin: 0;
-  font-size: 12px;
+  font-size: 20px;
   font-size: 1rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 .one-px {
   text-shadow: 0px 1px 1px #fff;
@@ -5773,11 +5772,11 @@ p {
 [class*="-example"] {
   text-align: center;
   padding-top: 44px;
-  padding-top: 3.6666666666666665rem;
+  padding-top: 2.2rem;
   padding-bottom: 22px;
-  padding-bottom: 1.8333333333333333rem;
+  padding-bottom: 1.1rem;
   margin-bottom: 44px;
-  margin-bottom: 3.6666666666666665rem;
+  margin-bottom: 2.2rem;
 }
 .one-px-example {
   background: #ccc;
@@ -5865,7 +5864,7 @@ p {
 }
 fieldset + fieldset {
   padding-bottom: 22px;
-  padding-bottom: 1.8333333333333333rem;
+  padding-bottom: 1.1rem;
 }
 form fieldset.form-actions {
   border: none;
@@ -5881,9 +5880,9 @@ textarea,
   space: 0px;
   border-radius: 5px;
   padding: 11px 13px;
-  padding: 0.9166666666666666rem 1.0999999999999999rem;
+  padding: 0.55rem 0.66rem;
   font-size: 14px;
-  font-size: 1.1666666666666667rem;
+  font-size: 0.7rem;
   border: 1px solid #ddd;
   background: #f5f5f5;
 }
@@ -5907,11 +5906,11 @@ form fieldset p.form-help {
   display: inline-block;
   height: 44px;
   font-size: 14px;
-  font-size: 1.1666666666666667rem;
+  font-size: 0.7rem;
   line-height: 44px;
-  line-height: 3.6666666666666665rem;
+  line-height: 2.2rem;
   padding: 0px 11px;
-  padding: 0rem 0.9166666666666666rem;
+  padding: 0rem 0.55rem;
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   background-color: #eee;
@@ -5966,7 +5965,7 @@ label.add-on {
 }
 .navbar .form-search {
   padding: 11px 11px;
-  padding: 0.9166666666666666rem 0.9166666666666666rem;
+  padding: 0.55rem 0.55rem;
 }
 .radio-widget {
   vertical-align: top;
@@ -6062,11 +6061,11 @@ label.add-on {
 }
 .navbar a {
   font-size: 16px;
-  font-size: 1.3333333333333333rem;
+  font-size: 0.8rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   padding: 22px 22px;
-  padding: 1.8333333333333333rem 1.8333333333333333rem;
+  padding: 1.1rem 1.1rem;
   color: #fff;
   text-decoration: none;
 }
@@ -6077,17 +6076,17 @@ label.add-on {
 }
 .navbar .divider {
   padding: 33px 0px;
-  padding: 2.75rem 0rem;
+  padding: 1.6500000000000001rem 0rem;
   border-left: 1px solid #222;
   border-right: 1px solid #444;
 }
 .navlist li a {
   font-size: 12px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   padding: 0px 11px;
-  padding: 0rem 0.9166666666666666rem;
+  padding: 0rem 0.55rem;
 }
 .navlist li a:hover {
   background: #f0f0f0;
@@ -6101,18 +6100,18 @@ label.add-on {
 }
 .navlist .nav-header {
   font-size: 12px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   color: #b3b3b3;
   text-transform: uppercase;
   font-weight: bold;
 }
 .navlist .divider {
   padding-top: 11px;
-  padding-top: 0.9166666666666666rem;
+  padding-top: 0.55rem;
   margin-bottom: 11px;
-  margin-bottom: 0.9166666666666666rem;
+  margin-bottom: 0.55rem;
   margin-top: -1px;
   border-bottom: 1px solid #ccc;
 }
@@ -6123,11 +6122,11 @@ label.add-on {
 }
 .flyout a {
   font-size: 12px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   padding: 2px 11px;
-  padding: 0.18333333333333335rem 0.9166666666666666rem;
+  padding: 0.11000000000000001rem 0.55rem;
   color: #fff;
   text-decoration: none;
 }
@@ -6145,7 +6144,7 @@ label.add-on {
 }
 .flyout.dropup .flyout {
   margin-bottom: -22px;
-  margin-bottom: -1.8333333333333333rem;
+  margin-bottom: -1.1rem;
 }
 .flyout a:first-child:nth-last-child(2):after {
   content: " + ";
@@ -6157,11 +6156,11 @@ input[type="button"],
 input[type="reset"],
 button {
   padding: 0px 22px;
-  padding: 0rem 1.8333333333333333rem;
+  padding: 0rem 1.1rem;
   font-size: 14px;
-  font-size: 1.1666666666666667rem;
+  font-size: 0.7rem;
   line-height: 44px;
-  line-height: 3.6666666666666665rem;
+  line-height: 2.2rem;
   border: 0;
   border-radius: 5px;
   color: #fff;
@@ -6224,11 +6223,11 @@ button:active {
   color: #fff;
   background-color: #e74c3c;
   font-size: 12px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   padding: 11px 22px;
-  padding: 0.9166666666666666rem 1.8333333333333333rem;
+  padding: 0.55rem 1.1rem;
 }
 .pagination ul > li > a:hover,
 .pagination ul > li > a:focus,
@@ -6284,7 +6283,7 @@ button:active {
 .tabs {
   position: relative;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 .tabs:before,
 .tabs:after {
@@ -6315,14 +6314,14 @@ button:active {
   margin-right: 2px;
   /*padding: 8px 18px;*/
   padding: 22px 22px;
-  padding: 1.8333333333333333rem 1.8333333333333333rem;
+  padding: 1.1rem 1.1rem;
   border: 1px solid transparent;
   color: #444;
   text-decoration: none;
 }
 .tabs-content {
   padding: 22px 22px;
-  padding: 1.8333333333333333rem 1.8333333333333333rem;
+  padding: 1.1rem 1.1rem;
   background-color: #fff;
   border: 1px solid #999;
   border-top: 0;
@@ -6408,7 +6407,7 @@ button:active {
 .media,
 .media .media {
   margin-top: 44px;
-  margin-top: 3.6666666666666665rem;
+  margin-top: 2.2rem;
 }
 .media:first-child {
   margin-top: 0;
@@ -6421,22 +6420,18 @@ button:active {
 }
 .label,
 .badge {
-  font-size: 14px;
-  font-size: 1.1666666666666667rem;
-  line-height: 18px;
-  line-height: 1.4666666666666668rem;
+  padding-left: 7px;
+  padding-left: 0.33rem;
+  padding-right: 7px;
+  padding-right: 0.33rem;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #b3b3b3;
 }
 .label {
-  padding: 2px 6px;
-  padding: 0.18333333333333335rem 0.4583333333333333rem;
   border-radius: 3px;
 }
 .badge {
-  padding: 2px 9px;
-  padding: 0.18333333333333335rem 0.7333333333333334rem;
   border-radius: 9px;
 }
 a.label:hover,
@@ -6521,7 +6516,7 @@ th {
 }
 body {
   padding: 44px 0px;
-  padding: 3.6666666666666665rem 0rem;
+  padding: 2.2rem 0rem;
 }
 .container {
   width: 1140px;
@@ -6537,7 +6532,7 @@ body {
 }
 #masthead {
   padding: 66px 0px;
-  padding: 5.5rem 0rem;
+  padding: 3.3000000000000003rem 0rem;
   background: #ffd200;
   color: #333;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -6569,9 +6564,9 @@ body {
   background: #333;
   color: #ffd200;
   padding: 44px 0px;
-  padding: 3.6666666666666665rem 0rem;
+  padding: 2.2rem 0rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 }
@@ -6593,18 +6588,18 @@ body {
 }
 #main-features .feature-icon {
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 #main-features i {
   margin: 0;
   font-size: 36px;
-  font-size: 3rem;
+  font-size: 1.8rem;
   line-height: 88px;
-  line-height: 7.333333333333333rem;
+  line-height: 4.4rem;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
   padding: 22px 22px;
-  padding: 1.8333333333333333rem 1.8333333333333333rem;
+  padding: 1.1rem 1.1rem;
   color: #333;
   background-color: #ffd200;
   border-radius: 100%;
@@ -6613,27 +6608,27 @@ body {
 #main-features h3 {
   /*margin: 40px 0 10px 0;*/
   font-size: 20px;
-  font-size: 1.6666666666666667rem;
+  font-size: 1rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin: 0;
   margin-bottom: 22px;
-  margin-bottom: 1.8333333333333333rem;
+  margin-bottom: 1.1rem;
 }
 #main-features p {
   font-size: 14px;
-  font-size: 1.1666666666666667rem;
+  font-size: 0.7rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   margin: 0;
 }
 #grid .row > * span {
   display: block;
   background-color: #4ad391;
   padding: 11px 11px;
-  padding: 0.9166666666666666rem 0.9166666666666666rem;
+  padding: 0.55rem 0.55rem;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
   border-radius: 5px;
 }
 .example-block-equal > * {
@@ -6642,7 +6637,7 @@ body {
 small {
   font-size: 0.3em;
   line-height: 22px;
-  line-height: 1.8333333333333333rem;
+  line-height: 1.1rem;
 }
 .inline-popup {
   display: block;
@@ -7365,11 +7360,11 @@ small {
   }
   #main-features {
     padding: 44px 44px;
-    padding: 3.6666666666666665rem 3.6666666666666665rem;
+    padding: 2.2rem 2.2rem;
   }
   #main-features li {
     margin-bottom: 44px;
-    margin-bottom: 3.6666666666666665rem;
+    margin-bottom: 2.2rem;
   }
   #main-features p {
     padding: 0 10%;

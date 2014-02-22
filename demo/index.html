@@ -1673,15 +1673,7 @@
     <!-- ======================================================= -->
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../js/easing.js"></script>
-    <script src="../js/resize.js"></script>
-    <script src="../js/navigation.js"></script>
-    <script src="../js/tabs.js"></script>
-    <script src="../js/form.js"></script>
-    <script src="../js/icheck.js"></script>
-    <script src="../js/lightbox.js"></script>
-    <script src="../js/scroller.js"></script>
-    <script src="../js/panzoom.js"></script>
+    <script src="../js/plugins.min.js"></script>
     
     <script type='text/javascript'>
         $(function() {
@@ -1713,8 +1705,8 @@
             
 
             // Scroller
-    		var $frame = $('#forcecentered');
-    		var $wrap  = $frame.parent();
+            var $frame = $('#forcecentered');
+            var $wrap  = $frame.parent();
             var options = {
                 horizontal: 1,
                 itemNav: 'forceCentered',
@@ -1734,10 +1726,10 @@
                 dynamicHandle: 1,
                 clickBar: 1,
     
-    			// Buttons
-    			prev: $wrap.find('.prev'),
-    			next: $wrap.find('.next')
-    		};
+                // Buttons
+                prev: $wrap.find('.prev'),
+                next: $wrap.find('.next')
+            };
             
             var slyder = new Sly($frame, options).init();
             var slyder_first_run = true;
@@ -1800,10 +1792,10 @@
             
             
    //          $('#forcecentered img').touchPanView({
-   //  			width: 	600,
-			// 	height: 300,
-			// 	startZoomedOut: true
-			// });
+   //           width:  600,
+            //  height: 300,
+            //  startZoomedOut: true
+            // });
         });
     </script>
     

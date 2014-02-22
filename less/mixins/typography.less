@@ -21,7 +21,7 @@
 // Mixins
 // --------------------------------------------
 
-// Margins for the vertical rhythm
+// Margin for the vertical rhythm
 .margin-top (@lines: 1) {
     margin-top: 0px + round( (@line_height_base * @global_multiplier) * @lines );
     margin-top: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
@@ -42,12 +42,22 @@
     margin-left: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
 }
 
+.margin-horizontal (@lines_left: 1, @lines_right: @lines_left) {
+    .margin-left(@lines_left);
+    .margin-right(@lines_right);
+}
+
+.margin-vertical (@lines_top: 1, @lines_bottom: @lines_top) {
+    .margin-top(@lines_top);
+    .margin-bottom(@lines_bottom);
+}
+
 .margin (@lines_v: 1, @lines_h: 0) {
     margin: (0px + round( (@line_height_base * @global_multiplier)  * @lines_v )) (0px + round( (@line_height_base * @global_multiplier)  * @lines_h ));
     margin: (0rem + ((@_doc_ratio * @global_multiplier)) * @lines_v) (0rem + ((@_doc_ratio * @global_multiplier)) * @lines_h);
 }
 
-// Paddings for the vertical rhythm
+// Padding for the vertical rhythm
 .padding-top (@lines: 1) {
     padding-top: 0px + round( (@line_height_base * @global_multiplier) * @lines );
     padding-top: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
@@ -68,7 +78,15 @@
     padding-left: 0rem + ( (@_doc_ratio * @global_multiplier) * @lines );
 }
 
+.padding-horizontal (@lines_left: 1, @lines_right: @lines_left) {
+    .padding-left(@lines_left);
+    .padding-right(@lines_right);
+}
 
+.padding-vertical (@lines_top: 1, @lines_bottom: @lines_top) {
+    .padding-top(@lines_top);
+    .padding-bottom(@lines_bottom);
+}
 
 .padding (@lines_v: 1, @lines_h: 0) {
     padding: (0px + round( (@line_height_base * @global_multiplier)  * @lines_v )) (0px + round( (@line_height_base * @global_multiplier)  * @lines_h ));
@@ -89,7 +107,7 @@
 // Just font-size and line-height
 .font (@size: @font_size_base, @line_height: 1) {  
     .font-rem(@size);
-    .line-height (@line_height);
+    .line-height(@line_height);
 }
 
 // Full-fat vertical rhythm
@@ -99,8 +117,8 @@
 
 .font-size (@size: @font_size_base, @line_height: 1, @margin: 1) {
     margin: 0;
-    .font (@size, @line_height);
-    .margin-bottom (@margin);
+    .font(@size, @line_height);
+    .margin-bottom(@margin);
 }
 
 
