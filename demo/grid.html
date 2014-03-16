@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Grid | Holy Kit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/demo.css" media="screen" type="text/css" />
+  <script src="http://localhost:35729/livereload.js"></script>
+
+</head>
+<body>
+    
+    <div id="grid" class="container">
+        
+        <h3>The Grid</h3>
+        <p>The examples are based on a <strong>12 columns</strong> grid with a gutter of <strong>20px</strong>.</p>
+        
+        <!-- ================================================ -->
+        <!-- Simple Layouts -->
+        <!-- ================================================ -->
+        
+        <h2>Single Grid Units <small>The units depend on the amount of columns</small></h2>
+        
+        <div class="row">    
+            <div class="grid12"><span>.grid12</span></div>
+            
+            <div class="grid6"><span>.grid6</span></div>
+            <div class="grid6"><span>grid6</span></div>
+            
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid4"><span>.grid4</span></div>
+            
+            <div class="grid3"><span>.grid3</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+            <div class="grid2"><span>.grid2</span></div>
+        </div> <!-- / .row -->
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Complex Layouts -->
+        <!-- ================================================ -->
+        
+        <h2>Complex Layouts <small>Infinitely nestable, mixed widths and offsets</small></h2>
+        
+        <div class="row">
+            
+            <div class="grid6">
+                <div class="row">
+                    <div class="grid6"><span>.grid6</span></div>
+                    <div class="grid6">
+                        <div class="row">
+                            <div class="grid6"><span>.grid6</span></div>
+                            <div class="grid6"><span>.grid6</span></div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="grid6"><span>.grid6</span></div>
+            
+            <div class="grid12">
+            <div class="row">
+                <div class="grid6">
+                    <div class="row">
+                        <div class="grid6"><span>.grid6</span></div>
+                        <div class="grid6"><span>.grid6</span></div>
+                    </div>
+                </div>
+                <div class="grid6"><span>.grid6</span></div>
+            </div>
+            </div>
+            
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid8"><span>.grid8</span></div>
+            
+            <div class="grid5"><span>.grid5</span></div>
+            <div class="grid4"><span>.grid4</span></div>
+            <div class="grid3"><span>.grid3</span></div>
+            
+            <div class="grid6"><span>.grid6</span></div>
+            <div class="grid6"><span>.grid6</span></div>
+            
+            <div class="grid2 offset1"><span>.grid2 .offset1</span></div>
+            <div class="grid2 offset1"><span>.grid2 .offset1</span></div>
+            <div class="grid3 offset3"><span>.grid3 .offset2</span></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Responsive Layouts -->
+        <!-- ================================================ -->
+        
+        <h2>Responsive Layouts <small>Change elements size depending on media queries</small></h2>
+        
+        <div class="row">
+        <div class="grid10 s-grid8"><span>.grid10 .s-grid8</span></div>
+        <div class="grid2 s-grid4"><span>.grid2 .s-grid4</span></div>
+        
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        <div class="grid3 m-grid6 s-grid12"><span>.grid3 .m-grid6 .s-grid12</span></div>
+        
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        <div class="grid1 s-grid2"><span>.grid1</span></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Helpers -->
+        <!-- ================================================ -->
+        
+        <h2>Helpers <small>Independent by the amount of columns</small></h2>
+        
+        <div class="row">
+        <div class="full"><span>.full</span></div>
+        
+        <div class="half"><span>.half</span></div>
+        <div class="half"><span>.half</span></div>
+        
+        <div class="one-third"><span>.one-third</span></div>
+        <div class="one-third"><span>.one-third</span></div>
+        <div class="one-third"><span>.one-third</span></div>
+        
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        <div class="one-fourth"><span>.one-fourth</span></div>
+        
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        <div class="one-fifth"><span>.one-fifth</span></div>
+        
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        <div class="one-sixth"><span>.one-sixth</span></div>
+        
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        <div class="one-seventh"><span>.one-seventh</span></div>
+        
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        <div class="one-eighth"><span>.one-eighth</span></div>
+        
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        <div class="one-ninth"><span>.one-ninth</span></div>
+        
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        <div class="one-tenth"><span>.one-tenth</span></div>
+        </div>
+        
+        <h3>More combinations...</h3>
+        <div class="row">
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="three-fourths"><span>.three-fourths</span></div>
+            
+            <div class="one-third"><span>.one-third</span></div>
+            <div class="two-thirds"><span>.two-thirds</span></div>
+            
+            <div class="two-fifths"><span>.two-fifths</span></div>
+            <div class="three-fifths"><span>.three-fifths</span></div>
+            
+            <div class="golden-ratio1"><span>.golden-ratio1</span></div>
+            <div class="golden-ratio2"><span>.golden-ratio2</span></div>  
+        </div>
+        
+        <h3>Even more combinations...</h3>
+        <div class="row">
+            <div class="two-thirds pull-left"><span>.two-thirds .pull-left (1)</span></div>
+            
+            <div class="one-third pull-right"><span>.one-third .pull-right (2)<br/>with text<br/> on multiple<br/>lines</span></div>
+            
+            <div class="one-third pull-left"><span>.one-third .pull-left (3)</span></div>
+            <div class="one-third pull-left"><span>.one-third .pull-left (4)</span></div>
+        </div>
+        
+        <hr>
+        
+        <h3>Look mom, no gutters!</h3>
+        <div class="row no-gutters">
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+        </div>
+        
+        <hr>
+
+        <h3>Column dividers and equal height</h3>
+        <div class="row divided equal-height">
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="one-fourth"><p>Our food-getters were called freemen. This was a joke. We of the ruling classes owned all the land, all the machines, everything.</p></div>
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+        </div>
+    
+        <hr>
+
+        <h3>Block grid and equal height</h3>
+        <div class="block4">
+            <div><p>You remember when your dad taught you to swim?</p></div>
+            <div><p>Our food-getters were called freemen. This was a joke. We of the ruling classes owned all the land, all the machines, everything.</p></div>
+            <div><p>You remember when your dad taught you to swim?</p></div>
+            <div><p>You remember when your dad taught you to swim?</p></div>
+        </div>
+
+        <hr>
+
+        <h3>Celled columns</h3>
+        <div class="row celled">
+            <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="three-fourths"><p>Our food-getters were called freemen. This was a joke. We of the ruling classes owned all the land, all the machines, everything.</p></div>
+            <div class="half"><p>You remember when your dad taught you to swim?</p></div>
+            <div class="half"><p>You remember when your dad taught you to swim?</p></div>
+        </div>
+
+        <hr>
+        
+        <!-- ================================================ -->
+        <!-- Semantic Grid -->
+        <!-- ================================================ -->
+        
+        <h2>Semantic Grid</h2>
+        <p>By using the <strong>.grid-column()</strong> mixin you can keep the HTML document free from non-semantic classes (like grid12, grid6 etc...).</p>
+        
+        <section>
+            
+          <article>
+            <div>
+                <header><span>header { .grid-item(8); }</span></header>
+                <aside><span>aside { .grid-item(4); }</span></aside>
+            </div>
+          </article>
+            
+          <article>
+            <div>
+                <header><span>header { .grid-item(8); }</span></header>
+                <aside><span>aside { .grid-item(4); }</span></aside>
+            </div>
+          </article>
+            
+        </section>
+        
+        <hr />
+    
+        <!-- ================================================ -->
+        <!-- Block Grid -->
+        <!-- ================================================ -->
+    
+        <h2>Block Grid <small>Create a grid of elements of the same size</small></h2>
+        
+        <h3>Elements with <em>.block2</em> class</h3>
+        
+        <div class="block2">
+            <img src="http://placehold.it/350x155" />
+            <img src="http://placehold.it/350x155" />
+        </div>
+        
+        <h3>Elements with <em>.block3</em> class</h3>
+        
+        <div class="block3">
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+        </div>
+        
+        <h3>Elements with <em>.block4 class</em></h3>
+        
+        <div class="block4">
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+        </div>
+        
+        <h3>Responsive elements with <em>.block4 .m-block2 .s-block1</em> classes</h3>  
+        
+        <div class="block4 m-block2 s-block1">
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+            <div><img src="http://placehold.it/350x155" class="responsive-image" /></div>
+        </div>
+        
+        <hr />
+        
+        <!-- ================================================ -->
+        <!-- Responsive Embeds -->
+        <!-- ================================================ -->
+      
+        <h3>Responsive elements with <em>.block4 .m-block2 .s-block1</em> classes</h3>
+        
+        <div class="row">
+            <div class="grid6">
+                <div class="responsive-embed">
+                    <iframe src="http://player.vimeo.com/video/40058332" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+            </div>
+            
+            <div class="grid6">
+                <div class="responsive-embed">
+                    <iframe width="560" height="315" src="http://www.youtube.com/embed/1xGbw7nnH-o" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <hr />
+    
+        <!-- ================================================ -->
+        <!-- Responsive Table Example -->
+        <!-- ================================================ -->
+        
+        <h2>Responsive Table Example <small>Change the table rows/columns depending on the viewport size.</small></h2>
+        
+        <div class="clearfix">
+            <!--<div class="full">-->
+            <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>One</th>
+                    <th>Two</th>
+                    <th class="l-up">Three</th>
+                    <th>Four</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <td>Foo</td>
+                    <td>86-91</td>
+                    <td>97-102</td>
+                    <td class="l-up">107-112</td>
+                    <td>117-122</td>
+                  </tr>
+                
+                  <tr>
+                    <td>Bar</td>
+                    <td>76-81</td>
+                    <td>81-84</td>
+                    <td class="l-up">84-86</td>
+                    <td>91-97</td>
+                  </tr>
+                </tbody>
+            </table>
+            <!--</div>-->
+        </div>
+        
+        <hr />
+    
+        <!-- ================================================ -->
+        <!-- Layout Example -->
+        <!-- ================================================ -->
+    
+        <h2>Layout Example</h2>
+        <div class="row">
+        
+            <div class="full">
+                <img src="http://placehold.it/350x150" class="responsive-image" />
+            </div>
+            
+            <div class="grid4">
+                <img src="http://placehold.it/350x150" class="responsive-image"/>
+                <h3>Test 1</h3>
+                <p>Nam nibh magna, gravida a rutrum quis, dapibus ut risus. Fusce non arcu justo. Donec facilisis malesuada ante, eget porttitor turpis tempus in. Curabitur semper mattis nisl at mollis.</p>
+                <p><a href="#">Some link &rarr;</a></p>
+            </div>
+            
+            <div class="grid4">
+                <img src="http://placehold.it/350x150" class="responsive-image"/>
+                <h3>Test 2</h3>
+                <p>Nam nibh magna, gravida a rutrum quis, dapibus ut risus. Fusce non arcu justo. Donec facilisis malesuada ante, eget porttitor turpis tempus in. Curabitur semper mattis nisl at mollis.</p>
+                <p><a href="#">Some link &rarr;</a></p>
+            </div>
+            
+            <div class="grid4">
+                <img src="http://placehold.it/350x150" class="responsive-image"/>
+                <h3>Test 3</h3>
+                <p>Nam nibh magna, gravida a rutrum quis, dapibus ut risus. Fusce non arcu justo. Donec facilisis malesuada ante, eget porttitor turpis tempus in. Curabitur semper mattis nisl at mollis.</p>
+                <p><a href="#">Some link &rarr;</a></p>
+            </div>
+            
+        </div>
+        
+        <hr>
+        <p>Test</p>
+        
+    </div><!-- / .container -->
+    
+</body>
+</html>

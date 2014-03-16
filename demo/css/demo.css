@@ -358,8 +358,8 @@ table {
   box-sizing: border-box;
 }
 html {
-  font-size: 125%;
-  line-height: 1.1;
+  font-size: 87.5%;
+  line-height: 1.5714285714285714;
   font-family: "Montserrat", sans-serif;
 }
 figure img {
@@ -407,22 +407,22 @@ img[height] {
 .img--right {
   float: right;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
   margin-left: 22px;
-  margin-left: 1.1rem;
+  margin-left: 1.5714285714285714rem;
 }
 .img--left {
   float: left;
   margin-right: 22px;
-  margin-right: 1.1rem;
+  margin-right: 1.5714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 .img--center {
   display: block;
   margin-right: auto;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
   margin-left: auto;
 }
 /**
@@ -1092,7 +1092,7 @@ a.badge:focus {
 .breadcrumbs,
 .breadcrumbs ul {
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin: 0;
   padding: 0;
 }
@@ -1415,9 +1415,9 @@ a.badge:focus {
      */
 .message {
   padding: 22px 22px;
-  padding: 1.1rem 1.1rem;
+  padding: 1.5714285714285714rem 1.5714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
   background-color: #efefef;
   background-repeat: no-repeat;
   background-position: left center;
@@ -5361,6 +5361,20 @@ img.mfp-img {
   right: 0;
   padding-top: 0;
 }
+/*
+ * swiper 2.4.3
+ * Mobile touch slider and framework with hardware accelerated transitions
+ *
+ * http://www.idangero.us/sliders/swiper/
+ *
+ * Copyright 2010-2014, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ *
+ * Licensed under GPL & MIT
+ *
+ * Released on: January 29, 2014
+*/
 .swiper-container {
   margin: 0 auto;
   position: relative;
@@ -5398,6 +5412,9 @@ img.mfp-img {
   transition-duration: 0s;
   transform: translate3d(0px, 0, 0);
   transition-timing-function: ease;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 .swiper-free-mode > .swiper-wrapper {
   -webkit-transition-timing-function: ease-out;
@@ -5593,7 +5610,7 @@ figure {
   padding-top: 0;
   padding-bottom: 0;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 hr {
   margin: 0;
@@ -5603,13 +5620,13 @@ hr {
   clear: both;
   border-bottom: 1px dotted #aaa;
   margin-bottom: 66px;
-  margin-bottom: 3.3000000000000003rem;
+  margin-bottom: 4.714285714285714rem;
   padding-top: 66px;
-  padding-top: 3.3000000000000003rem;
+  padding-top: 4.714285714285714rem;
   margin-top: -1px;
 }
 small {
-  line-height: 1.1;
+  line-height: 1.5714285714285714;
 }
 a {
   color: #4ad391;
@@ -5618,65 +5635,65 @@ a {
 h1 {
   margin: 0;
   font-size: 110px;
-  font-size: 5.5rem;
+  font-size: 7.857142857142857rem;
   line-height: 88px;
-  line-height: 4.4rem;
+  line-height: 6.285714285714286rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 h2 {
   margin: 0;
   font-size: 68px;
-  font-size: 3.4rem;
+  font-size: 4.857142857142857rem;
   line-height: 66px;
-  line-height: 3.3000000000000003rem;
+  line-height: 4.714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 h3 {
   margin: 0;
   font-size: 42px;
-  font-size: 2.1rem;
+  font-size: 3rem;
   line-height: 44px;
-  line-height: 2.2rem;
+  line-height: 3.142857142857143rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 h4 {
   margin: 0;
   font-size: 26px;
-  font-size: 1.3rem;
+  font-size: 1.8571428571428572rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 h5 {
   margin: 0;
   font-size: 14px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 h6 {
   margin: 0;
   font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 0.8571428571428571rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 p {
   margin: 0;
-  font-size: 20px;
+  font-size: 14px;
   font-size: 1rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 .one-px {
   text-shadow: 0px 1px 1px #fff;
@@ -5772,11 +5789,11 @@ p {
 [class*="-example"] {
   text-align: center;
   padding-top: 44px;
-  padding-top: 2.2rem;
+  padding-top: 3.142857142857143rem;
   padding-bottom: 22px;
-  padding-bottom: 1.1rem;
+  padding-bottom: 1.5714285714285714rem;
   margin-bottom: 44px;
-  margin-bottom: 2.2rem;
+  margin-bottom: 3.142857142857143rem;
 }
 .one-px-example {
   background: #ccc;
@@ -5864,7 +5881,7 @@ p {
 }
 fieldset + fieldset {
   padding-bottom: 22px;
-  padding-bottom: 1.1rem;
+  padding-bottom: 1.5714285714285714rem;
 }
 form fieldset.form-actions {
   border: none;
@@ -5880,9 +5897,9 @@ textarea,
   space: 0px;
   border-radius: 5px;
   padding: 11px 13px;
-  padding: 0.55rem 0.66rem;
+  padding: 0.7857142857142857rem 0.9428571428571428rem;
   font-size: 14px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   border: 1px solid #ddd;
   background: #f5f5f5;
 }
@@ -5906,11 +5923,11 @@ form fieldset p.form-help {
   display: inline-block;
   height: 44px;
   font-size: 14px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 44px;
-  line-height: 2.2rem;
+  line-height: 3.142857142857143rem;
   padding: 0px 11px;
-  padding: 0rem 0.55rem;
+  padding: 0rem 0.7857142857142857rem;
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   background-color: #eee;
@@ -5965,7 +5982,7 @@ label.add-on {
 }
 .navbar .form-search {
   padding: 11px 11px;
-  padding: 0.55rem 0.55rem;
+  padding: 0.7857142857142857rem 0.7857142857142857rem;
 }
 .radio-widget {
   vertical-align: top;
@@ -6061,11 +6078,11 @@ label.add-on {
 }
 .navbar a {
   font-size: 16px;
-  font-size: 0.8rem;
+  font-size: 1.1428571428571428rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   padding: 22px 22px;
-  padding: 1.1rem 1.1rem;
+  padding: 1.5714285714285714rem 1.5714285714285714rem;
   color: #fff;
   text-decoration: none;
 }
@@ -6076,17 +6093,17 @@ label.add-on {
 }
 .navbar .divider {
   padding: 33px 0px;
-  padding: 1.6500000000000001rem 0rem;
+  padding: 2.357142857142857rem 0rem;
   border-left: 1px solid #222;
   border-right: 1px solid #444;
 }
 .navlist li a {
   font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 0.8571428571428571rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   padding: 0px 11px;
-  padding: 0rem 0.55rem;
+  padding: 0rem 0.7857142857142857rem;
 }
 .navlist li a:hover {
   background: #f0f0f0;
@@ -6100,18 +6117,18 @@ label.add-on {
 }
 .navlist .nav-header {
   font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 0.8571428571428571rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   color: #b3b3b3;
   text-transform: uppercase;
   font-weight: bold;
 }
 .navlist .divider {
   padding-top: 11px;
-  padding-top: 0.55rem;
+  padding-top: 0.7857142857142857rem;
   margin-bottom: 11px;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.7857142857142857rem;
   margin-top: -1px;
   border-bottom: 1px solid #ccc;
 }
@@ -6122,11 +6139,11 @@ label.add-on {
 }
 .flyout a {
   font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 0.8571428571428571rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   padding: 2px 11px;
-  padding: 0.11000000000000001rem 0.55rem;
+  padding: 0.15714285714285714rem 0.7857142857142857rem;
   color: #fff;
   text-decoration: none;
 }
@@ -6144,7 +6161,7 @@ label.add-on {
 }
 .flyout.dropup .flyout {
   margin-bottom: -22px;
-  margin-bottom: -1.1rem;
+  margin-bottom: -1.5714285714285714rem;
 }
 .flyout a:first-child:nth-last-child(2):after {
   content: " + ";
@@ -6156,11 +6173,11 @@ input[type="button"],
 input[type="reset"],
 button {
   padding: 0px 22px;
-  padding: 0rem 1.1rem;
+  padding: 0rem 1.5714285714285714rem;
   font-size: 14px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 44px;
-  line-height: 2.2rem;
+  line-height: 3.142857142857143rem;
   border: 0;
   border-radius: 5px;
   color: #fff;
@@ -6223,11 +6240,11 @@ button:active {
   color: #fff;
   background-color: #e74c3c;
   font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 0.8571428571428571rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   padding: 11px 22px;
-  padding: 0.55rem 1.1rem;
+  padding: 0.7857142857142857rem 1.5714285714285714rem;
 }
 .pagination ul > li > a:hover,
 .pagination ul > li > a:focus,
@@ -6283,7 +6300,7 @@ button:active {
 .tabs {
   position: relative;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 .tabs:before,
 .tabs:after {
@@ -6314,14 +6331,14 @@ button:active {
   margin-right: 2px;
   /*padding: 8px 18px;*/
   padding: 22px 22px;
-  padding: 1.1rem 1.1rem;
+  padding: 1.5714285714285714rem 1.5714285714285714rem;
   border: 1px solid transparent;
   color: #444;
   text-decoration: none;
 }
 .tabs-content {
   padding: 22px 22px;
-  padding: 1.1rem 1.1rem;
+  padding: 1.5714285714285714rem 1.5714285714285714rem;
   background-color: #fff;
   border: 1px solid #999;
   border-top: 0;
@@ -6407,7 +6424,7 @@ button:active {
 .media,
 .media .media {
   margin-top: 44px;
-  margin-top: 2.2rem;
+  margin-top: 3.142857142857143rem;
 }
 .media:first-child {
   margin-top: 0;
@@ -6421,9 +6438,9 @@ button:active {
 .label,
 .badge {
   padding-left: 7px;
-  padding-left: 0.33rem;
+  padding-left: 0.4714285714285714rem;
   padding-right: 7px;
-  padding-right: 0.33rem;
+  padding-right: 0.4714285714285714rem;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #b3b3b3;
@@ -6516,7 +6533,7 @@ th {
 }
 body {
   padding: 44px 0px;
-  padding: 2.2rem 0rem;
+  padding: 3.142857142857143rem 0rem;
 }
 .container {
   width: 1140px;
@@ -6532,7 +6549,7 @@ body {
 }
 #masthead {
   padding: 66px 0px;
-  padding: 3.3000000000000003rem 0rem;
+  padding: 4.714285714285714rem 0rem;
   background: #ffd200;
   color: #333;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -6564,9 +6581,9 @@ body {
   background: #333;
   color: #ffd200;
   padding: 44px 0px;
-  padding: 2.2rem 0rem;
+  padding: 3.142857142857143rem 0rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 }
@@ -6588,18 +6605,18 @@ body {
 }
 #main-features .feature-icon {
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 #main-features i {
   margin: 0;
   font-size: 36px;
-  font-size: 1.8rem;
+  font-size: 2.5714285714285716rem;
   line-height: 88px;
-  line-height: 4.4rem;
+  line-height: 6.285714285714286rem;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
   padding: 22px 22px;
-  padding: 1.1rem 1.1rem;
+  padding: 1.5714285714285714rem 1.5714285714285714rem;
   color: #333;
   background-color: #ffd200;
   border-radius: 100%;
@@ -6608,27 +6625,27 @@ body {
 #main-features h3 {
   /*margin: 40px 0 10px 0;*/
   font-size: 20px;
-  font-size: 1rem;
+  font-size: 1.4285714285714286rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin: 0;
   margin-bottom: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5714285714285714rem;
 }
 #main-features p {
   font-size: 14px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   margin: 0;
 }
 #grid .row > * span {
   display: block;
   background-color: #4ad391;
   padding: 11px 11px;
-  padding: 0.55rem 0.55rem;
+  padding: 0.7857142857142857rem 0.7857142857142857rem;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
   border-radius: 5px;
 }
 .example-block-equal > * {
@@ -6637,7 +6654,7 @@ body {
 small {
   font-size: 0.3em;
   line-height: 22px;
-  line-height: 1.1rem;
+  line-height: 1.5714285714285714rem;
 }
 .inline-popup {
   display: block;
@@ -7360,11 +7377,11 @@ small {
   }
   #main-features {
     padding: 44px 44px;
-    padding: 2.2rem 2.2rem;
+    padding: 3.142857142857143rem 3.142857142857143rem;
   }
   #main-features li {
     margin-bottom: 44px;
-    margin-bottom: 2.2rem;
+    margin-bottom: 3.142857142857143rem;
   }
   #main-features p {
     padding: 0 10%;

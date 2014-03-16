@@ -20,42 +20,94 @@
 </head>
 <body>
     
-        
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="img/slide1.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="img/slide2.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="img/slide3.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="img/slide4.jpg" alt="">
-          </div>
+  <div class="container">
+    
+    <h1>Slider</h1>
+    
+    <hr>
+    
+    <h2>Boxed slider</h2>
+
+    <div id="s1" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/slide1.jpg" alt="">
         </div>
-        <div class="pagination"></div>
+        <div class="swiper-slide">
+          <img src="img/slide2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/slide3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/slide4.jpg" alt="">
+        </div>
+      </div>
+      <div class="pagination"></div>
     </div>
-        
-    
-    <!-- ======================================================= -->
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="../js/plugins.min.js"></script>
-    
-    <script type='text/javascript'>
-        $(function() {
+
+  </div>    
+  
+  <h2>Fullwidth slider</h2>
+
+  <div id="s2" class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/slide1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/slide2.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/slide3.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/slide4.jpg" alt="">
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+
+  <!-- ======================================================= -->
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="../js/plugins.min.js"></script>
+  
+  <script type='text/javascript'>
+      $(function() {
+          
+          // var sliders = [];
+
+          $('.swiper-container').each(function(index, element){
+
+            $(this).addClass('s'+index);
+
+            $('.s'+index).swiper();
+
+            // sliders.push(slider);
+
+          });
+
+          console.log($('#s1').data('swiper'));
+
+          // var sliders = [];
+
+          // $('.swiper-container').each(function(index, element){
+
+          //   $(this).addClass('s'+index);
             
-            // Slider
-            var mySwiper = new Swiper('.swiper-container',{
-                pagination: '.pagination',
-                paginationClickable: true,
-                centeredSlides: true
-            });
-        });
-    </script>
+          //   var slider = new Swiper('.s'+index,{
+          //       pagination: '.pagination',
+          //       paginationClickable: true,
+          //       centeredSlides: true
+          //   });
+
+          //   sliders.push(slider);
+
+          // });
+
+      });
+  </script>
     
 </body>
 </html>
