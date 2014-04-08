@@ -6639,6 +6639,48 @@ body {
   line-height: 1.5714285714285714rem;
   margin: 0;
 }
+section,
+article > div {
+  margin: 0 0 0 -20px;
+  padding: 0;
+  letter-spacing: -0.31em;
+}
+section > *,
+article > div > * {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+  letter-spacing: normal;
+}
+article {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+  letter-spacing: normal;
+  width: 50%;
+}
+header {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+  letter-spacing: normal;
+  width: 66.66666666666667%;
+}
+aside {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 20px;
+  letter-spacing: normal;
+  width: 33.333333333333336%;
+}
+article span {
+  display: block;
+  background-color: #ffd200;
+  padding: 6px 8px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  font-size: 12px;
+}
 #grid .row > * span {
   display: block;
   background-color: #4ad391;
@@ -7388,6 +7430,13 @@ small {
   }
   #main-features li:last-child {
     margin-bottom: 0;
+  }
+  article {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px;
+    letter-spacing: normal;
+    width: 100%;
   }
 }
 @media screen and (max-width: 639px) {

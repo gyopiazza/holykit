@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Grid | Holy Kit</title>
+  <title>Grid system | Holy Kit</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -18,6 +18,9 @@
     <div id="grid" class="container">
         
         <h3>The Grid</h3>
+        
+        <p>The Holy Kit includes a very powerful grid system, with support for any number of columns, fixed or fluid gutters, and a very easy mechanism to handle the behavior at various resolutions.</p>
+
         <p>The examples are based on a <strong>12 columns</strong> grid with a gutter of <strong>20px</strong>.</p>
         
         <!-- ================================================ -->
@@ -136,7 +139,7 @@
         <!-- Helpers -->
         <!-- ================================================ -->
         
-        <h2>Helpers <small>Independent by the amount of columns</small></h2>
+<!--         <h2>Helpers <small>Independent by the amount of columns</small></h2>
         
         <div class="row">
         <div class="full"><span>.full</span></div>
@@ -203,7 +206,7 @@
         <div class="one-tenth"><span>.one-tenth</span></div>
         <div class="one-tenth"><span>.one-tenth</span></div>
         <div class="one-tenth"><span>.one-tenth</span></div>
-        </div>
+        </div> -->
         
         <h3>More combinations...</h3>
         <div class="row">
@@ -242,6 +245,16 @@
         
         <hr>
 
+        <h3>Double gutters!</h3>
+        <div class="row double-gutters">
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+            <div class="one-fourth"><span>.one-fourth</span></div>
+        </div>
+
+        <hr>
+
         <h3>Column dividers and equal height</h3>
         <div class="row divided equal-height">
             <div class="one-fourth"><p>You remember when your dad taught you to swim?</p></div>
@@ -277,11 +290,12 @@
         <!-- ================================================ -->
         
         <h2>Semantic Grid</h2>
-        <p>By using the <strong>.grid-column()</strong> mixin you can keep the HTML document free from non-semantic classes (like grid12, grid6 etc...).</p>
+        <p>By using the <strong>.grid-item()</strong> mixin you can keep the HTML document free from non-semantic classes (like grid12, grid6 etc...).</p>
         
         <section>
             
           <article>
+            <h3>Article 1</h3>
             <div>
                 <header><span>header { .grid-item(8); }</span></header>
                 <aside><span>aside { .grid-item(4); }</span></aside>
@@ -289,7 +303,8 @@
           </article>
             
           <article>
-            <div>
+            <h3>Article 2</h3>
+            <div>                
                 <header><span>header { .grid-item(8); }</span></header>
                 <aside><span>aside { .grid-item(4); }</span></aside>
             </div>

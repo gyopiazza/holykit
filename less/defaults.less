@@ -3,6 +3,7 @@
 // ============================================
 
 
+// --------------------------------------------
 // Colours palette
 // --------------------------------------------
 
@@ -50,6 +51,8 @@
 @link_color_hover:          darken(@link_color, 15%);
 
 
+
+// --------------------------------------------
 // Modules
 // --------------------------------------------
 
@@ -95,6 +98,8 @@
 @use_slider:                true;
 
 
+
+// --------------------------------------------
 // Typography
 // --------------------------------------------
 
@@ -127,11 +132,12 @@
 // Forms
 @input_color_placeholder:   lighten(@text_color, 25%);
 
-// Private variable: no need to change it (using 16 as the 'common' default)
-// @_doc_ratio:                @line_height_base / 16;
-@_doc_ratio:                @line_height_base / @font_size_base;
+// Private variable: no need to change it
+// @_doc_ratio:             @line_height_base / 16; // Using 16 as the 'common' default
+@_doc_ratio:                @line_height_base / @font_size_base; // Calculate the rhythm ratio with the base font size
 
 
+// --------------------------------------------
 // Grid
 // --------------------------------------------
 
@@ -140,6 +146,7 @@
 @responsive:                true;
 
 
+// --------------------------------------------
 // Media Queries Breakpoints
 // --------------------------------------------
 
@@ -164,6 +171,8 @@
 @xxl-min:                   1920px;
 
 
+
+// --------------------------------------------
 // Media queries definitions
 // --------------------------------------------
 
@@ -188,9 +197,11 @@
                             ~"only screen and (                min-resolution: 2dppx)";
 
 
+// --------------------------------------------
 // Grid elements class names
 // --------------------------------------------
 
+@namespace: 				~"";
 @grid_class:                grid;
 @row_class:                 row;
 @offset_class:              offset;
@@ -198,8 +209,12 @@
 @fraction_class:            f-;
 
 
+
+// --------------------------------------------
 // Selectors (currently not in use)
 // --------------------------------------------
 
 @container_selector:        ~".container";
+
+
 

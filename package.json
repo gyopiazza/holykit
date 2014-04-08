@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gyopiazza/Holy-Kit.git"
+    "url": "https://github.com/gyopiazza/holykit.git"
   },
   "keywords": [
     "front-end",
@@ -19,7 +19,7 @@
   "author": "Giordano Piazza",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gyopiazza/Holy-Kit/issues"
+    "url": "https://github.com/gyopiazza/holykit/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -18,6 +18,7 @@
 
 // Here you can override the default config values
 
+// --------------------------------------------
 // Typography
 // --------------------------------------------
 
@@ -27,6 +28,7 @@
 @global_multiplier:         1;
 
 
+// --------------------------------------------
 // Colors palette
 // --------------------------------------------
 
@@ -76,6 +78,7 @@
 @link_color_hover:          darken(@link_color, 15%);
 
 
+// --------------------------------------------
 // Typography
 // --------------------------------------------
 
@@ -90,6 +93,7 @@
 // @_doc_ratio:                @line_height_base / 16;
 // @_doc_ratio:                @line_height_base / @font_size_base;
 
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -101,22 +105,6 @@
 
 
 
-// Skin
-// --------------------------------------------
-
-// #skins > .plain;
-
-
-// Grid Helpers
-// --------------------------------------------
-
-// Import all the grid helpers
-// #grid > .all;
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-
 // ============================================
 // Custom styles
 // ============================================
@@ -124,7 +112,7 @@
 
 body { .padding(2); }
 
-.container { width:1140px; margin:0 auto; }
+.container { width: 1140px; margin: 0 auto; }
 
 .m() { .grid-container(960px); .container { padding: 0 (0px + @line_height_base); } }
 .s-down()  { .grid-container(100%); .container { padding: 0; } }
@@ -150,6 +138,56 @@ body { .padding(2); }
     #main-features p { padding: 0 10%; }
     #main-features li:last-child { margin-bottom: 0; }
 }
+
+
+// --------------------------------------------
+// Semantic Grid Example
+// --------------------------------------------
+
+
+section, article > div { .grid-row; }
+
+article { .grid-column(6); }
+header { .grid-column(8); }
+aside { .grid-column(4); }
+
+article span {
+  display:block;
+  background-color:#ffd200;
+  padding:6px 8px;
+  border-radius:5px;
+  margin-bottom:@gutter*2;
+  font-size:12px;
+}
+
+// Responsive
+
+.s-down() { 
+	article { .grid-column(12); }
+}
+
+
+
+
+// --------------------------------------------
+// Box background tests
+// --------------------------------------------
+
+// .equal-height {
+// 	margin-right: -20px;
+// }
+
+// .equal-height .one-fourth {
+// 	padding: 0 20px;
+// 	background: #f4f4f4;
+// 	background-clip: content-box;
+// }
+
+// .equal-height .one-fourth > * {
+// 	padding: 20px;
+// }
+
+
 
 /////// Temp stuff...
 
@@ -285,24 +323,6 @@ small {
 // table th, table td { text-align:left; padding:10px; }
 
 
-
-// Semantic Grid Example
-// --------------------------------------------
-
-// section, article > div { .grid-row; }
-
-// article { .grid-column(6); }
-// header { .grid-column(8); }
-// aside { .grid-column(4); }
-
-// article span {
-//   display:block;
-//   background-color:#ffd200;
-//   padding:6px 8px;
-//   border-radius:5px;
-//   margin-bottom:@gutter*2;
-//   font-size:12px;
-// }
 
 // .button-flat3D { #button-styles > .flat3D; }
 
