@@ -1,6 +1,6 @@
 {
   "name": "holykit",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Building blocks for front-end designers",
   "main": "index.html",
   "private": true,
